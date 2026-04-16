@@ -23,7 +23,7 @@ function LatestNews() {
 
   return (
     <section className="bg-gradient-to-br from-gray-50 via-white to-blue-50 py-8 lg:py-10">
-      <div className="mx-auto max-w-7xl">
+      <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
         <div className="mb-6 text-center">
           <div className="mb-5 inline-flex items-center rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
             <Megaphone className="mr-2 h-4 w-4" />

@@ -87,14 +87,14 @@ function Hero() {
               <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
-
+{/* 
           <p className="mt-5 text-sm text-gray-200">
             Operational highlights shown across the site are indicative estimates.
-          </p>
+          </p> */}
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2">
+      {/* <div className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2">
         <button
           onClick={scrollToNext}
           className="group flex flex-col items-center text-white transition-colors duration-300 hover:text-blue-300"
@@ -103,7 +103,7 @@ function Hero() {
           <span className="mb-2 text-sm opacity-80">Scroll</span>
           <ChevronDown className="h-6 w-6 animate-bounce group-hover:animate-none" />
         </button>
-      </div>
+      </div> */}
     </section>
   )
 }
