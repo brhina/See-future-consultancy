@@ -102,14 +102,14 @@ function Home() {
     <div className="relative">
       <Hero />
 
-      <section id="about-section" className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 py-12 lg:py-16">
+      <section id="about-section" className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 py-8 lg:py-10">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5"></div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className={`grid items-center gap-8 lg:grid-cols-1 lg:gap-12 transition-all duration-1000 ${
+        <div className="relative mx-auto max-w-7xl">
+          <div className={`grid items-center gap-5 lg:grid-cols-1 lg:gap-3 transition-all duration-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
-            <div className="space-y-6">
-              <div className="space-y-4">
+            <div className="space-y-4">
+              <div className="space-y-3">
                 <div className="mb-4 inline-flex items-center rounded-full bg-gradient-to-r from-blue-100 to-purple-100 px-4 py-2 text-sm font-medium text-blue-700">
                   <CheckCircle className="mr-2 h-4 w-4" />
                   Established in early 2023
@@ -124,9 +124,9 @@ function Home() {
 
               <div className="space-y-3">
                 {strengths.map((item) => (
-                  <div key={item.title} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-md">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600">
+                  <div key={item.title} className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-md">
+                    <div className="flex items-start space-x-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600">
                         <item.icon className="h-6 w-6 text-white" />
                       </div>
                       <div>
@@ -140,14 +140,14 @@ function Home() {
 
               <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
                 {stats.map((stat) => (
-                  <div key={stat.label} className="text-center">
+                <div key={stat.label} className="text-center">
                     <div className="text-3xl font-bold text-gray-900 lg:text-4xl">{stat.value}+</div>
-                    <p className="mt-2 text-sm font-medium text-gray-600">{stat.label}</p>
+                    <p className="mt-1 text-xs font-medium text-gray-600">{stat.label}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="rounded-xl bg-amber-50 p-4 text-sm text-amber-800">
+              <div className="rounded-xl bg-amber-50 p-3 text-xs text-amber-800">
                 Operational figures are presented as indicative estimates and may be updated as project records are consolidated.
               </div>
 
@@ -163,20 +163,20 @@ function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 py-12 lg:py-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 py-8 lg:py-10">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5"></div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 text-center">
-            <h2 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">Core Service Domains</h2>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600">
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mb-6 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">Core Service Domains</h2>
+            <p className="mx-auto max-w-3xl text-lg text-gray-600">
               SEEF delivers tailored technical and advisory services that strengthen resilience, improve outcomes, and support long-term development goals.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {serviceDomains.map((service) => (
-              <div key={service.title} className="rounded-xl bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600">
+              <div key={service.title} className="rounded-xl bg-white p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600">
                   <service.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="mb-3 text-xl font-bold text-gray-900">{service.title}</h3>
@@ -204,22 +204,22 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 text-center">
-            <h2 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">Our Delivery Approach</h2>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600">
+      <section className="bg-white py-8 lg:py-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-6 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">Our Delivery Approach</h2>
+            <p className="mx-auto max-w-3xl text-lg text-gray-600">
               Projects are built around collaboration, accountability, and practical implementation.
             </p>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-3">
             {[
               'Ground each project in local context through stakeholder engagement and field-based assessments.',
               'Apply multidisciplinary methods and geospatial tools to generate clear and reliable evidence.',
               'Strengthen institutional and community capacity to sustain impact beyond project completion.'
             ].map((step) => (
-              <div key={step} className="rounded-xl border border-gray-200 p-6 shadow-sm">
-                <CheckCircle className="mb-4 h-6 w-6 text-blue-600" />
+              <div key={step} className="rounded-xl border border-gray-200 p-4 shadow-sm">
+                <CheckCircle className="mb-3 h-5 w-5 text-blue-600" />
                 <p className="leading-relaxed text-gray-700">{step}</p>
               </div>
             ))}

@@ -22,9 +22,9 @@ function LatestNews() {
   ]
 
   return (
-    <section className="bg-gradient-to-br from-gray-50 via-white to-blue-50 py-10 lg:py-14">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 text-center">
+    <section className="bg-gradient-to-br from-gray-50 via-white to-blue-50 py-8 lg:py-10">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-6 text-center">
           <div className="mb-5 inline-flex items-center rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
             <Megaphone className="mr-2 h-4 w-4" />
             Latest Updates
@@ -35,9 +35,9 @@ function LatestNews() {
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-3">
           {updates.map((item) => (
-            <article key={item.title} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <article key={item.title} className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className="mb-4 flex items-center text-sm text-gray-500">
                 <Calendar className="mr-2 h-4 w-4" />
                 {item.date}
@@ -48,7 +48,7 @@ function LatestNews() {
           ))}
         </div>
 
-        <div className="mt-7 text-center">
+        <div className="mt-5 text-center">
           <Link
             to="/contact"
             className="group inline-flex items-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-purple-700"

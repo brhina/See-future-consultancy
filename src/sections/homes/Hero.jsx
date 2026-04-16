@@ -30,10 +30,10 @@ function Hero() {
       />
       <div className="absolute inset-0 bg-black/45" />
 
-      <div className="relative z-10 flex h-full items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex h-full items-center justify-center">
         <div className="mx-auto max-w-5xl text-center">
           <div
-            className={`mb-6 inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-sm text-white backdrop-blur transition-all duration-1000 ${
+            className={`mb-4 inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-sm text-white backdrop-blur transition-all duration-1000 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
             }`}
           >
@@ -42,7 +42,7 @@ function Hero() {
           </div>
 
           <h1
-            className={`mb-6 text-4xl font-bold leading-tight text-white transition-all duration-1000 sm:text-5xl lg:text-7xl ${
+            className={`mb-4 text-4xl font-bold leading-tight text-white transition-all duration-1000 sm:text-5xl lg:text-7xl ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}
           >
@@ -53,7 +53,7 @@ function Hero() {
           </h1>
 
           <p
-            className={`mx-auto mb-10 max-w-4xl text-lg leading-relaxed text-gray-100 transition-all delay-200 duration-1000 sm:text-xl lg:text-2xl ${
+            className={`mx-auto mb-6 max-w-4xl text-lg leading-relaxed text-gray-100 transition-all delay-200 duration-1000 sm:text-xl lg:text-2xl ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}
           >
@@ -61,7 +61,7 @@ function Hero() {
           </p>
 
           <div
-            className={`flex flex-col items-center justify-center gap-4 transition-all delay-300 duration-1000 sm:flex-row ${
+            className={`flex flex-col items-center justify-center gap-2 transition-all delay-300 duration-1000 sm:flex-row ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}
           >
@@ -88,7 +88,7 @@ function Hero() {
             </Link>
           </div>
 
-          <p className="mt-8 text-sm text-gray-200">
+          <p className="mt-5 text-sm text-gray-200">
             Operational highlights shown across the site are indicative estimates.
           </p>
         </div>

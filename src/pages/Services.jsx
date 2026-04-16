@@ -53,8 +53,8 @@ function Services() {
 
   return (
     <div className="bg-white">
-      <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-10 lg:py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-8 lg:py-10">
+        <div className="mx-auto max-w-7xl">
           <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">SEEF Consulting Services</h1>
           <p className="max-w-4xl text-lg leading-relaxed text-gray-600 lg:text-xl">
             SEEF delivers integrated consulting services to advance sustainable development in Ethiopia. Each engagement is designed around practical implementation, measurable outcomes, and long-term resilience.
@@ -62,11 +62,11 @@ function Services() {
         </div>
       </section>
 
-      <section className="py-10 lg:py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-5 md:grid-cols-2">
+      <section className="py-8 lg:py-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-3 md:grid-cols-2">
             {services.map((service) => (
-              <article key={service.title} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <article key={service.title} className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600">
                   <service.icon className="h-6 w-6 text-white" />
                 </div>
@@ -82,8 +82,8 @@ function Services() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-10 lg:py-12">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <section className="bg-gray-50 py-8 lg:py-10">
+        <div className="mx-auto max-w-7xl text-center">
           <h3 className="mb-3 text-2xl font-bold text-gray-900">Capacity Building and Knowledge Transfer</h3>
           <p className="mx-auto mb-6 max-w-4xl text-base leading-relaxed text-gray-600 lg:text-lg">
             In addition to consulting, SEEF provides practical training in ArcGIS and fruit production, and is expanding offerings in R programming, statistics, GIS, and Integrated Resource Management (IRM).

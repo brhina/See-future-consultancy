@@ -5,9 +5,9 @@ import AppRoutes from "./routes/AppRoutes"
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full">
       <Header />
-      <div className="flex-1">
+      <div className="w-full">
         <AppRoutes />
       </div>
       <Footer />
