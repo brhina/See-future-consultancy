@@ -1,48 +1,128 @@
 import React from 'react'
-import { Mail, MapPin, Phone } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import PageHero from '../components/PageHero'
+import SectionHeading from '../components/SectionHeading'
+import { contactPageData } from '../data/contactData'
 
 function Contact() {
   return (
     <div className="bg-white">
-      <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-8 lg:py-10">
-        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
-          <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">Contact SEEF</h1>
-          <p className="max-w-4xl text-lg leading-relaxed text-gray-600 lg:text-xl">
-            We welcome collaboration with government institutions, NGOs, private sector organizations, and communities seeking sustainable and evidence-based solutions.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Partnership and Project Inquiries"
+        title={contactPageData.hero.title}
+        description={contactPageData.hero.description}
+        gradient="from-sky-50 via-white to-cyan-50"
+      />
 
-      <section className="py-8 lg:py-10">
-        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full grid gap-3 lg:grid-cols-2">
-          <div className="rounded-xl border border-gray-200 p-4 shadow-sm">
-            <h2 className="mb-4 text-xl font-bold text-gray-900">Office Location</h2>
-            <div className="space-y-4 text-gray-700">
-              <div className="flex items-start">
-                <MapPin className="mr-3 mt-1 h-5 w-5 text-blue-600" />
-                <p>Dembel City Center, Addis Ababa, Ethiopia</p>
-              </div>
-              <div className="flex items-start">
-                <Phone className="mr-3 mt-1 h-5 w-5 text-blue-600" />
-                <p>Phone details available on request</p>
-              </div>
-              <div className="flex items-start">
-                <Mail className="mr-3 mt-1 h-5 w-5 text-blue-600" />
-                <p>Email details available on request</p>
-              </div>
+      <section className="py-12 lg:py-16">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+          <div>
+            <SectionHeading
+              eyebrow="Contact Options"
+              title="Reach SEEF through the channel that fits your need"
+              description="Use the option that best matches your timeline, preferred communication style, and project stage."
+            />
+
+            <div className="grid gap-4">
+              {contactPageData.contactCards.map((card) => (
+                <a
+                  key={card.title}
+                  href={card.href}
+                  target={card.href.startsWith('http') ? '_blank' : undefined}
+                  rel={card.href.startsWith('http') ? 'noreferrer' : undefined}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
+                    <card.icon className="h-5 w-5 text-white" />
+                  </div>
+                  <h2 className="mt-5 text-xl font-bold text-slate-900">{card.title}</h2>
+                  <p className="mt-3 text-base font-medium text-slate-800">{card.value}</p>
+                  <p className="mt-3 leading-7 text-slate-600">{card.helper}</p>
+                  <div className="mt-5 inline-flex items-center text-sm font-semibold text-sky-700">
+                    {card.action}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
 
-          <div className="rounded-xl border border-gray-200 p-4 shadow-sm">
-            <h2 className="mb-3 text-xl font-bold text-gray-900">Partnership and Project Inquiries</h2>
-            <p className="mb-4 leading-relaxed text-gray-600">
-              Share your project goals, sector focus, and expected support areas. Our team will respond with a tailored engagement approach aligned to your needs.
-            </p>
-            <div className="space-y-3 text-gray-700">
-              <p>- Consulting and technical advisory requests</p>
-              <p>- Research, assessment, and evaluation partnerships</p>
-              <p>- Training and capacity-building program coordination</p>
-              <p>- Joint initiatives for sustainable development</p>
+          <div className="space-y-6">
+            <div className="rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl">
+              <h2 className="text-2xl font-bold">What to include in your inquiry</h2>
+              <div className="mt-6 space-y-4">
+                {contactPageData.readinessChecklist.map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-sky-300" />
+                    <p className="text-sm leading-7 text-slate-200">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm">
+              <h2 className="text-2xl font-bold text-slate-900">Why partners reach out</h2>
+              <div className="mt-6 space-y-4">
+                {contactPageData.inquiryTypes.map((item) => (
+                  <div key={item.title} className="rounded-2xl bg-white p-5 shadow-sm">
+                    <div className="flex items-center gap-3">
+                      <item.icon className="h-5 w-5 text-sky-600" />
+                      <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                    </div>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <SectionHeading
+                eyebrow="Response Approach"
+                title="What SEEF aims to do after you reach out"
+                description="The goal is to make the next step clear as early as possible."
+              />
+              <div className="flex flex-wrap gap-3">
+                {contactPageData.trustSignals.map((item) => (
+                  <div key={item.label} className="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm">
+                    <item.icon className="mr-2 h-4 w-4 text-emerald-600" />
+                    {item.label}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-4">
+              {contactPageData.responseCommitments.map((item) => (
+                <div key={item} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <CheckCircle2 className="h-5 w-5 text-sky-600" />
+                  <p className="mt-4 leading-7 text-slate-600">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-[2rem] bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 p-8 text-white shadow-xl lg:p-10">
+            <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-100">Ready When You Are</p>
+                <h2 className="mt-3 text-3xl font-bold lg:text-4xl">{contactPageData.cta.title}</h2>
+                <p className="mt-4 max-w-3xl text-base leading-7 text-sky-50">{contactPageData.cta.description}</p>
+              </div>
+              <div className="flex justify-start lg:justify-end">
+                <a
+                  href={contactPageData.cta.action.href}
+                  className="group inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-sky-700 transition-all duration-300 hover:scale-105"
+                >
+                  {contactPageData.cta.action.label}
+                  <contactPageData.cta.action.icon className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
