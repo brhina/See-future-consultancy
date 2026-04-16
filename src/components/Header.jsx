@@ -9,7 +9,7 @@ const navItems = [
     label: 'Home',
     path: '/',
     children: [
-      { label: 'Our Vision', path: '/#vision' },
+      { label: 'About SEEF', path: '/about' },
       { label: 'Latest News', path: '/latest-news' }
     ]
   },
@@ -17,43 +17,31 @@ const navItems = [
     label: 'About Us',
     path: '/about',
     children: [
-      { label: 'Our Story', path: '/about/story' },
-      { label: 'Our Mission', path: '/about/mission' },
-      { label: 'Our Achievements', path: '/about/achievements' },
-      { label: 'Our Awards', path: '/about/awards' },
-      { label: 'Our Projects', path: '/about/projects' },
-      { label: 'Our Team', path: '/about/team' },
-      { label: 'Core Values', path: '/about/values' },
-      { label: 'Our Partners', path: '/about/partners' },
-      { label: 'Our Clients', path: '/about/clients' },
+      { label: 'Our Story and Values', path: '/about' },
+      { label: 'Our Team', path: '/about' },
+      { label: 'Who We Work With', path: '/about' }
     ]
   },
   {
     label: 'Services',
     path: '/services',
     children: [
-      { label: 'Consulting', path: '/services/consulting' },
-      { label: 'Research & Development', path: '/services/research' },
-      { label: 'Training Programs', path: '/services/training' },
-      { label: 'Innovation Solutions', path: '/services/innovation' },
-      { label: "Agriculture & Environment", path: "/services/agriculture" },
-      { label: "Water Management", path: "/services/water" },
-      { label: "Health & Social Affairs", path: "/services/health" },
-      { label: "GeoInformation Services", path: "/services/geoinfo" }
+      { label: 'Agriculture and Environment', path: '/services' },
+      { label: 'Water Resource Management', path: '/services' },
+      { label: 'Health and Social Development', path: '/services' },
+      { label: 'Geoinformation Services', path: '/services' },
+      { label: 'Training and Capacity Building', path: '/services' }
     ]
   },
   {
     label: 'Thematic Areas',
     path: '/thematic-areas',
     children: [
-      { label: 'Climate Change', path: '/thematic-areas/climate-change' },
-      { label: 'Sustainable Development', path: '/thematic-areas/sustainable-development' },
-      { label: 'Biodiversity', path: '/thematic-areas/biodiversity' },
-      { label: 'Renewable Energy', path: '/thematic-areas/renewable-energy' },
-      { label: 'Water Resources', path: '/thematic-areas/water-resources' },
-      { label: 'Agriculture', path: '/thematic-areas/agriculture' },
-      { label: 'Health & Social Affairs', path: '/thematic-areas/health-social' },
-      { label: 'GeoInformation Services', path: '/thematic-areas/geo-info' }
+      { label: 'Infrastructure and Environment', path: '/thematic-areas' },
+      { label: 'Agriculture and Production', path: '/thematic-areas' },
+      { label: 'Social Development', path: '/thematic-areas' },
+      { label: 'Data and Geospatial Systems', path: '/thematic-areas' },
+      { label: 'Health and Well-Being', path: '/thematic-areas' }
     ]
   },
   {
