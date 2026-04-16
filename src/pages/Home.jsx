@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { ArrowUp, CheckCircle, ChevronRight, Droplets, HeartPulse, Leaf, Map, Users } from 'lucide-react'
 import Hero from '../sections/homes/Hero'
 import LatestNews from '../sections/homes/LatestNews'
-import logoIntro from '../assets/logo.mp4'
 
 function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -103,14 +102,14 @@ function Home() {
     <div className="relative">
       <Hero />
 
-      <section id="about-section" className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 py-20 lg:py-28">
+      <section id="about-section" className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 py-12 lg:py-16">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5"></div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className={`grid items-center gap-14 lg:grid-cols-2 lg:gap-20 transition-all duration-1000 ${
+          <div className={`grid items-center gap-8 lg:grid-cols-1 lg:gap-12 transition-all duration-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
-            <div className="space-y-8">
-              <div className="space-y-6">
+            <div className="space-y-6">
+              <div className="space-y-4">
                 <div className="mb-4 inline-flex items-center rounded-full bg-gradient-to-r from-blue-100 to-purple-100 px-4 py-2 text-sm font-medium text-blue-700">
                   <CheckCircle className="mr-2 h-4 w-4" />
                   Established in early 2023
@@ -123,7 +122,7 @@ function Home() {
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {strengths.map((item) => (
                   <div key={item.title} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-md">
                     <div className="flex items-start space-x-4">
@@ -139,7 +138,7 @@ function Home() {
                 ))}
               </div>
 
-              <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+              <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
                 {stats.map((stat) => (
                   <div key={stat.label} className="text-center">
                     <div className="text-3xl font-bold text-gray-900 lg:text-4xl">{stat.value}+</div>
@@ -160,33 +159,21 @@ function Home() {
                 <ChevronRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
-
-            <div className="relative">
-              <video
-                src={logoIntro}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full max-w-md rounded-3xl border border-white/20 bg-white/90 object-contain shadow-2xl backdrop-blur-sm lg:max-w-lg xl:max-w-xl"
-                style={{ background: 'rgba(255, 255, 255, 0.9)' }}
-              />
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16 lg:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 py-12 lg:py-16">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5"></div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
+          <div className="mb-10 text-center">
             <h2 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">Core Service Domains</h2>
             <p className="mx-auto max-w-3xl text-xl text-gray-600">
               SEEF delivers tailored technical and advisory services that strengthen resilience, improve outcomes, and support long-term development goals.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             {serviceDomains.map((service) => (
               <div key={service.title} className="rounded-xl bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600">
@@ -198,7 +185,7 @@ function Home() {
             ))}
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               to="/services"
               className="group inline-flex items-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-purple-700"
@@ -217,15 +204,15 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
+          <div className="mb-8 text-center">
             <h2 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">Our Delivery Approach</h2>
             <p className="mx-auto max-w-3xl text-xl text-gray-600">
               Projects are built around collaboration, accountability, and practical implementation.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-3">
             {[
               'Ground each project in local context through stakeholder engagement and field-based assessments.',
               'Apply multidisciplinary methods and geospatial tools to generate clear and reliable evidence.',

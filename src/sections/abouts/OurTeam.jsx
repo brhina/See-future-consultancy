@@ -26,22 +26,22 @@ function OurTeam() {
   ]
 
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-white py-10 lg:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center">
           <h2 className="mb-5 text-4xl font-bold text-gray-900">Our Team</h2>
           <p className="mx-auto max-w-4xl text-lg leading-relaxed text-gray-600">
             SEEF brings together a multidisciplinary team with complementary technical expertise, enabling the firm to solve complex challenges from multiple perspectives.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2">
           {teamProfiles.map((profile) => (
-            <article key={profile.title} className="rounded-xl border border-gray-200 p-8 shadow-sm">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600">
+            <article key={profile.title} className="rounded-xl border border-gray-200 p-6 shadow-sm">
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600">
                 <profile.icon className="h-6 w-6 text-white" />
               </div>
-              <h3 className="mb-3 text-2xl font-bold text-gray-900">{profile.title}</h3>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">{profile.title}</h3>
               <p className="leading-relaxed text-gray-600">{profile.description}</p>
             </article>
           ))}

@@ -53,7 +53,7 @@ function Services() {
 
   return (
     <div className="bg-white">
-      <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-16 lg:py-24">
+      <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">SEEF Consulting Services</h1>
           <p className="max-w-4xl text-lg leading-relaxed text-gray-600 lg:text-xl">
@@ -62,15 +62,15 @@ function Services() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-24">
+      <section className="py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-5 md:grid-cols-2">
             {services.map((service) => (
-              <article key={service.title} className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600">
+              <article key={service.title} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600">
                   <service.icon className="h-6 w-6 text-white" />
                 </div>
-                <h2 className="mb-4 text-2xl font-bold text-gray-900">{service.title}</h2>
+                <h2 className="mb-3 text-xl font-bold text-gray-900">{service.title}</h2>
                 <ul className="space-y-3 text-gray-600">
                   {service.points.map((point) => (
                     <li key={point} className="leading-relaxed">- {point}</li>
@@ -82,10 +82,10 @@ function Services() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-16">
+      <section className="bg-gray-50 py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h3 className="mb-4 text-3xl font-bold text-gray-900">Capacity Building and Knowledge Transfer</h3>
-          <p className="mx-auto mb-8 max-w-4xl text-lg leading-relaxed text-gray-600">
+          <h3 className="mb-3 text-2xl font-bold text-gray-900">Capacity Building and Knowledge Transfer</h3>
+          <p className="mx-auto mb-6 max-w-4xl text-base leading-relaxed text-gray-600 lg:text-lg">
             In addition to consulting, SEEF provides practical training in ArcGIS and fruit production, and is expanding offerings in R programming, statistics, GIS, and Integrated Resource Management (IRM).
           </p>
           <Link
