@@ -27,7 +27,7 @@ function OurTeam() {
 
   return (
     <section className="bg-white py-8 lg:py-10">
-      <div className="mx-auto max-w-7xl">
+      <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
         <div className="mb-6 text-center">
           <h2 className="mb-5 text-4xl font-bold text-gray-900">Our Team</h2>
           <p className="mx-auto max-w-4xl text-lg leading-relaxed text-gray-600">

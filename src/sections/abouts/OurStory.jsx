@@ -13,7 +13,7 @@ function OurStory() {
 
   return (
     <section className="bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 py-8 lg:py-10">
-      <div className="mx-auto max-w-7xl">
+      <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
         <div className="mb-6">
           <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">Our Story</h1>
           <p className="max-w-5xl text-lg leading-relaxed text-gray-600 lg:text-xl">
