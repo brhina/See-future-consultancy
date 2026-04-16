@@ -1,50 +1,41 @@
 import React from 'react'
-import { Brain, Cross, Leaf, Map } from 'lucide-react'
+import { CheckCircle2 } from 'lucide-react'
+import SectionHeading from '../../components/SectionHeading'
+import { aboutPageData } from '../../data/aboutData'
 
 function OurTeam() {
-  const teamProfiles = [
-    {
-      icon: Leaf,
-      title: 'Natural and Environmental Sciences',
-      description: 'Supports environmental planning, ecosystem stewardship, climate resilience, and sustainable resource management.'
-    },
-    {
-      icon: Brain,
-      title: 'Social Sciences and Development Practice',
-      description: 'Leads social assessment, inclusion design, stakeholder engagement, and participatory planning processes.'
-    },
-    {
-      icon: Cross,
-      title: 'Public and Community Health',
-      description: 'Contributes to health impact assessments, surveillance support, behavior change strategy, and equity-oriented program design.'
-    },
-    {
-      icon: Map,
-      title: 'Geospatial and Data Technologies',
-      description: 'Delivers GIS, remote sensing, and GPS-based analysis for monitoring, planning, and risk-informed decision support.'
-    }
-  ]
-
   return (
-    <section className="bg-white py-8 lg:py-10">
-      <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
-        <div className="mb-6 text-center">
-          <h2 className="mb-5 text-4xl font-bold text-gray-900">Our Team</h2>
-          <p className="mx-auto max-w-4xl text-lg leading-relaxed text-gray-600">
-            SEEF brings together a multidisciplinary team with complementary technical expertise, enabling the firm to solve complex challenges from multiple perspectives.
-          </p>
-        </div>
+    <section className="bg-white py-12 lg:py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Multidisciplinary Expertise"
+          title={aboutPageData.teamIntro.title}
+          description={aboutPageData.teamIntro.description}
+          centered
+        />
 
-        <div className="grid gap-3 md:grid-cols-2">
-          {teamProfiles.map((profile) => (
-            <article key={profile.title} className="rounded-xl border border-gray-200 p-4 shadow-sm">
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600">
-                <profile.icon className="h-6 w-6 text-white" />
+        <div className="grid gap-5 md:grid-cols-2">
+          {aboutPageData.teamProfiles.map((profile) => (
+            <article key={profile.title} className="rounded-3xl border border-slate-200 p-6 shadow-sm">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
+                <profile.icon className="h-5 w-5 text-white" />
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-900">{profile.title}</h3>
-              <p className="leading-relaxed text-gray-600">{profile.description}</p>
+              <h3 className="text-xl font-bold text-slate-900">{profile.title}</h3>
+              <p className="mt-3 leading-7 text-slate-600">{profile.description}</p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 rounded-[2rem] bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-8 text-white shadow-xl">
+          <h3 className="text-2xl font-bold">How the team collaborates</h3>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {aboutPageData.collaborationPrinciples.map((item) => (
+              <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <CheckCircle2 className="h-5 w-5 text-sky-300" />
+                <p className="mt-4 text-sm leading-7 text-slate-200">{item}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
