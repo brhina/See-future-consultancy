@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUp, ChevronRight } from 'lucide-react'
+import { motion as Motion, useReducedMotion } from 'framer-motion'
 import Hero from '../sections/homes/Hero'
 import LatestNews from '../sections/homes/LatestNews'
 import SectionHeading from '../components/SectionHeading'
 import { homePageData } from '../data/homeData'
+import { cardVariants, hoverLift, sectionVariants, staggerContainer } from '../utils/motionPresets'
 
 const statsTargetValues = homePageData.stats.map((stat) => stat.value)
 
@@ -14,6 +16,7 @@ function Home() {
   const [shouldAnimateStats, setShouldAnimateStats] = useState(false)
   const [animatedStats, setAnimatedStats] = useState(() => homePageData.stats.map(() => 0))
   const aboutSectionRef = useRef(null)
+  const reduceMotion = useReducedMotion()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,7 +88,13 @@ function Home() {
         className="relative overflow-hidden bg-gradient-to-br from-white via-sky-50/60 to-emerald-50/60 py-12 lg:py-16"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.12),transparent_35%)]" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Motion.div
+          className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.25 }}
+        >
           <div
             className={`grid items-start gap-8 lg:grid-cols-[1.2fr_0.9fr] transition-all duration-1000 ${
               isOverviewVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
@@ -98,11 +107,19 @@ function Home() {
                 description={homePageData.overview.description}
               />
 
-              <div className="grid gap-4">
+              <Motion.div
+                className="grid gap-4"
+                variants={reduceMotion ? undefined : staggerContainer(0.07, 0.06)}
+                initial={reduceMotion ? false : 'initial'}
+                whileInView={reduceMotion ? undefined : 'animate'}
+                viewport={{ once: true, amount: 0.25 }}
+              >
                 {homePageData.strengths.map((item) => (
-                  <div
+                  <Motion.div
                     key={item.title}
                     className="rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-200 hover:shadow-md"
+                    variants={reduceMotion ? undefined : cardVariants}
+                    {...(reduceMotion ? {} : hoverLift)}
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
@@ -113,32 +130,59 @@ function Home() {
                         <p className="mt-2 text-sm leading-7 text-slate-600">{item.description}</p>
                       </div>
                     </div>
-                  </div>
+                  </Motion.div>
                 ))}
-              </div>
+              </Motion.div>
             </div>
 
             <div className="space-y-5">
-              <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-sky-100/70">
+              <Motion.div
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-sky-100/70"
+                variants={reduceMotion ? undefined : cardVariants}
+                initial={reduceMotion ? false : 'initial'}
+                whileInView={reduceMotion ? undefined : 'animate'}
+                viewport={{ once: true, amount: 0.25 }}
+              >
                 <h3 className="text-xl font-bold text-slate-900">SEEF at a Glance</h3>
-                <div className="mt-5 grid grid-cols-2 gap-4">
+                <Motion.div
+                  className="mt-5 grid grid-cols-2 gap-4"
+                  variants={reduceMotion ? undefined : staggerContainer(0.06, 0.04)}
+                  initial={reduceMotion ? false : 'initial'}
+                  whileInView={reduceMotion ? undefined : 'animate'}
+                  viewport={{ once: true, amount: 0.25 }}
+                >
                   {homePageData.stats.map((stat, index) => (
-                    <div key={stat.label} className="rounded-2xl bg-slate-50 p-4 text-center">
+                    <Motion.div
+                      key={stat.label}
+                      className="rounded-2xl bg-slate-50 p-4 text-center"
+                      variants={reduceMotion ? undefined : cardVariants}
+                      {...(reduceMotion ? {} : { whileHover: { scale: 1.02 }, whileTap: { scale: 0.99 } })}
+                    >
                       <div className="text-3xl font-bold text-slate-900">
                         {animatedStats[index]}
                         {stat.suffix}
                       </div>
                       <p className="mt-2 text-sm leading-6 text-slate-600">{stat.label}</p>
-                    </div>
+                    </Motion.div>
                   ))}
-                </div>
-              </div>
+                </Motion.div>
+              </Motion.div>
 
-              <div className="rounded-3xl bg-slate-900 p-6 text-white shadow-lg">
+              <Motion.div
+                className="rounded-3xl bg-slate-900 p-6 text-white shadow-lg"
+                variants={reduceMotion ? undefined : cardVariants}
+                initial={reduceMotion ? false : 'initial'}
+                whileInView={reduceMotion ? undefined : 'animate'}
+                viewport={{ once: true, amount: 0.2 }}
+              >
                 <h3 className="text-xl font-bold">Typical engagement signals</h3>
                 <div className="mt-5 space-y-5">
                   {homePageData.projectSignals.map((group) => (
-                    <div key={group.title} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <Motion.div
+                      key={group.title}
+                      className="rounded-2xl border border-white/10 bg-white/5 p-4"
+                      {...(reduceMotion ? {} : { whileHover: { y: -2 }, transition: { duration: 0.18 } })}
+                    >
                       <div className="flex items-center gap-3">
                         <group.icon className="h-5 w-5 text-sky-300" />
                         <h4 className="font-semibold">{group.title}</h4>
@@ -148,14 +192,20 @@ function Home() {
                           <p key={item}>{item}</p>
                         ))}
                       </div>
-                    </div>
+                    </Motion.div>
                   ))}
                 </div>
-              </div>
+              </Motion.div>
 
-              <div className="rounded-2xl bg-amber-50 p-4 text-sm leading-7 text-amber-800">
+              <Motion.div
+                className="rounded-2xl bg-amber-50 p-4 text-sm leading-7 text-amber-800"
+                variants={reduceMotion ? undefined : cardVariants}
+                initial={reduceMotion ? false : 'initial'}
+                whileInView={reduceMotion ? undefined : 'animate'}
+                viewport={{ once: true, amount: 0.35 }}
+              >
                 {homePageData.overview.note}
-              </div>
+              </Motion.div>
 
               <div className="flex flex-wrap gap-3">
                 <Link
@@ -175,11 +225,17 @@ function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </Motion.div>
       </section>
 
       <section className="bg-white py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Motion.div
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <SectionHeading
             eyebrow="Core Service Domains"
             title="Technical support that connects strategy, evidence, and delivery"
@@ -187,20 +243,28 @@ function Home() {
             centered
           />
 
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <Motion.div
+            className="grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+            variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
+            initial={reduceMotion ? false : 'initial'}
+            whileInView={reduceMotion ? undefined : 'animate'}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {homePageData.serviceDomains.map((service) => (
-              <div
+              <Motion.div
                 key={service.title}
                 className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-sky-200 hover:shadow-lg"
+                variants={reduceMotion ? undefined : cardVariants}
+                {...(reduceMotion ? {} : hoverLift)}
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
                   <service.icon className="h-5 w-5 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900">{service.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">{service.description}</p>
-              </div>
+              </Motion.div>
             ))}
-          </div>
+          </Motion.div>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
@@ -218,7 +282,7 @@ function Home() {
               <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
-        </div>
+        </Motion.div>
       </section>
 
       <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 py-12 text-white lg:py-16">
