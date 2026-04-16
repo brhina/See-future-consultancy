@@ -107,12 +107,12 @@ function Header() {
       </div> */}
 
       {/* Main Header */}
-      <header className={`fixed top-1 left-0 w-full z-50 transition-all duration-300 ${
+      <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
           : 'bg-white'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full px-4 py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center">

@@ -19,21 +19,21 @@ function Hero() {
   }
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-1/2 w-full overflow-hidden">
       <video
         src={heroVideo}
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-1/2 w-full object-cover"
       />
       <div className="absolute inset-0 bg-black/45" />
 
-      <div className="relative z-10 flex h-full items-center justify-center">
-        <div className="mx-auto max-w-5xl text-center">
+      <div className="relative z-10 flex h-1/2 items-center justify-center">
+        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full text-center">
           <div
-            className={`mb-4 inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-sm text-white backdrop-blur transition-all duration-1000 ${
+            className={`mb-2 inline-flex items-center rounded-full bg-white/15 px-4 py-2 text-sm text-white backdrop-blur transition-all duration-1000 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
             }`}
           >
@@ -61,7 +61,7 @@ function Hero() {
           </p>
 
           <div
-            className={`flex flex-col items-center justify-center gap-2 transition-all delay-300 duration-1000 sm:flex-row ${
+            className={`flex flex-col mb-4 items-center justify-center gap-2 transition-all delay-300 duration-1000 sm:flex-row ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}
           >
