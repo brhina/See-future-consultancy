@@ -97,7 +97,7 @@ function Header() {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white h-12">
+      {/* <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white h-12">
         <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between text-sm">
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
@@ -116,10 +116,10 @@ function Header() {
             <span>SEEF Consulting</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Header */}
-      <header className={`fixed top-12 left-0 w-full z-50 transition-all duration-300 ${
+      <header className={`fixed top-1 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
           : 'bg-white'
