@@ -1,54 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, ChevronUp, Phone, Mail, MapPin } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import seefLogo from '../assets/seef-logo.svg';
 import MapLocation from '../utils/MapLocation';
-
-const navItems = [
-  {
-    label: 'Home',
-    path: '/',
-    children: [
-      { label: 'About SEEF', path: '/about' },
-      { label: 'Latest News', path: '/latest-news' }
-    ]
-  },
-  {
-    label: 'About Us',
-    path: '/about',
-    children: [
-      { label: 'Our Story and Values', path: '/about' },
-      { label: 'Our Team', path: '/about' },
-      { label: 'Who We Work With', path: '/about' }
-    ]
-  },
-  {
-    label: 'Services',
-    path: '/services',
-    children: [
-      { label: 'Agriculture and Environment', path: '/services' },
-      { label: 'Water Resource Management', path: '/services' },
-      { label: 'Health and Social Development', path: '/services' },
-      { label: 'Geoinformation Services', path: '/services' },
-      { label: 'Training and Capacity Building', path: '/services' }
-    ]
-  },
-  {
-    label: 'Thematic Areas',
-    path: '/thematic-areas',
-    children: [
-      { label: 'Infrastructure and Environment', path: '/thematic-areas' },
-      { label: 'Agriculture and Production', path: '/thematic-areas' },
-      { label: 'Social Development', path: '/thematic-areas' },
-      { label: 'Data and Geospatial Systems', path: '/thematic-areas' },
-      { label: 'Health and Well-Being', path: '/thematic-areas' }
-    ]
-  },
-  {
-    label: 'Contact Us',
-    path: '/contact'
-  }
-];
+import { navigationItems } from '../data/siteData';
 
 function Header() {
   const [isMapOpen, setIsMapOpen] = useState(false)
@@ -127,7 +82,7 @@ function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
-              {navItems.map((item, index) => (
+              {navigationItems.map((item, index) => (
                 <div key={item.label} className="relative group">
                   <div className="flex items-center space-x-1">
                     <NavLink
@@ -216,7 +171,7 @@ function Header() {
         }`}>
           <div className="bg-white border-t border-gray-200 shadow-lg">
             <nav className="px-4 py-4 space-y-2">
-              {navItems.map((item, index) => (
+              {navigationItems.map((item, index) => (
                 <div key={item.label} className="space-y-1">
                   <div className="flex items-center justify-between">
                     <NavLink

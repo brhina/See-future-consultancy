@@ -1,29 +1,13 @@
 import { Link } from "react-router-dom"
-import { Facebook, Linkedin, Instagram, Twitter, Mail, MapPin, Phone, Users, Briefcase, Target, FileText, Leaf, Droplets, Heart, Map } from "lucide-react"
+import { Facebook, Linkedin, Instagram, Twitter, Mail, MapPin, Phone } from "lucide-react"
 import MapLocation from "../utils/MapLocation"
 import { useState } from "react"
+import seefLogo from "../assets/seef-logo.svg"
+import { footerQuickLinks, footerServiceLinks, officeContact } from "../data/siteData"
 
 function Footer() {
   const [isMapOpen, setIsMapOpen] = useState(false)
   const currentYear = new Date().getFullYear()
-
-  const quickLinks = [
-    { name: "About Us", href: "/about", icon: Users },
-    { name: "Services", href: "/services", icon: Briefcase },
-    { name: "Thematic Areas", href: "/thematic-areas", icon: Target },
-    { name: "Contact", href: "/contact", icon: Mail },
-  ]
-
-  const services = [
-    { name: "Research & Development", href: "/services", icon: FileText },
-    { name: "Consulting", href: "/services", icon: Briefcase },
-    { name: "Training Programs", href: "/services", icon: Users },
-    { name: "Innovation Solutions", href: "/services", icon: Target },
-    { name: "Agriculture & Environment", href: "/services", icon: Leaf },
-    { name: "Water Management", href: "/services", icon: Droplets },
-    { name: "Health & Social Affairs", href: "/services", icon: Heart },
-    { name: "GeoInformation Services", href: "/services", icon: Map }
-  ]
 
   const socialLinks = [
     { name: "Facebook", icon: Facebook, href: "#", color: "hover:text-blue-500" },
@@ -49,13 +33,9 @@ function Footer() {
               <div className="flex items-center mb-6">
                 <Link to="/" className="flex items-center group">
                   <img 
-                    src="/src/assets/seef-logo.svg" 
+                    src={seefLogo} 
                     alt="See Future Logo" 
                     className="h-10 w-auto transition-transform duration-300 group-hover:scale-110" 
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.marginLeft = '0';
-                    }}
                   />
                   <span className="ml-3 text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                     See Future
@@ -74,16 +54,16 @@ function Footer() {
                 >
                   <MapPin className="h-4 w-4 mr-3 text-blue-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
                   <span className="text-sm group-hover:text-blue-300 transition-colors duration-200">
-                    Addis Ababa Dembel City Center Street, 12th Floor office no 1237
+                    {officeContact.address}
                   </span>
                 </button>
                 <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-200">
                   <Phone className="h-4 w-4 mr-3 text-blue-400 flex-shrink-0" />
-                  <span className="text-sm">+251-115621777</span>
+                  <span className="text-sm">{officeContact.phone}</span>
                 </div>
                 <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-200">
                   <Mail className="h-4 w-4 mr-3 text-blue-400 flex-shrink-0" />
-                  <span className="text-sm">info@seefcounsult.com</span>
+                  <span className="text-sm">{officeContact.email}</span>
                 </div>
               </div>
             </div>
@@ -95,7 +75,7 @@ function Footer() {
                 <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400"></div>
               </h3>
               <ul className="space-y-3">
-                {quickLinks.map((link) => (
+                {footerQuickLinks.map((link) => (
                   <li key={link.name}>
                     <Link 
                       to={link.href}
@@ -118,7 +98,7 @@ function Footer() {
                 <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400"></div>
               </h3>
               <ul className="space-y-3">
-                {services.map((service) => (
+                {footerServiceLinks.map((service) => (
                   <li key={service.name}>
                     <Link 
                       to={service.href}
@@ -185,12 +165,12 @@ function Footer() {
               <div className="flex items-center space-x-6 text-sm text-gray-400">
                 <span>© {currentYear} See Future. All rights reserved.</span>
                 <span className="hidden sm:inline">•</span>
-                <Link to="/privacy" className="hover:text-white transition-colors duration-200">
-                  Privacy Policy
+                <Link to="/about" className="hover:text-white transition-colors duration-200">
+                  About SEEF
                 </Link>
                 <span className="hidden sm:inline">•</span>
-                <Link to="/terms" className="hover:text-white transition-colors duration-200">
-                  Terms of Service
+                <Link to="/contact" className="hover:text-white transition-colors duration-200">
+                  Contact
                 </Link>
               </div>
               
