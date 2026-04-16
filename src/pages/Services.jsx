@@ -1,100 +1,162 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Droplets, HeartPulse, Leaf, Map, Users } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import PageHero from '../components/PageHero'
+import SectionHeading from '../components/SectionHeading'
+import { servicesPageData } from '../data/servicesData'
 
 function Services() {
-  const services = [
-    {
-      icon: Leaf,
-      title: 'Agriculture and Environmental Management',
-      points: [
-        'Sustainable land use planning and ecosystem conservation',
-        'Climate-smart agriculture and production system advisory',
-        'Environmental impact assessment and mitigation planning'
-      ]
-    },
-    {
-      icon: Droplets,
-      title: 'Water Resource Management',
-      points: [
-        'Watershed and catchment assessment',
-        'Water allocation, conservation, and quality improvement',
-        'Integrated planning for community and institutional water systems'
-      ]
-    },
-    {
-      icon: HeartPulse,
-      title: 'Human and Animal Health Support',
-      points: [
-        'Health impact assessments and program evaluation',
-        'Policy and strategy support for equitable health outcomes',
-        'Surveillance, nutrition, and behavior change program inputs'
-      ]
-    },
-    {
-      icon: Users,
-      title: 'Social Affairs and Inclusive Development',
-      points: [
-        'Stakeholder engagement and participatory facilitation',
-        'Social impact assessment and livelihood analysis',
-        'Gender-responsive and equity-centered development planning'
-      ]
-    },
-    {
-      icon: Map,
-      title: 'Geoinformation and Spatial Services',
-      points: [
-        'GIS mapping and spatial data analysis',
-        'Remote sensing for environmental and risk monitoring',
-        'GPS-enabled data collection and planning support'
-      ]
-    }
-  ]
-
   return (
     <div className="bg-white">
-      <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-8 lg:py-10">
-        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
-          <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">SEEF Consulting Services</h1>
-          <p className="max-w-4xl text-lg leading-relaxed text-gray-600 lg:text-xl">
-            SEEF delivers integrated consulting services to advance sustainable development in Ethiopia. Each engagement is designed around practical implementation, measurable outcomes, and long-term resilience.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Integrated Service Offerings"
+        title={servicesPageData.hero.title}
+        description={servicesPageData.hero.description}
+        tags={servicesPageData.hero.tags}
+        gradient="from-sky-50 via-white to-emerald-50"
+      />
 
-      <section className="py-8 lg:py-10">
-        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
-          <div className="grid gap-3 md:grid-cols-2">
-            {services.map((service) => (
-              <article key={service.title} className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-purple-600">
-                  <service.icon className="h-6 w-6 text-white" />
+      <section className="py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Service Portfolio"
+            title="Flexible support across sectors and project stages"
+            description="Each service line is designed to move teams from analysis to action with outputs that are practical, accountable, and tailored to context."
+            centered
+          />
+
+          <div className="grid gap-5 lg:grid-cols-2">
+            {servicesPageData.services.map((service) => (
+              <article
+                key={service.title}
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
+                  <service.icon className="h-5 w-5 text-white" />
                 </div>
-                <h2 className="mb-3 text-xl font-bold text-gray-900">{service.title}</h2>
-                <ul className="space-y-3 text-gray-600">
-                  {service.points.map((point) => (
-                    <li key={point} className="leading-relaxed">- {point}</li>
-                  ))}
-                </ul>
+                <h2 className="text-2xl font-bold text-slate-900">{service.title}</h2>
+                <p className="mt-3 leading-7 text-slate-600">{service.summary}</p>
+
+                <div className="mt-6 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">What we support</h3>
+                    <div className="mt-3 space-y-3">
+                      {service.points.map((point) => (
+                        <p key={point} className="text-sm leading-7 text-slate-600">
+                          {point}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="rounded-2xl bg-slate-50 p-4">
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-700">Typical outputs</h3>
+                    <div className="mt-3 space-y-3">
+                      {service.deliverables.map((item) => (
+                        <div key={item} className="flex items-start gap-2 text-sm text-slate-600">
+                          <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-emerald-600" />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-gray-50 py-8 lg:py-10">
-        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full text-center">
-          <h3 className="mb-3 text-2xl font-bold text-gray-900">Capacity Building and Knowledge Transfer</h3>
-          <p className="mx-auto mb-6 max-w-4xl text-base leading-relaxed text-gray-600 lg:text-lg">
-            In addition to consulting, SEEF provides practical training in ArcGIS and fruit production, and is expanding offerings in R programming, statistics, GIS, and Integrated Resource Management (IRM).
-          </p>
-          <Link
-            to="/contact"
-            className="group inline-flex items-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-blue-600 hover:to-purple-700"
-          >
-            Discuss Your Service Needs
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+      <section className="bg-slate-50 py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="How We Work"
+            title="A delivery model built for clarity"
+            description="Even when assignments differ, SEEF keeps the engagement path easy to follow so partners know what happens next."
+            centered
+          />
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {servicesPageData.process.map((step, index) => (
+              <div key={step.title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-100 text-base font-bold text-sky-700">
+                    {index + 1}
+                  </div>
+                  <step.icon className="h-5 w-5 text-sky-600" />
+                </div>
+                <h3 className="mt-5 text-xl font-bold text-slate-900">{step.title}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{step.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl">
+            <h3 className="text-2xl font-bold">What partners usually gain</h3>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {servicesPageData.serviceBenefits.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                  <CheckCircle2 className="h-5 w-5 text-sky-300" />
+                  <p className="mt-4 text-sm leading-7 text-slate-200">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+            <div>
+              <SectionHeading
+                eyebrow="Training and Capacity"
+                title={servicesPageData.training.title}
+                description={servicesPageData.training.description}
+              />
+            </div>
+
+            <div className="grid gap-4">
+              {servicesPageData.training.tracks.map((track) => (
+                <div key={track.title} className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <track.icon className="h-5 w-5 text-sky-600" />
+                    <h3 className="text-lg font-bold text-slate-900">{track.title}</h3>
+                  </div>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    {track.items.map((item) => (
+                      <span key={item} className="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-[2rem] bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 p-8 text-white shadow-xl lg:p-10">
+            <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-100">Start an Engagement</p>
+                <h2 className="mt-3 text-3xl font-bold lg:text-4xl">{servicesPageData.cta.title}</h2>
+                <p className="mt-4 max-w-3xl text-base leading-7 text-sky-50">{servicesPageData.cta.description}</p>
+              </div>
+              <div className="flex justify-start lg:justify-end">
+                <Link
+                  to={servicesPageData.cta.action.to}
+                  className="group inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-sky-700 transition-all duration-300 hover:scale-105"
+                >
+                  {servicesPageData.cta.action.label}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
