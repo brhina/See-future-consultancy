@@ -1,53 +1,87 @@
 import React from 'react'
+import PageHero from '../components/PageHero'
+import SectionHeading from '../components/SectionHeading'
+import { thematicAreasPageData } from '../data/thematicAreasData'
 
 function ThematicAreas() {
-  const thematicGroups = [
-    {
-      title: 'Infrastructure and Environmental Management',
-      areas: ['Watershed protection', 'Climate resilience', 'Environmental impact assessment', 'Urban and regional planning']
-    },
-    {
-      title: 'Agriculture and Production Systems',
-      areas: ['Sustainable farming systems', 'Value chain development', 'Precision agriculture', 'Food security support']
-    },
-    {
-      title: 'Social Development and Governance',
-      areas: ['Community livelihoods', 'Conflict resolution support', 'Income generation pathways', 'Equity and inclusion integration']
-    },
-    {
-      title: 'Data, Geospatial, and Technology',
-      areas: ['GIS monitoring systems', 'Remote sensing analysis', 'Spatial data infrastructure', 'Disaster risk management systems']
-    },
-    {
-      title: 'Health and Well-Being',
-      areas: ['Public health program evaluation', 'Surveillance system support', 'Behavioral change strategies', 'Nutrition program support']
-    }
-  ]
-
   return (
     <div className="bg-white">
-      <section className="bg-gradient-to-br from-blue-50 via-white to-green-50 py-8 lg:py-10">
-        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
-          <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">Thematic Areas</h1>
-          <p className="max-w-4xl text-lg leading-relaxed text-gray-600 lg:text-xl">
-            SEEF addresses complex development challenges through interconnected thematic areas that reflect the social, environmental, and economic dimensions of sustainability.
-          </p>
+      <PageHero
+        eyebrow="Cross-Sector Focus"
+        title={thematicAreasPageData.hero.title}
+        description={thematicAreasPageData.hero.description}
+        gradient="from-sky-50 via-white to-green-50"
+      />
+
+      <section className="py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Priority Themes"
+            title="Interconnected topics that shape program performance"
+            description="SEEF works across themes that often overlap in practice, helping partners respond to complexity without losing implementation focus."
+            centered
+          />
+
+          <div className="grid gap-5 lg:grid-cols-2">
+            {thematicAreasPageData.groups.map((group) => (
+              <article key={group.title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
+                    <group.icon className="h-5 w-5 text-white" />
+                  </div>
+                  <div className="flex flex-wrap justify-end gap-2">
+                    {group.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <h2 className="mt-5 text-2xl font-bold text-slate-900">{group.title}</h2>
+                <p className="mt-3 leading-7 text-slate-600">{group.summary}</p>
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  {group.areas.map((item) => (
+                    <div key={item} className="rounded-2xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="py-8 lg:py-10">
-        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
-          <div className="grid gap-3 md:grid-cols-2">
-            {thematicGroups.map((group) => (
-              <article key={group.title} className="rounded-xl border border-gray-200 p-4 shadow-sm">
-                <h2 className="mb-3 text-xl font-bold text-gray-900">{group.title}</h2>
-                <ul className="space-y-3 text-gray-600">
-                  {group.areas.map((item) => (
-                    <li key={item}>- {item}</li>
-                  ))}
-                </ul>
-              </article>
+      <section className="bg-slate-50 py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Where Themes Meet"
+            title="Cross-cutting lenses that keep work coherent"
+            description="These shared lenses help connect thematic workstreams and reduce fragmentation during implementation."
+            centered
+          />
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {thematicAreasPageData.intersections.map((item) => (
+              <div key={item.title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100">
+                  <item.icon className="h-5 w-5 text-sky-700" />
+                </div>
+                <h3 className="mt-5 text-xl font-bold text-slate-900">{item.title}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{item.description}</p>
+              </div>
             ))}
+          </div>
+
+          <div className="mt-8 rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl">
+            <h3 className="text-2xl font-bold">What this thematic model supports</h3>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {thematicAreasPageData.outcomes.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-200">
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
