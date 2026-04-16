@@ -27,7 +27,7 @@ function ThematicAreas() {
   return (
     <div className="bg-white">
       <section className="bg-gradient-to-br from-blue-50 via-white to-green-50 py-8 lg:py-10">
-        <div className="mx-auto max-w-7xl">
+        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
           <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">Thematic Areas</h1>
           <p className="max-w-4xl text-lg leading-relaxed text-gray-600 lg:text-xl">
             SEEF addresses complex development challenges through interconnected thematic areas that reflect the social, environmental, and economic dimensions of sustainability.
@@ -36,7 +36,7 @@ function ThematicAreas() {
       </section>
 
       <section className="py-8 lg:py-10">
-        <div className="mx-auto max-w-7xl">
+        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
           <div className="grid gap-3 md:grid-cols-2">
             {thematicGroups.map((group) => (
               <article key={group.title} className="rounded-xl border border-gray-200 p-4 shadow-sm">
