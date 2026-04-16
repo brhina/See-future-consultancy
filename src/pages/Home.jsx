@@ -104,8 +104,8 @@ function Home() {
 
       <section id="about-section" className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 py-8 lg:py-10">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5"></div>
-        <div className="relative mx-auto max-w-7xl">
-          <div className={`grid items-center gap-5 lg:grid-cols-1 lg:gap-3 transition-all duration-1000 ${
+        <div className="relative lg:mx-2 md:mx-4 mx-auto max-w-full">
+          <div className={`grid items-center gap-5 lg:grid-cols-2 lg:gap-3 transition-all duration-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
             <div className="space-y-4">
@@ -138,7 +138,10 @@ function Home() {
                 ))}
               </div>
 
-              <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+              
+            </div>
+            <div>
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-2">
                 {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
                     <div className="text-3xl font-bold text-gray-900 lg:text-4xl">{stat.value}+</div>
@@ -165,7 +168,7 @@ function Home() {
 
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 py-8 lg:py-10">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5"></div>
-        <div className="relative mx-auto max-w-7xl">
+        <div className="relative lg:mx-2 md:mx-4 mx-auto max-w-full">
           <div className="mb-6 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">Core Service Domains</h2>
             <p className="mx-auto max-w-3xl text-lg text-gray-600">
@@ -205,7 +208,7 @@ function Home() {
       </section>
 
       <section className="bg-white py-8 lg:py-10">
-        <div className="mx-auto max-w-7xl">
+        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
           <div className="mb-6 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">Our Delivery Approach</h2>
             <p className="mx-auto max-w-3xl text-lg text-gray-600">

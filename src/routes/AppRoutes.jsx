@@ -9,7 +9,7 @@ import LatestNews from '../sections/homes/LatestNews';
 
 function AppRoutes() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen w-full">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/latest-news" element={<LatestNews />} />
