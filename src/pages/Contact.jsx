@@ -5,7 +5,7 @@ function Contact() {
   return (
     <div className="bg-white">
       <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-8 lg:py-10">
-        <div className="mx-auto max-w-7xl">
+        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full">
           <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">Contact SEEF</h1>
           <p className="max-w-4xl text-lg leading-relaxed text-gray-600 lg:text-xl">
             We welcome collaboration with government institutions, NGOs, private sector organizations, and communities seeking sustainable and evidence-based solutions.
@@ -14,7 +14,7 @@ function Contact() {
       </section>
 
       <section className="py-8 lg:py-10">
-        <div className="mx-auto grid max-w-7xl gap-3 lg:grid-cols-2">
+        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full grid gap-3 lg:grid-cols-2">
           <div className="rounded-xl border border-gray-200 p-4 shadow-sm">
             <h2 className="mb-4 text-xl font-bold text-gray-900">Office Location</h2>
             <div className="space-y-4 text-gray-700">
