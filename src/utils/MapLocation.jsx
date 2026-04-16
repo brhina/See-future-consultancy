@@ -1,20 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { MapPin, Phone, Mail, Clock, Navigation, ExternalLink, X } from 'lucide-react'
+import { officeContact } from '../data/siteData'
+
+const location = officeContact
 
 function MapLocation({ isOpen, onClose }) {
   const [isLoaded, setIsLoaded] = useState(false)
   const mapRef = useRef(null)
   const mapInstanceRef = useRef(null)
-
-  // Company location details
-  const location = {
-    address: "Addis Ababa Dembel City Center Street, 12th Floor office no 1237",
-    coordinates: [9.0320, 38.7636], // Addis Ababa coordinates [lat, lng]
-    phone: "+251-115621777",
-    email: "info@seefcounsult.com",
-    hours: "Mon - Fri: 9:00 AM - 6:00 PM",
-    googleMapsUrl: "https://maps.google.com/?q=Addis+Ababa+Dembel+City+Center"
-  }
 
   useEffect(() => {
     // Load Leaflet CSS and JS
