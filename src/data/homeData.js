@@ -1,8 +1,11 @@
 import {
   ArrowRight,
   CheckCircle,
+  Compass,
   Droplets,
+  Handshake,
   HeartPulse,
+  Landmark,
   Leaf,
   LineChart,
   Map,
@@ -17,26 +20,22 @@ export const homePageData = {
   hero: {
     badge: `Headquartered in ${officeContact.locationLabel}`,
     title: 'SEE Future Consult PLC',
-    highlightedTitle: 'Social, Environmental, Economic Sustainability',
+    highlightedTitle: 'Social. Environmental. Economic. Sustainability.',
     description:
-      'SEEF advances sustainable development in Ethiopia through integrated consulting solutions in natural resource management, inclusive development, public health, and geospatial intelligence.',
+      'SEEF is a forward-thinking consulting firm helping shape a more sustainable and resilient Ethiopia through integrated social, environmental, and economic solutions.',
     ctas: [
-      { label: 'Explore Our Mission', to: '/about', icon: ArrowRight, variant: 'primary' },
+      { label: 'Explore Our Story', to: '/about', icon: ArrowRight, variant: 'primary' },
       { label: 'View Services', to: '/services', icon: ArrowRight, variant: 'secondary' },
       { label: 'Partner With SEEF', to: '/contact', icon: ArrowRight, variant: 'accent' }
     ],
-    highlights: [
-      'Locally grounded advisory',
-      'Cross-sector delivery teams',
-      'Evidence-first project design'
-    ]
+    highlights: ['Founded in early 2023', 'Multidisciplinary delivery team', 'Evidence-based and implementation-minded']
   },
   coreIdeas: [
     {
       icon: Leaf,
       title: 'Sustainability in every decision',
       description:
-        'SEEF connects social inclusion, environmental stewardship, and economic viability instead of treating them as separate tracks.',
+        'SEEF treats social inclusion, environmental stewardship, and economic viability as one connected system.',
       label: 'Integrated lens'
     },
     {
@@ -70,37 +69,45 @@ export const homePageData = {
   ],
   overview: {
     eyebrow: 'Established in early 2023',
-    title: 'A forward-thinking consultancy for Ethiopia and beyond',
+    title: 'A multidisciplinary partner for sustainable development in Ethiopia',
     description:
-      'SEE Future Consult PLC supports sustainable development by combining technical rigor, local context, and collaborative delivery for government, NGOs, private sector actors, and communities.',
-    note:
-      'Operational figures are presented as indicative estimates and may be updated as project records are consolidated.'
+      'SEEF brings together natural sciences, social sciences, environmental management, public health, and geospatial technologies to solve complex challenges from multiple perspectives.',
+    details: [
+      'The firm was founded to contribute to the well-being of present and future generations through responsible natural resource management, inclusive development, and evidence-based decision-making.',
+      'Its work is especially shaped by the need for resilient livelihoods and food security, recognizing that long-term prosperity depends on healthy ecosystems, capable institutions, and informed planning.'
+    ]
   },
   strengths: [
     {
-      icon: Users,
-      title: 'Multidisciplinary Team',
+      icon: Compass,
+      title: 'Purpose-Led Foundation',
       description:
-        'Experts in natural sciences, social sciences, environmental management, public health, and geospatial technologies.'
+        'SEEF was created with a clear mission to connect research, consulting, and development practice around sustainability.'
     },
     {
-      icon: Leaf,
-      title: 'Integrated Sustainability',
+      icon: Users,
+      title: 'Multidisciplinary Expertise',
       description:
-        'SEEF aligns social inclusion, environmental stewardship, and economic viability in every engagement.'
+        'The team combines natural science, social science, public health, environmental management, and geospatial capabilities.'
     },
     {
       icon: Map,
       title: 'Evidence-Based Consulting',
       description:
         'GIS, remote sensing, and field-based analytics support stronger and more accountable decisions.'
+    },
+    {
+      icon: Sprout,
+      title: 'Food Security Commitment',
+      description:
+        'Assignments are approached with an understanding that resilient food systems are central to Ethiopia’s long-term development.'
     }
   ],
   stats: [
-    { label: 'Projects and advisory assignments', value: 40, suffix: '+' },
-    { label: 'Multidisciplinary professionals engaged', value: 18, suffix: '+' },
-    { label: 'Priority sectors covered', value: 6, suffix: '' },
-    { label: 'Capacity-building sessions delivered or planned', value: 12, suffix: '+' }
+    { label: 'Year established', value: 2023, suffix: '' },
+    { label: 'Sustainability dimensions', value: 3, suffix: '' },
+    { label: 'Core service domains', value: 5, suffix: '' },
+    { label: 'Partner groups engaged', value: 4, suffix: '' }
   ],
   serviceDomains: [
     {
@@ -117,9 +124,15 @@ export const homePageData = {
     },
     {
       icon: HeartPulse,
-      title: 'Health and Social Development',
+      title: 'Human and Animal Health',
       description:
-        'Health impact assessments, program support, social impact analysis, and inclusive community development.'
+        'Health impact assessments, policy support, surveillance inputs, and program evaluation for equitable outcomes.'
+    },
+    {
+      icon: Users,
+      title: 'Social Affairs and Inclusive Development',
+      description:
+        'Community development, stakeholder engagement, social impact assessment, and equity-centered planning.'
     },
     {
       icon: Map,
@@ -128,87 +141,119 @@ export const homePageData = {
         'GIS, GPS, and remote sensing for monitoring, spatial analysis, disaster risk management, and planning.'
     }
   ],
-  focusAreas: [
+  partnerGroups: [
     {
-      icon: Sprout,
-      title: 'Resilient livelihoods',
+      icon: Landmark,
+      title: 'Government institutions',
       description:
-        'We help programs connect production systems, environmental stewardship, and local market realities.',
-      bullets: ['Climate-smart planning', 'Food systems support', 'Community-facing implementation']
+        'Supporting planning, assessment, implementation, and policy-facing work aligned with development priorities.'
     },
     {
-      icon: ShieldCheck,
-      title: 'Responsible investment decisions',
+      icon: Handshake,
+      title: 'NGOs and development partners',
       description:
-        'Assessments and advisory inputs help institutions manage risks before they become delays or costly redesigns.',
-      bullets: ['Impact and safeguard thinking', 'Stakeholder alignment', 'Practical mitigation pathways']
+        'Helping programs strengthen evidence, implementation quality, accountability, and community relevance.'
     },
     {
       icon: Radar,
-      title: 'Smarter monitoring systems',
+      title: 'Private sector actors',
       description:
-        'Data systems, geospatial workflows, and field evidence come together to improve visibility and accountability.',
-      bullets: ['GIS and remote sensing', 'Monitoring frameworks', 'Decision-ready reporting']
+        'Providing sustainability-informed advisory that supports responsible growth, safeguards, and stronger operational decisions.'
+    },
+    {
+      icon: Users,
+      title: 'Communities and local networks',
+      description:
+        'Keeping interventions grounded in lived realities through participation, inclusion, and local ownership.'
+    }
+  ],
+  focusAreas: [
+    {
+      icon: Sprout,
+      title: 'Food security and resilient livelihoods',
+      description:
+        'SEEF helps connect agricultural productivity, natural resource stewardship, and practical livelihood improvement.',
+      bullets: ['Climate-smart agriculture', 'Value chain thinking', 'Sustainable livelihood design']
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Responsible planning and safeguards',
+      description:
+        'Assessments and advisory inputs help partners anticipate environmental, social, and operational risks early.',
+      bullets: ['Impact assessment', 'Stakeholder engagement', 'Mitigation and resilience planning']
+    },
+    {
+      icon: Radar,
+      title: 'Data-driven monitoring and response',
+      description:
+        'Geospatial analysis, field evidence, and monitoring systems improve visibility, coordination, and decision quality.',
+      bullets: ['GIS and remote sensing', 'Spatial monitoring systems', 'Decision-ready reporting']
     }
   ],
   deliveryApproach: [
     {
-      title: 'Listen and diagnose',
+      title: 'Understand the context',
       description:
-        'Ground each project in local context through stakeholder engagement, rapid diagnostics, and field-based assessments.'
+        'Start with local realities, stakeholder perspectives, and the institutional setting behind the assignment.'
     },
     {
-      title: 'Analyze with rigor',
+      title: 'Generate evidence',
       description:
-        'Apply multidisciplinary methods and geospatial tools to generate clear and reliable evidence.'
+        'Use multidisciplinary methods, fieldwork, and geospatial tools to build a reliable picture of the challenge.'
     },
     {
-      title: 'Co-design practical action',
+      title: 'Design practical solutions',
       description:
-        'Translate findings into feasible roadmaps, implementation options, and decision support for partners.'
+        'Translate analysis into roadmaps, implementation options, and tailored recommendations that teams can act on.'
     },
     {
-      title: 'Build lasting capacity',
+      title: 'Strengthen local capability',
       description:
-        'Strengthen institutions and communities so impact continues beyond the assignment period.'
+        'Build institutional and community capacity so impact continues beyond the assignment period.'
     }
   ],
+  knowledgeTransfer: {
+    title: 'Capacity building is part of the model',
+    description:
+      'SEEF pairs technical assignments with knowledge transfer so partners build internal capability while projects move forward.',
+    items: ['ArcGIS training', 'Fruit production training', 'Upcoming R, statistics, GIS, and IRM tracks']
+  },
   projectSignals: [
     {
       icon: LineChart,
-      title: 'Typical engagement signals',
+      title: 'When SEEF is often most useful',
       items: [
-        'A program needs stronger baseline evidence',
-        'A new investment requires environmental or social due diligence',
-        'A partner wants to strengthen delivery systems with better data'
+        'A program needs stronger evidence before scaling or redesign',
+        'A new investment requires social or environmental due diligence',
+        'A partner wants better data for planning, monitoring, or accountability'
       ]
     },
     {
       icon: CheckCircle,
-      title: 'What partners usually gain',
+      title: 'What engagements are designed to deliver',
       items: [
-        'Sharper project scoping and implementation plans',
-        'Decision-ready technical outputs for teams and leadership',
-        'Capacity transfer that supports long-term ownership'
+        'Clearer project scoping and better-informed implementation choices',
+        'Technical outputs that support leadership decisions and field action',
+        'Capacity transfer that helps momentum continue after project closeout'
       ]
     }
   ],
   cta: {
-    title: 'Planning a program, study, or technical intervention?',
+    title: 'Planning a program, study, training, or technical intervention?',
     description:
-      'SEEF can support early scoping, applied research, implementation design, and capacity-building with a practical sustainability lens.',
+      'SEEF can help shape the right response, whether the need is advisory support, applied research, geospatial analysis, social engagement, or practical training.',
     primary: { label: 'Start a Conversation', to: '/contact' },
     secondary: { label: 'Review Services', to: '/services' }
   },
   news: {
     eyebrow: 'Latest Updates',
-    title: 'News and Organizational Highlights',
+    title: 'Insights, activity, and organizational focus',
     description:
-      'Stay informed about SEEF priorities, technical areas, and institutional developments.',
+      'A snapshot of the themes, training priorities, and collaboration directions shaping SEEF’s current work.',
     lead: {
-      title: 'SEEF continues to deepen integrated advisory support across sectors',
+      title: 'SEEF continues expanding integrated advisory support across development sectors',
       excerpt:
-        'Recent priorities reflect the firm’s emphasis on connecting field realities, sustainability standards, and decision-ready technical advice.',
+        'Current priorities reflect the firm’s effort to connect field realities, sustainability standards, and decision-ready evidence for partners working in Ethiopia.',
       tag: 'Current Focus'
     },
     updates: [
@@ -216,21 +261,21 @@ export const homePageData = {
         title: 'SEEF strengthens integrated sustainability advisory services',
         date: 'April 2026',
         excerpt:
-          'SEEF continues to support institutions with integrated social, environmental, and economic planning approaches tailored to Ethiopia.',
+          'Recent work continues to emphasize balanced social, environmental, and economic planning tailored to Ethiopian contexts.',
         tag: 'Advisory'
       },
       {
-        title: 'Capacity-building tracks expanded in geospatial and agriculture topics',
+        title: 'Capacity-building tracks continue expanding in geospatial and agriculture topics',
         date: 'March 2026',
         excerpt:
-          'Current training support includes ArcGIS and fruit production, with upcoming offerings in R, statistics, GIS, and IRM.',
+          'Training support includes ArcGIS and fruit production, with planned expansion into R programming, statistics, GIS, and IRM.',
         tag: 'Training'
       },
       {
-        title: 'Cross-sector collaboration focus deepened',
+        title: 'Cross-sector collaboration remains central to delivery',
         date: 'February 2026',
         excerpt:
-          'SEEF is scaling collaborative work with public institutions, NGOs, private sector actors, and communities.',
+          'SEEF continues working with public institutions, NGOs, private sector actors, and communities to keep projects grounded and relevant.',
         tag: 'Partnerships'
       }
     ],
