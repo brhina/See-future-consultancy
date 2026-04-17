@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Calendar, Megaphone } from 'lucide-react'
 import { motion as Motion, useReducedMotion } from 'framer-motion'
