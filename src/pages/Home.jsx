@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUp, ChevronRight } from 'lucide-react'
 import { motion as Motion, useReducedMotion } from 'framer-motion'
+import SectionHeading from '../components/SectionHeading'
+import { homePageData } from '../data/homeData'
 import CoreIdeasRail from '../sections/homes/CoreIdeasRail'
 import Hero from '../sections/homes/Hero'
 import LatestNews from '../sections/homes/LatestNews'
-import SectionHeading from '../components/SectionHeading'
-import { homePageData } from '../data/homeData'
 import { cardVariants, hoverLift, sectionVariants, staggerContainer } from '../utils/motionPresets'
 
 const statsTargetValues = homePageData.stats.map((stat) => stat.value)
@@ -16,7 +16,7 @@ function Home() {
   const [isOverviewVisible, setIsOverviewVisible] = useState(false)
   const [shouldAnimateStats, setShouldAnimateStats] = useState(false)
   const [animatedStats, setAnimatedStats] = useState(() => homePageData.stats.map(() => 0))
-  const aboutSectionRef = useRef(null)
+  const overviewRef = useRef(null)
   const reduceMotion = useReducedMotion()
 
   useEffect(() => {
@@ -35,7 +35,7 @@ function Home() {
   }, [])
 
   useEffect(() => {
-    if (!aboutSectionRef.current) return undefined
+    if (!overviewRef.current) return undefined
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -47,7 +47,7 @@ function Home() {
       { threshold: 0.35 }
     )
 
-    observer.observe(aboutSectionRef.current)
+    observer.observe(overviewRef.current)
 
     return () => observer.disconnect()
   }, [])
@@ -75,10 +75,6 @@ function Home() {
     return () => window.cancelAnimationFrame(frameId)
   }, [shouldAnimateStats])
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   return (
     <div className="relative bg-white">
       <CoreIdeasRail />
@@ -86,8 +82,8 @@ function Home() {
 
       <section
         id="about-section"
-        ref={aboutSectionRef}
-        className="relative overflow-hidden bg-gradient-to-br from-white via-sky-50/60 to-emerald-50/60 py-12 lg:py-16"
+        ref={overviewRef}
+        className="relative overflow-hidden bg-gradient-to-br from-white via-sky-50/70 to-emerald-50/70 py-12 lg:py-16"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.12),transparent_35%)]" />
         <Motion.div
@@ -109,8 +105,14 @@ function Home() {
                 description={homePageData.overview.description}
               />
 
+              <div className="space-y-4 text-base leading-8 text-slate-600">
+                {homePageData.overview.details.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+
               <Motion.div
-                className="grid gap-4"
+                className="mt-6 grid gap-4 md:grid-cols-2"
                 variants={reduceMotion ? undefined : staggerContainer(0.07, 0.06)}
                 initial={reduceMotion ? false : 'initial'}
                 whileInView={reduceMotion ? undefined : 'animate'}
@@ -134,7 +136,9 @@ function Home() {
                     </div>
                   </Motion.div>
                 ))}
-                <div className="flex flex-wrap gap-3">
+              </Motion.div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   to="/about"
                   className="group inline-flex items-center rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:from-sky-600 hover:to-cyan-600"
@@ -150,7 +154,6 @@ function Home() {
                   <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </div>
-              </Motion.div>
             </div>
 
             <div className="space-y-5">
@@ -161,7 +164,7 @@ function Home() {
                 whileInView={reduceMotion ? undefined : 'animate'}
                 viewport={{ once: true, amount: 0.25 }}
               >
-                <h3 className="text-xl font-bold text-slate-900">SEEF at a Glance</h3>
+                <h3 className="text-xl font-bold text-slate-900">SEEF at a glance</h3>
                 <Motion.div
                   className="mt-5 grid grid-cols-2 gap-4"
                   variants={reduceMotion ? undefined : staggerContainer(0.06, 0.04)}
@@ -172,7 +175,7 @@ function Home() {
                   {homePageData.stats.map((stat, index) => (
                     <Motion.div
                       key={stat.label}
-                      className="rounded-2xl bg-slate-50 p-2 text-center"
+                      className="rounded-2xl bg-slate-50 p-4 text-center"
                       variants={reduceMotion ? undefined : cardVariants}
                       {...(reduceMotion ? {} : { whileHover: { scale: 1.02 }, whileTap: { scale: 0.99 } })}
                     >
@@ -193,7 +196,7 @@ function Home() {
                 whileInView={reduceMotion ? undefined : 'animate'}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <h3 className="text-xl font-bold">Typical engagement signals</h3>
+                <h3 className="text-xl font-bold">Why organizations engage SEEF</h3>
                 <div className="mt-5 space-y-5">
                   {homePageData.projectSignals.map((group) => (
                     <Motion.div
@@ -230,12 +233,12 @@ function Home() {
           <SectionHeading
             eyebrow="Core Service Domains"
             title="Technical support that connects strategy, evidence, and delivery"
-            description="SEEF delivers tailored technical and advisory services that strengthen resilience, improve outcomes, and support long-term development goals."
+            description="SEEF delivers tailored consulting support across the sectors where sustainability and implementation need to work together."
             centered
           />
 
           <Motion.div
-            className="grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+            className="grid gap-5 md:grid-cols-2 xl:grid-cols-5"
             variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
             initial={reduceMotion ? false : 'initial'}
             whileInView={reduceMotion ? undefined : 'animate'}
@@ -276,12 +279,52 @@ function Home() {
         </Motion.div>
       </section>
 
+      <section className="bg-slate-50 py-12 lg:py-16">
+        <Motion.div
+          className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <SectionHeading
+            eyebrow="Partnership Landscape"
+            title="SEEF works where collaboration has to cross institutions and sectors"
+            description="Projects are shaped with the people and organizations closest to the challenge so the work stays relevant and actionable."
+            centered
+          />
+
+          <Motion.div
+            className="grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+            variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
+            initial={reduceMotion ? false : 'initial'}
+            whileInView={reduceMotion ? undefined : 'animate'}
+            viewport={{ once: true, amount: 0.25 }}
+          >
+            {homePageData.partnerGroups.map((group) => (
+              <Motion.article
+                key={group.title}
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                variants={reduceMotion ? undefined : cardVariants}
+                {...(reduceMotion ? {} : hoverLift)}
+              >
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
+                  <group.icon className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900">{group.title}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{group.description}</p>
+              </Motion.article>
+            ))}
+          </Motion.div>
+        </Motion.div>
+      </section>
+
       <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 py-12 text-white lg:py-16">
         <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Featured Focus Areas"
             title="Where SEEF adds momentum fastest"
-            description="These are the kinds of problem spaces where integrated advisory, field insight, and practical planning tend to matter most."
+            description="These are the problem spaces where integrated advisory, local understanding, and practical planning tend to matter most."
           />
 
           <div className="grid gap-5 lg:grid-cols-3">
@@ -303,27 +346,55 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-12 lg:py-16">
-        <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Delivery Approach"
-            title="A simple engagement journey"
-            description="Projects are built around collaboration, accountability, and practical implementation."
-            centered
-          />
+      <section className="bg-white py-12 lg:py-16">
+        <Motion.div
+          className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+            <div>
+              <SectionHeading
+                eyebrow="Delivery Approach"
+                title="A simple engagement journey from diagnosis to capability"
+                description="Projects are structured to stay collaborative, accountable, and useful to the teams making decisions."
+              />
 
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {homePageData.deliveryApproach.map((step, index) => (
-              <div key={step.title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-100 text-base font-bold text-sky-700">
-                  {index + 1}
-                </div>
-                <h3 className="mt-5 text-lg font-bold text-slate-900">{step.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{step.description}</p>
+              <div className="grid gap-5 md:grid-cols-2">
+                {homePageData.deliveryApproach.map((step, index) => (
+                  <div key={step.title} className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-100 text-base font-bold text-sky-700">
+                      {index + 1}
+                    </div>
+                    <h3 className="mt-5 text-lg font-bold text-slate-900">{step.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">{step.description}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <Motion.div
+              className="rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
+              variants={reduceMotion ? undefined : cardVariants}
+              initial={reduceMotion ? false : 'initial'}
+              whileInView={reduceMotion ? undefined : 'animate'}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-200">Knowledge Transfer</p>
+              <h3 className="mt-3 text-2xl font-bold">{homePageData.knowledgeTransfer.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-200">{homePageData.knowledgeTransfer.description}</p>
+              <div className="mt-6 grid gap-3">
+                {homePageData.knowledgeTransfer.items.map((item) => (
+                  <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </Motion.div>
           </div>
-        </div>
+        </Motion.div>
       </section>
 
       <section className="bg-white py-12 lg:py-16">
@@ -358,7 +429,8 @@ function Home() {
 
       {showScrollTop && (
         <button
-          onClick={scrollToTop}
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="fixed bottom-8 right-8 z-50 rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 p-4 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
           aria-label="Scroll to top"
         >
