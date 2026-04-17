@@ -1,4 +1,3 @@
-import React from 'react'
 import { CheckCircle2 } from 'lucide-react'
 import { motion as Motion, useReducedMotion } from 'framer-motion'
 import SectionHeading from '../../components/SectionHeading'

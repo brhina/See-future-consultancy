@@ -1,4 +1,4 @@
-import React from 'react'
+import { CheckCircle2 } from 'lucide-react'
 import { motion as Motion, useReducedMotion } from 'framer-motion'
 import SectionHeading from '../../components/SectionHeading'
 import { aboutPageData } from '../../data/aboutData'
@@ -44,6 +44,31 @@ function OurClients() {
               <p className="mt-3 leading-7 text-slate-600">{partner.description}</p>
             </Motion.article>
           ))}
+        </Motion.div>
+
+        <Motion.div
+          className="mt-10 rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
+          variants={reduceMotion ? undefined : cardVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-200">Partnership Approach</p>
+              <h3 className="mt-3 text-2xl font-bold">{aboutPageData.partnershipApproach.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-200">{aboutPageData.partnershipApproach.description}</p>
+            </div>
+
+            <div className="grid gap-3">
+              {aboutPageData.partnershipApproach.points.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-7 text-slate-100">
+                  <CheckCircle2 className="mb-3 h-5 w-5 text-emerald-300" />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
         </Motion.div>
       </Motion.div>
     </section>
