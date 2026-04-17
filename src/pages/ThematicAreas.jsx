@@ -1,9 +1,13 @@
 import React from 'react'
+import { motion as Motion, useReducedMotion } from 'framer-motion'
 import PageHero from '../components/PageHero'
 import SectionHeading from '../components/SectionHeading'
 import { thematicAreasPageData } from '../data/thematicAreasData'
+import { cardVariants, hoverLift, sectionVariants, staggerContainer } from '../utils/motionPresets'
 
 function ThematicAreas() {
+  const reduceMotion = useReducedMotion()
+
   return (
     <div className="bg-white">
       <PageHero
@@ -14,7 +18,13 @@ function ThematicAreas() {
       />
 
       <section className="py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Motion.div
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <SectionHeading
             eyebrow="Priority Themes"
             title="Interconnected topics that shape program performance"
@@ -22,9 +32,20 @@ function ThematicAreas() {
             centered
           />
 
-          <div className="grid gap-5 lg:grid-cols-2">
+          <Motion.div
+            className="grid gap-5 lg:grid-cols-2"
+            variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
+            initial={reduceMotion ? false : 'initial'}
+            whileInView={reduceMotion ? undefined : 'animate'}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {thematicAreasPageData.groups.map((group) => (
-              <article key={group.title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <Motion.article
+                key={group.title}
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                variants={reduceMotion ? undefined : cardVariants}
+                {...(reduceMotion ? {} : hoverLift)}
+              >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
                     <group.icon className="h-5 w-5 text-white" />
@@ -41,19 +62,29 @@ function ThematicAreas() {
                 <p className="mt-3 leading-7 text-slate-600">{group.summary}</p>
                 <div className="mt-5 grid gap-3 sm:grid-cols-2">
                   {group.areas.map((item) => (
-                    <div key={item} className="rounded-2xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700">
+                    <Motion.div
+                      key={item}
+                      className="rounded-2xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700"
+                      {...(reduceMotion ? {} : { whileHover: { scale: 1.01 }, whileTap: { scale: 0.99 } })}
+                    >
                       {item}
-                    </div>
+                    </Motion.div>
                   ))}
                 </div>
-              </article>
+              </Motion.article>
             ))}
-          </div>
-        </div>
+          </Motion.div>
+        </Motion.div>
       </section>
 
       <section className="bg-slate-50 py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Motion.div
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <SectionHeading
             eyebrow="Where Themes Meet"
             title="Cross-cutting lenses that keep work coherent"
@@ -61,29 +92,57 @@ function ThematicAreas() {
             centered
           />
 
-          <div className="grid gap-5 md:grid-cols-3">
+          <Motion.div
+            className="grid gap-5 md:grid-cols-3"
+            variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
+            initial={reduceMotion ? false : 'initial'}
+            whileInView={reduceMotion ? undefined : 'animate'}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {thematicAreasPageData.intersections.map((item) => (
-              <div key={item.title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <Motion.div
+                key={item.title}
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                variants={reduceMotion ? undefined : cardVariants}
+                {...(reduceMotion ? {} : hoverLift)}
+              >
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100">
                   <item.icon className="h-5 w-5 text-sky-700" />
                 </div>
                 <h3 className="mt-5 text-xl font-bold text-slate-900">{item.title}</h3>
                 <p className="mt-3 leading-7 text-slate-600">{item.description}</p>
-              </div>
+              </Motion.div>
             ))}
-          </div>
+          </Motion.div>
 
-          <div className="mt-8 rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl">
+          <Motion.div
+            className="mt-8 rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
+            variants={reduceMotion ? undefined : cardVariants}
+            initial={reduceMotion ? false : 'initial'}
+            whileInView={reduceMotion ? undefined : 'animate'}
+            viewport={{ once: true, amount: 0.25 }}
+          >
             <h3 className="text-2xl font-bold">What this thematic model supports</h3>
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <Motion.div
+              className="mt-6 grid gap-4 md:grid-cols-3"
+              variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
+              initial={reduceMotion ? false : 'initial'}
+              whileInView={reduceMotion ? undefined : 'animate'}
+              viewport={{ once: true, amount: 0.25 }}
+            >
               {thematicAreasPageData.outcomes.map((item) => (
-                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-200">
+                <Motion.div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-200"
+                  variants={reduceMotion ? undefined : cardVariants}
+                  {...(reduceMotion ? {} : { whileHover: { y: -2 }, whileTap: { scale: 0.99 } })}
+                >
                   {item}
-                </div>
+                </Motion.div>
               ))}
-            </div>
-          </div>
-        </div>
+            </Motion.div>
+          </Motion.div>
+        </Motion.div>
       </section>
     </div>
   )
