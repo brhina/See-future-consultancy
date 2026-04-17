@@ -1,4 +1,3 @@
-import React from 'react'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { motion as Motion, useReducedMotion } from 'framer-motion'
 import PageHero from '../components/PageHero'
@@ -15,6 +14,7 @@ function Contact() {
         eyebrow="Partnership and Project Inquiries"
         title={contactPageData.hero.title}
         description={contactPageData.hero.description}
+        tags={contactPageData.hero.tags}
         gradient="from-sky-50 via-white to-cyan-50"
       />
 
@@ -67,7 +67,7 @@ function Contact() {
 
           <div className="flex h-full flex-col gap-6">
             <Motion.div
-              className="flex-1 rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
+              className="rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
               variants={reduceMotion ? undefined : cardVariants}
               initial={reduceMotion ? false : 'initial'}
               whileInView={reduceMotion ? undefined : 'animate'}
@@ -85,41 +85,69 @@ function Contact() {
             </Motion.div>
 
             <Motion.div
-              className="flex-1 rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm"
+              className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm"
               variants={reduceMotion ? undefined : cardVariants}
               initial={reduceMotion ? false : 'initial'}
               whileInView={reduceMotion ? undefined : 'animate'}
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="text-2xl font-bold text-slate-900">Why partners reach out</h2>
-              <Motion.div
-                className="mt-6 space-y-4"
-                variants={reduceMotion ? undefined : staggerContainer(0.05, 0.04)}
-                initial={reduceMotion ? false : 'initial'}
-                whileInView={reduceMotion ? undefined : 'animate'}
-                viewport={{ once: true, amount: 0.25 }}
-              >
-                {contactPageData.inquiryTypes.map((item) => (
-                  <Motion.div
-                    key={item.title}
-                    className="rounded-2xl bg-white p-5 shadow-sm"
-                    variants={reduceMotion ? undefined : cardVariants}
-                    {...(reduceMotion ? {} : hoverLift)}
-                  >
-                    <div className="flex items-center gap-3">
-                      <item.icon className="h-5 w-5 text-sky-600" />
-                      <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                    </div>
-                    <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
-                  </Motion.div>
+              <h2 className="text-2xl font-bold text-slate-900">Practical coordination notes</h2>
+              <div className="mt-6 grid gap-3">
+                {contactPageData.officeDetails.map((item) => (
+                  <div key={item} className="rounded-2xl bg-white p-4 text-sm leading-7 text-slate-600 shadow-sm">
+                    {item}
+                  </div>
                 ))}
-              </Motion.div>
+              </div>
             </Motion.div>
           </div>
         </Motion.div>
       </section>
 
       <section className="bg-slate-50 py-12 lg:py-16">
+        <Motion.div
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+            <div>
+              <SectionHeading
+                eyebrow="Why Reach Out"
+                title="Common ways organizations start a conversation with SEEF"
+                description="Inquiries can begin at different stages, from early scoping to active implementation support."
+              />
+            </div>
+
+            <Motion.div
+              className="grid gap-4"
+              variants={reduceMotion ? undefined : staggerContainer(0.05, 0.04)}
+              initial={reduceMotion ? false : 'initial'}
+              whileInView={reduceMotion ? undefined : 'animate'}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {contactPageData.inquiryTypes.map((item) => (
+                <Motion.div
+                  key={item.title}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                  variants={reduceMotion ? undefined : cardVariants}
+                  {...(reduceMotion ? {} : hoverLift)}
+                >
+                  <div className="flex items-center gap-3">
+                    <item.icon className="h-5 w-5 text-sky-600" />
+                    <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                </Motion.div>
+              ))}
+            </Motion.div>
+          </div>
+        </Motion.div>
+      </section>
+
+      <section className="bg-white py-12 lg:py-16">
         <Motion.div
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
           variants={reduceMotion ? undefined : sectionVariants}
@@ -138,7 +166,7 @@ function Contact() {
                 {contactPageData.trustSignals.map((item) => (
                   <Motion.div
                     key={item.label}
-                    className="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm"
+                    className="inline-flex items-center rounded-full bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm"
                     {...(reduceMotion ? {} : { whileHover: { y: -2 }, whileTap: { scale: 0.99 } })}
                   >
                     <item.icon className="mr-2 h-4 w-4 text-emerald-600" />
@@ -158,7 +186,7 @@ function Contact() {
               {contactPageData.responseCommitments.map((item) => (
                 <Motion.div
                   key={item}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                  className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
                   variants={reduceMotion ? undefined : cardVariants}
                   {...(reduceMotion ? {} : hoverLift)}
                 >

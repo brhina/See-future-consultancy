@@ -1,10 +1,10 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion as Motion, useReducedMotion } from 'framer-motion'
-import OurClients from '../sections/abouts/OurClients'
-import OurTeam from '../sections/abouts/OurTeam'
-import OurStory from '../sections/abouts/OurStory'
+import PageHero from '../components/PageHero'
 import { aboutPageData } from '../data/aboutData'
+import OurClients from '../sections/abouts/OurClients'
+import OurStory from '../sections/abouts/OurStory'
+import OurTeam from '../sections/abouts/OurTeam'
 import { cardVariants, sectionVariants } from '../utils/motionPresets'
 
 function About() {
@@ -12,6 +12,14 @@ function About() {
 
   return (
     <div className="bg-white">
+      <PageHero
+        eyebrow="Who We Are"
+        title={aboutPageData.hero.title}
+        description={aboutPageData.hero.description}
+        tags={aboutPageData.hero.tags}
+        gradient="from-sky-50 via-white to-emerald-50"
+      />
+
       <OurStory />
       <OurTeam />
       <OurClients />
