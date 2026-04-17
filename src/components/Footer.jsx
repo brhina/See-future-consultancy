@@ -1,194 +1,131 @@
-import { Link } from "react-router-dom"
-import { Facebook, Linkedin, Instagram, Twitter, Mail, MapPin, Phone } from "lucide-react"
-import MapLocation from "../utils/MapLocation"
-import { useState } from "react"
-import seefLogo from "../assets/seef-logo.svg"
-import { footerQuickLinks, footerServiceLinks, officeContact } from "../data/siteData"
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react'
+import seefLogo from '../assets/seef-logo.svg'
+import { footerPrinciples, footerQuickLinks, footerServiceLinks, officeContact, siteMeta } from '../data/siteData'
+import MapLocation from '../utils/MapLocation'
 
 function Footer() {
   const [isMapOpen, setIsMapOpen] = useState(false)
   const currentYear = new Date().getFullYear()
 
-  const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "#", color: "hover:text-blue-500" },
-    { name: "LinkedIn", icon: Linkedin, href: "#", color: "hover:text-blue-600" },
-    { name: "Instagram", icon: Instagram, href: "#", color: "hover:text-pink-500" },
-    { name: "Twitter", icon: Twitter, href: "#", color: "hover:text-blue-400" },
-  ]
-
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative bottom-0 w-full overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:20px_20px]"></div>
-      </div>
-      
-      <div className="relative z-10">
-        {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            
-            {/* Company Info */}
-            <div className="lg:col-span-1">
-              <div className="flex items-center mb-6">
-                <Link to="/" className="flex items-center group">
-                  <img 
-                    src={seefLogo} 
-                    alt="See Future Logo" 
-                    className="h-10 w-auto transition-transform duration-300 group-hover:scale-110" 
-                  />
-                  <span className="ml-3 text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    See Future
-                  </span>
-                </Link>
-              </div>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                Empowering organizations through innovative research, strategic consulting, and transformative solutions for a sustainable future.
-              </p>
-              
-              {/* Contact Info */}
-              <div className="space-y-3">
-                <button 
-                  onClick={() => setIsMapOpen(true)}
-                  className="flex items-center text-gray-300 hover:text-white transition-colors duration-200 w-full text-left group"
-                >
-                  <MapPin className="h-4 w-4 mr-3 text-blue-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
-                  <span className="text-sm group-hover:text-blue-300 transition-colors duration-200">
-                    {officeContact.address}
-                  </span>
-                </button>
-                <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-200">
-                  <Phone className="h-4 w-4 mr-3 text-blue-400 flex-shrink-0" />
-                  <span className="text-sm">{officeContact.phone}</span>
-                </div>
-                <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-200">
-                  <Mail className="h-4 w-4 mr-3 text-blue-400 flex-shrink-0" />
-                  <span className="text-sm">{officeContact.email}</span>
-                </div>
-              </div>
-            </div>
+    <footer className="relative overflow-hidden bg-slate-950 text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.22),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.16),transparent_24%)]" />
+      <div className="absolute inset-0 opacity-10 [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:36px_36px]" />
 
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-lg font-semibold mb-6 text-white relative">
-                Quick Links
-                <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400"></div>
-              </h3>
-              <ul className="space-y-3">
-                {footerQuickLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link 
-                      to={link.href}
-                      className="flex items-center text-gray-300 hover:text-white transition-all duration-200 group"
-                    >
-                      <link.icon className="h-4 w-4 mr-3 text-blue-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
-                      <span className="text-sm group-hover:translate-x-1 transition-transform duration-200">
-                        {link.name}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h3 className="text-lg font-semibold mb-6 text-white relative">
-                Our Services
-                <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400"></div>
-              </h3>
-              <ul className="space-y-3">
-                {footerServiceLinks.map((service) => (
-                  <li key={service.name}>
-                    <Link 
-                      to={service.href}
-                      className="flex items-center text-gray-300 hover:text-white transition-all duration-200 group"
-                    >
-                      <service.icon className="h-4 w-4 mr-3 text-blue-400 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
-                      <span className="text-sm group-hover:translate-x-1 transition-transform duration-200">
-                        {service.name}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Newsletter & Social */}
-            <div>
-              <h3 className="text-lg font-semibold mb-6 text-white relative">
-                Stay Connected
-                <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400"></div>
-              </h3>
-              
-              {/* Newsletter */}
-              <div className="mb-6">
-                <p className="text-gray-300 text-sm mb-4">
-                  Subscribe to our newsletter for the latest insights and updates.
-                </p>
-                <div className="flex">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-3 py-2 bg-gray-700 border border-gray-600 rounded-l-md text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-                  />
-                  <button className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-r-md hover:from-blue-600 hover:to-purple-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                    Subscribe
-                  </button>
-                </div>
-              </div>
-
-              {/* Social Links */}
+      <div className="relative mx-auto max-w-full px-2 py-3 sm:px-2 lg:px-3 lg:py-4">
+        <div className="grid gap-4 xl:grid-cols-[1.2fr_0.8fr_0.8fr_0.9fr]">
+          <div className="max-w-xl">
+            <Link to="/" className="inline-flex items-center gap-3">
+              <img src={seefLogo} alt="SEEF logo" className="h-12 w-auto" />
               <div>
-                <p className="text-gray-300 text-sm mb-4">Follow us on social media</p>
-                <div className="flex space-x-4">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      className={`p-2 bg-gray-700 rounded-lg text-gray-300 transition-all duration-200 ${social.color} hover:bg-gray-600 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400`}
-                      aria-label={social.name}
-                    >
-                      <social.icon className="h-5 w-5" />
-                    </a>
-                  ))}
+                <div className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-200">SEE Future Consult</div>
+                <div className="text-sm text-slate-300">{siteMeta.tagline}</div>
+              </div>
+            </Link>
+
+            <p className="mt-6 max-w-lg text-sm leading-7 text-slate-300">{siteMeta.summary}</p>
+
+            <div className="mt-6 grid gap-3">
+              {footerPrinciples.map((item) => (
+                <div
+                  key={item.label}
+                  className="inline-flex w-fit items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200"
+                >
+                  <item.icon className="mr-2 h-4 w-4 text-emerald-300" />
+                  {item.label}
                 </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-8 xl:contents">
+            {/* Explore */}
+            <div>
+              <h3 className="text-lg font-semibold text-white">Explore</h3>
+              <div className="mt-5 grid gap-3">
+                {footerQuickLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="inline-flex items-center text-sm text-slate-300 transition-colors hover:text-white"
+                  >
+                    <link.icon className="mr-3 h-4 w-4 text-sky-300" />
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Service Themes */}
+            <div>
+              <h3 className="text-lg font-semibold text-white">Service Themes</h3>
+              <div className="mt-5 grid gap-3">
+                {footerServiceLinks.map((service) => (
+                  <Link
+                    key={service.name}
+                    to={service.href}
+                    className="inline-flex items-center text-sm text-slate-300 transition-colors hover:text-white"
+                  >
+                    <service.icon className="mr-3 h-4 w-4 text-emerald-300" />
+                    {service.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-white">Contact</h3>
+            <div className="mt-5 grid gap-4 text-sm text-slate-300">
+              <button
+                type="button"
+                onClick={() => setIsMapOpen(true)}
+                className="inline-flex items-start gap-3 text-left transition-colors hover:text-white"
+              >
+                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-300" />
+                <span>{officeContact.address}</span>
+              </button>
+              <a href={`tel:${officeContact.phone}`} className="inline-flex items-center gap-3 transition-colors hover:text-white">
+                <Phone className="h-4 w-4 flex-shrink-0 text-sky-300" />
+                <span>{officeContact.phone}</span>
+              </a>
+              <a href={`mailto:${officeContact.email}`} className="inline-flex items-center gap-3 transition-colors hover:text-white">
+                <Mail className="h-4 w-4 flex-shrink-0 text-sky-300" />
+                <span>{officeContact.email}</span>
+              </a>
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-200">Office Hours</p>
+                <p className="mt-3 text-sm text-slate-200">{officeContact.hours}</p>
+                <Link to="/contact" className="mt-4 inline-flex items-center font-semibold text-white">
+                  Start a conversation
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-700 bg-gray-800/50 backdrop-blur-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="flex items-center space-x-6 text-sm text-gray-400">
-                <span>© {currentYear} See Future. All rights reserved.</span>
-                <span className="hidden sm:inline">•</span>
-                <Link to="/about" className="hover:text-white transition-colors duration-200">
-                  About SEEF
-                </Link>
-                <span className="hidden sm:inline">•</span>
-                <Link to="/contact" className="hover:text-white transition-colors duration-200">
-                  Contact
-                </Link>
-              </div>
-              
-              <div className="flex items-center space-x-2 text-sm text-gray-400">
-                <span>Made with</span>
-                <span className="text-red-400">❤</span>
-                <span>for the future</span>
-              </div>
+        <div className="mt-2 border-t border-white/10 pt-2 text-sm text-slate-400">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+            <p>© {currentYear} SEE Future Consult PLC. All rights reserved.</p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/about" className="transition-colors hover:text-white">
+                About
+              </Link>
+              <Link to="/services" className="transition-colors hover:text-white">
+                Services
+              </Link>
+              <Link to="/contact" className="transition-colors hover:text-white">
+                Contact
+              </Link>
             </div>
           </div>
         </div>
       </div>
-      
-      {/* Map Location Modal */}
-      <MapLocation 
-        isOpen={isMapOpen} 
-        onClose={() => setIsMapOpen(false)} 
-      />
+
+      <MapLocation isOpen={isMapOpen} onClose={() => setIsMapOpen(false)} />
     </footer>
   )
 }
