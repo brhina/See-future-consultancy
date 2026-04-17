@@ -4,6 +4,7 @@ import {
   Building2,
   Compass,
   Cross,
+  Globe2,
   Handshake,
   Landmark,
   Leaf,
@@ -15,24 +16,40 @@ import {
 } from 'lucide-react'
 
 export const aboutPageData = {
+  hero: {
+    title: 'About SEE Future Consult PLC',
+    description:
+      'SEEF was established in early 2023 to advance sustainable development through integrated social, environmental, and economic solutions that are rigorous, practical, and locally grounded.',
+    tags: ['Founded in 2023', 'Headquartered in Addis Ababa', 'Built for collaboration']
+  },
   story: {
     title: 'Our Story',
     description:
-      'SEE Future Consult PLC (SEEF) was established in early 2023 with a clear purpose: contribute to the well-being of present and future generations through responsible natural resource management, inclusive development, and evidence-based decision-making.'
+      'SEE Future Consult PLC (SEEF) was founded with a clear purpose: contribute to the well-being of present and future generations through responsible natural resource management, inclusive development, and evidence-based decision-making.',
+    details: [
+      'From its base in Dembel City Center in Addis Ababa, SEEF works with institutions, organizations, businesses, and communities that need practical support at the intersection of sustainability, development, and implementation.',
+      'The firm’s name reflects its core philosophy: sustainability must be approached through Social, Environmental, and Economic dimensions together, not in isolation.'
+    ],
+    facts: [
+      'Headquartered in Addis Ababa, Ethiopia',
+      'Founded in early 2023',
+      'Focused on present and future generations',
+      'Committed to food security and resilience'
+    ]
   },
   missionVision: [
     {
       icon: Target,
       title: 'Mission',
       description:
-        'To be a respected and reliable research and development entity that delivers innovative, practical solutions to pressing social, environmental, and economic challenges in Ethiopia.',
+        'To establish SEEF as a respected and reliable research and development entity known for innovative, practical solutions to pressing social, environmental, and economic challenges in Ethiopia.',
       tone: 'blue'
     },
     {
       icon: Compass,
       title: 'Vision',
       description:
-        'To become a leading consultancy and trusted thought leader across Africa, supporting poverty reduction, food security, and resilient development systems.',
+        'To become a leading consultancy and thought leader across Africa, contributing to poverty reduction, food security, and sustainable development throughout the region.',
       tone: 'emerald'
     }
   ],
@@ -40,40 +57,58 @@ export const aboutPageData = {
     icon: Leaf,
     title: 'The Meaning of SEE',
     description:
-      'The name reflects SEEF’s core philosophy: balance sustainability across Social, Environmental, and Economic dimensions. This integrated lens shapes service design, implementation, and long-term impact evaluation.'
+      'The name reflects SEEF’s core philosophy: sustainability must be balanced across Social, Environmental, and Economic dimensions. This holistic lens guides how the firm defines problems, designs services, and evaluates long-term impact.'
   },
   values: [
-    'Professionalism and integrity',
-    'Trust, confidentiality, and respect',
-    'Agility and client responsiveness',
-    'Innovation and continuous improvement',
-    'Collaborative partnerships',
-    'Holistic sustainability thinking'
+    {
+      title: 'Professionalism',
+      description: 'Maintain high standards of expertise, integrity, accountability, and ethical conduct.'
+    },
+    {
+      title: 'Trust and confidentiality',
+      description: 'Protect client information and build long-term relationships based on mutual respect.'
+    },
+    {
+      title: 'Agility and responsiveness',
+      description: 'Adapt quickly to changing contexts, operational realities, and client needs.'
+    },
+    {
+      title: 'Client-centered delivery',
+      description: 'Tailor every engagement to maximize relevance, usefulness, and measurable impact.'
+    },
+    {
+      title: 'Innovation and excellence',
+      description: 'Continuously improve methods, tools, and technical practice across sectors.'
+    },
+    {
+      title: 'Holistic sustainability',
+      description: 'Keep social, environmental, and economic systems connected in every assignment.'
+    }
   ],
   milestones: [
     {
       year: '2023',
-      title: 'Foundation and positioning',
+      title: 'Foundation and purpose setting',
       description:
-        'SEEF launched with a clear cross-sector mandate linking sustainability, evidence, and implementation support.'
+        'SEEF launched with a clear cross-sector mandate to connect sustainability, research, and practical implementation support.'
     },
     {
       year: '2024',
-      title: 'Technical service expansion',
+      title: 'Service portfolio expansion',
       description:
-        'The team broadened engagement pathways in geospatial work, assessments, and interdisciplinary project delivery.'
+        'The team expanded work in geospatial services, environmental and social assessments, and interdisciplinary advisory delivery.'
     },
     {
       year: '2025',
-      title: 'Capacity-building growth',
+      title: 'Knowledge transfer growth',
       description:
-        'Training support and knowledge-transfer offerings became a more visible part of SEEF’s engagement model.'
+        'Training and capacity-building offerings became a more visible part of the SEEF engagement model.'
     },
     {
       year: '2026',
-      title: 'Partnership depth',
+      title: 'Partnership deepening',
       description:
-        'SEEF continues strengthening collaboration with institutions seeking practical and accountable development support.'
+        'SEEF continues strengthening collaboration with partners seeking practical, accountable, and forward-looking development support.'
     }
   ],
   differentiators: [
@@ -94,12 +129,18 @@ export const aboutPageData = {
       title: 'Practical delivery mindset',
       description:
         'Outputs are designed to help teams act, not just document findings.'
+    },
+    {
+      icon: Globe2,
+      title: 'Regional ambition',
+      description:
+        'SEEF is building from Ethiopia outward, with the long-term ambition to contribute thought leadership across Africa.'
     }
   ],
   teamIntro: {
     title: 'Our Team',
     description:
-      'SEEF brings together a multidisciplinary team with complementary technical expertise, enabling the firm to solve complex challenges from multiple perspectives.'
+      'SEEF brings together professionals from multiple disciplines so complex problems can be understood through scientific, social, health, and spatial perspectives at the same time.'
   },
   teamProfiles: [
     {
@@ -128,14 +169,14 @@ export const aboutPageData = {
     }
   ],
   collaborationPrinciples: [
-    'Multidisciplinary teams are assembled around the problem, not around fixed service silos.',
+    'Teams are assembled around the problem, not around fixed service silos.',
     'Field evidence, stakeholder input, and technical analysis are combined before major recommendations are made.',
-    'Knowledge transfer is built into delivery so partners can maintain momentum after project closeout.'
+    'Knowledge transfer is built into delivery so partners can sustain progress after project closeout.'
   ],
   clientsIntro: {
     title: 'Who We Work With',
     description:
-      'SEEF collaborates with diverse partners to ensure every project delivers meaningful, measurable, and context-responsive impact.'
+      'SEEF works with diverse partners because sustainable development challenges require coordinated action across institutions, sectors, and communities.'
   },
   partners: [
     {
@@ -163,10 +204,20 @@ export const aboutPageData = {
         'Community engagement is central to our approach, ensuring interventions are grounded in lived realities and practical needs.'
     }
   ],
-  aboutCta: {
-    title: 'Looking for a partner that can bridge analysis and action?',
+  partnershipApproach: {
+    title: 'How partnership is approached',
     description:
-      'SEEF works best when the assignment needs both technical depth and practical implementation thinking.',
+      'SEEF aims to be the kind of partner that listens carefully, works collaboratively, and produces outputs that are useful beyond the life of a single assignment.',
+    points: [
+      'Start with the real decision need, not only the requested deliverable.',
+      'Balance technical depth with practical recommendations that can be implemented.',
+      'Keep institutions, communities, and stakeholders meaningfully engaged throughout the process.'
+    ]
+  },
+  aboutCta: {
+    title: 'Looking for a partner that can connect analysis, sustainability, and implementation?',
+    description:
+      'SEEF works best when the assignment needs technical rigor, cross-sector thinking, and outputs that can guide real decisions.',
     primary: { label: 'Talk With Our Team', to: '/contact' },
     secondary: { label: 'Explore Services', to: '/services' }
   }
