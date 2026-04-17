@@ -14,14 +14,15 @@ export const contactPageData = {
   hero: {
     title: 'Contact SEEF',
     description:
-      'We welcome collaboration with government institutions, NGOs, private sector organizations, and communities seeking sustainable and evidence-based solutions.'
+      'SEEF welcomes collaboration with government institutions, NGOs, private sector organizations, and communities seeking sustainable, evidence-based, and practical solutions.',
+    tags: ['Project inquiries', 'Training requests', 'Partnership discussions']
   },
   contactCards: [
     {
       icon: MapPin,
       title: 'Office location',
       value: officeContact.address,
-      helper: 'Visits and in-person meetings can be coordinated in Addis Ababa.',
+      helper: 'Visits and in-person meetings can be coordinated at Dembel City Center in Addis Ababa.',
       href: officeContact.googleMapsUrl,
       action: 'Open map'
     },
@@ -37,7 +38,7 @@ export const contactPageData = {
       icon: Mail,
       title: 'Email',
       value: officeContact.email,
-      helper: 'Best for project briefs, requests for information, and written follow-up.',
+      helper: 'Best for project briefs, concept notes, TORs, and written follow-up.',
       href: `mailto:${officeContact.email}`,
       action: 'Send email'
     }
@@ -46,22 +47,22 @@ export const contactPageData = {
     {
       icon: Briefcase,
       title: 'Consulting and technical advisory',
-      description: 'Share your sector focus, immediate challenge, and expected outputs.'
+      description: 'Share the sector, the problem you are working on, and the outputs or decisions you need to support.'
     },
     {
       icon: Users,
       title: 'Research and partnership opportunities',
-      description: 'Tell us about the collaboration model, stakeholders, and timeline.'
+      description: 'Tell SEEF about the collaboration model, lead stakeholders, and the intended timeline.'
     },
     {
       icon: CalendarClock,
       title: 'Training and capacity-building support',
-      description: 'Outline your target audience, topic priorities, and preferred delivery format.'
+      description: 'Outline the target audience, topic priorities, and whether the training should be practical, technical, or blended.'
     }
   ],
   responseCommitments: [
     'Acknowledge project inquiries with a clear next-step response path.',
-    'Clarify scope, urgency, and decision needs before proposing support.',
+    'Clarify scope, urgency, geography, and decision needs before proposing support.',
     'Recommend the most suitable engagement format for the request.'
   ],
   readinessChecklist: [
@@ -71,10 +72,15 @@ export const contactPageData = {
     'The approximate timeline or deadline',
     'Any existing documents or background context'
   ],
+  officeDetails: [
+    `Office hours: ${officeContact.hours}`,
+    'Meetings can be arranged in person or through remote coordination depending on the assignment.',
+    'Early sharing of concept notes, TORs, or background documents helps SEEF respond faster.'
+  ],
   cta: {
     title: 'Ready to open a conversation?',
     description:
-      'If you already have a concept note, TOR, or short brief, sending it with your inquiry will help SEEF respond more efficiently.',
+      'If you already have a concept note, TOR, or short brief, sending it with your inquiry will help SEEF respond more efficiently and recommend the right next step.',
     action: { label: 'Email SEEF', href: `mailto:${officeContact.email}`, icon: ArrowRight }
   },
   trustSignals: [
