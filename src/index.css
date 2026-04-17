@@ -1,82 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* font family */
+:root {
+  font-family: 'Manrope', sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+  --color-primary: #0284c7;
+  --color-secondary: #10b981;
+  --color-surface: #f8fafc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding-left: 0;
-  padding-right: 0;
+  font-family: 'Manrope', sans-serif;
+  background: #ffffff;
+  color: #0f172a;
+  text-rendering: optimizeLegibility;
 }
 
-html, #root {
-  margin: 0;
-  padding-left: 0;
-  padding-right: 0;
+#root {
+  min-height: 100vh;
 }
 
-/* Custom animations */
-@keyframes gradient-x {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Fraunces', serif;
+  letter-spacing: -0.02em;
 }
 
-.animate-gradient-x {
-  background-size: 200% 200%;
-  animation: gradient-x 3s ease infinite;
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Fade in animation */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
-}
-
-/* Slide up animation */
-@keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-slide-up {
-  animation: slide-up 0.8s ease-out forwards;
-}
-
-/* Fade in up animation */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out forwards;
+::selection {
+  background: rgba(14, 165, 233, 0.18);
+  color: #082f49;
 }
 
 @keyframes core-ideas-marquee {
@@ -114,20 +82,19 @@ html, #root {
   }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #e2e8f0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
-  border-radius: 4px;
+  background: linear-gradient(to bottom, #0284c7, #10b981);
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #2563eb, #7c3aed);
+  background: linear-gradient(to bottom, #0369a1, #059669);
 }
