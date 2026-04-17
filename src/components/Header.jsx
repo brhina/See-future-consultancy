@@ -32,6 +32,14 @@ function Header() {
     setActiveDropdown(activeDropdown === index ? null : index);
   };
 
+  const openDropdown = (index) => {
+    setActiveDropdown(index);
+  };
+
+  const closeDropdown = () => {
+    setActiveDropdown(null);
+  };
+
   const closeAll = () => {
     setIsOpen(false);
     setActiveDropdown(null);
@@ -83,12 +91,23 @@ function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navigationItems.map((item, index) => (
-                <div key={item.label} className="relative group">
+                <div
+                  key={item.label}
+                  className="relative group"
+                  onMouseEnter={() => item.children && openDropdown(index)}
+                  onMouseLeave={() => item.children && closeDropdown()}
+                  onFocusCapture={() => item.children && openDropdown(index)}
+                  onBlurCapture={(event) => {
+                    if (item.children && !event.currentTarget.contains(event.relatedTarget)) {
+                      closeDropdown()
+                    }
+                  }}
+                >
                   <div className="flex items-center space-x-1">
                     <NavLink
                       to={item.path}
                       className={({ isActive }) =>
-                        `px-3 py-2 rounded-lg font-medium transition-all duration-200 relative ${
+                        `px-2 py-2 rounded-lg font-medium transition-all duration-200 relative ${
                           isActive
                             ? 'text-blue-600 bg-blue-50'
                             : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
@@ -99,14 +118,18 @@ function Header() {
                     </NavLink>
                     {item.children && (
                       <button
-                        onClick={() => toggleDropdown(index)}
+                        type="button"
+                        onMouseEnter={() => openDropdown(index)}
+                        onFocus={() => openDropdown(index)}
                         className="p-1 hover:bg-gray-100 rounded transition-colors"
+                        aria-expanded={activeDropdown === index}
+                        aria-label={`Show ${item.label} submenu`}
                       >
-                        {activeDropdown === index ? (
+                        {/* {activeDropdown === index ? (
                           <ChevronUp className="w-4 h-4 text-gray-600" />
                         ) : (
                           <ChevronDown className="w-4 h-4 text-gray-600" />
-                        )}
+                        )} */}
                       </button>
                     )}
                   </div>
@@ -248,7 +271,7 @@ function Header() {
       </header>
 
       {/* Spacer to prevent content from hiding behind fixed header */}
-      <div className="h-28" />
+      <div className="h-16" />
     </>
   );
 }

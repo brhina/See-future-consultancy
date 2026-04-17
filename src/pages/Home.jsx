@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUp, ChevronRight } from 'lucide-react'
 import { motion as Motion, useReducedMotion } from 'framer-motion'
+import CoreIdeasRail from '../sections/homes/CoreIdeasRail'
 import Hero from '../sections/homes/Hero'
 import LatestNews from '../sections/homes/LatestNews'
 import SectionHeading from '../components/SectionHeading'
@@ -80,6 +81,7 @@ function Home() {
 
   return (
     <div className="relative bg-white">
+      <CoreIdeasRail />
       <Hero />
 
       <section
@@ -89,7 +91,7 @@ function Home() {
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.12),transparent_35%)]" />
         <Motion.div
-          className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          className="relative mx-auto max-w-full px-4 sm:px-6 lg:px-8"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -132,12 +134,28 @@ function Home() {
                     </div>
                   </Motion.div>
                 ))}
+                <div className="flex flex-wrap gap-3">
+                <Link
+                  to="/about"
+                  className="group inline-flex items-center rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:from-sky-600 hover:to-cyan-600"
+                >
+                  Learn More About SEEF
+                  <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:border-sky-500 hover:text-sky-600"
+                >
+                  Get in Touch
+                  <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </div>
               </Motion.div>
             </div>
 
             <div className="space-y-5">
               <Motion.div
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-sky-100/70"
+                className="rounded-3xl bg-white p-6 shadow-lg shadow-sky-100/70"
                 variants={reduceMotion ? undefined : cardVariants}
                 initial={reduceMotion ? false : 'initial'}
                 whileInView={reduceMotion ? undefined : 'animate'}
@@ -154,11 +172,11 @@ function Home() {
                   {homePageData.stats.map((stat, index) => (
                     <Motion.div
                       key={stat.label}
-                      className="rounded-2xl bg-slate-50 p-4 text-center"
+                      className="rounded-2xl bg-slate-50 p-2 text-center"
                       variants={reduceMotion ? undefined : cardVariants}
                       {...(reduceMotion ? {} : { whileHover: { scale: 1.02 }, whileTap: { scale: 0.99 } })}
                     >
-                      <div className="text-3xl font-bold text-slate-900">
+                      <div className="text-2xl font-bold text-slate-900">
                         {animatedStats[index]}
                         {stat.suffix}
                       </div>
@@ -196,33 +214,6 @@ function Home() {
                   ))}
                 </div>
               </Motion.div>
-
-              <Motion.div
-                className="rounded-2xl bg-amber-50 p-4 text-sm leading-7 text-amber-800"
-                variants={reduceMotion ? undefined : cardVariants}
-                initial={reduceMotion ? false : 'initial'}
-                whileInView={reduceMotion ? undefined : 'animate'}
-                viewport={{ once: true, amount: 0.35 }}
-              >
-                {homePageData.overview.note}
-              </Motion.div>
-
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  to="/about"
-                  className="group inline-flex items-center rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:from-sky-600 hover:to-cyan-600"
-                >
-                  Learn More About SEEF
-                  <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-                <Link
-                  to="/contact"
-                  className="group inline-flex items-center rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:border-sky-500 hover:text-sky-600"
-                >
-                  Get in Touch
-                  <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </div>
             </div>
           </div>
         </Motion.div>
@@ -230,7 +221,7 @@ function Home() {
 
       <section className="bg-white py-12 lg:py-16">
         <Motion.div
-          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -286,7 +277,7 @@ function Home() {
       </section>
 
       <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 py-12 text-white lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Featured Focus Areas"
             title="Where SEEF adds momentum fastest"
@@ -313,7 +304,7 @@ function Home() {
       </section>
 
       <section className="bg-slate-50 py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Delivery Approach"
             title="A simple engagement journey"
@@ -336,7 +327,7 @@ function Home() {
       </section>
 
       <section className="bg-white py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
           <div className="rounded-[2rem] bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 p-8 text-white shadow-xl lg:p-10">
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
