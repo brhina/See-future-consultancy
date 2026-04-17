@@ -31,6 +31,43 @@ export const homePageData = {
       'Evidence-first project design'
     ]
   },
+  coreIdeas: [
+    {
+      icon: Leaf,
+      title: 'Sustainability in every decision',
+      description:
+        'SEEF connects social inclusion, environmental stewardship, and economic viability instead of treating them as separate tracks.',
+      label: 'Integrated lens'
+    },
+    {
+      icon: Users,
+      title: 'Locally grounded collaboration',
+      description:
+        'Our work is shaped by Ethiopian realities, with delivery models built around institutions, communities, and shared ownership.',
+      label: 'Context first'
+    },
+    {
+      icon: Map,
+      title: 'Evidence powered by geospatial insight',
+      description:
+        'GIS, GPS, remote sensing, and field analytics help partners move from assumptions to practical, decision-ready evidence.',
+      label: 'Data with place'
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Risk-aware technical advisory',
+      description:
+        'Assessments, safeguards, and due diligence inputs are translated into actions teams can actually implement.',
+      label: 'Practical rigor'
+    },
+    {
+      icon: Sprout,
+      title: 'Capacity that lasts beyond a project',
+      description:
+        'Training, co-design, and system strengthening are built in so momentum continues after the assignment ends.',
+      label: 'Lasting capability'
+    }
+  ],
   overview: {
     eyebrow: 'Established in early 2023',
     title: 'A forward-thinking consultancy for Ethiopia and beyond',
