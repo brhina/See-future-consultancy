@@ -1,279 +1,164 @@
-import { useState, useEffect } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
-import seefLogo from '../assets/seef-logo.svg';
-import MapLocation from '../utils/MapLocation';
-import { navigationItems } from '../data/siteData';
+import { useEffect, useState } from 'react'
+import { ArrowRight, MapPin, Menu, Phone, X } from 'lucide-react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
+import seefLogo from '../assets/seef-logo.svg'
+import { navigationItems, officeContact } from '../data/siteData'
+import MapLocation from '../utils/MapLocation'
 
 function Header() {
   const [isMapOpen, setIsMapOpen] = useState(false)
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+      setIsScrolled(window.scrollY > 20)
+    }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
-    setIsOpen(false);
-    setActiveDropdown(null);
-  }, [location]);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-  
-  const toggleDropdown = (index) => {
-    setActiveDropdown(activeDropdown === index ? null : index);
-  };
-
-  const openDropdown = (index) => {
-    setActiveDropdown(index);
-  };
-
-  const closeDropdown = () => {
-    setActiveDropdown(null);
-  };
-
-  const closeAll = () => {
-    setIsOpen(false);
-    setActiveDropdown(null);
-  };
+    setIsMenuOpen(false)
+  }, [location.pathname])
 
   return (
     <>
-      {/* Top Bar */}
-      {/* <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white h-12">
-        <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between text-sm">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
-              <Phone className="w-4 h-4" />
-              <span>+251 123 4567</span>
+      <header
+        className={`fixed left-0 top-0 z-50 w-full border-b border-slate-200/70 transition-all duration-300 ${
+          isScrolled ? 'bg-white/96 shadow-lg shadow-slate-200/60 backdrop-blur-xl' : 'bg-white/92 backdrop-blur-md'
+        }`}
+      >
+        <div className="hidden border-b border-slate-200/70 lg:block">
+          <div className="mx-auto flex max-w-full items-center justify-between px-4 py-2 text-sm text-slate-600 sm:px-6 lg:px-8">
+            <button
+              type="button"
+              onClick={() => setIsMapOpen(true)}
+              className="inline-flex items-center gap-2 transition-colors hover:text-sky-700"
+            >
+              <MapPin className="h-4 w-4 text-sky-600" />
+              <span>{officeContact.locationLabel}</span>
+            </button>
+
+            <div className="flex items-center gap-6">
+              <a href={`tel:${officeContact.phone}`} className="inline-flex items-center gap-2 transition-colors hover:text-sky-700">
+                <Phone className="h-4 w-4 text-sky-600" />
+                <span>{officeContact.phone}</span>
+              </a>
+              <a href={`mailto:${officeContact.email}`} className="transition-colors hover:text-sky-700">
+                {officeContact.email}
+              </a>
             </div>
-            <div className="flex items-center space-x-2">
-              <Mail className="w-4 h-4" />
-              <span>info@seefconsulting.com</span>
-            </div>
-          </div>
-          <div className="flex items-center space-x-2 cursor-pointer hover:text-blue-200 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
-          onClick={() => setIsMapOpen(true)}
-          >
-            <MapPin className="w-4 h-4" />
-            <span>SEEF Consulting</span>
           </div>
         </div>
-      </div> */}
 
-      {/* Main Header */}
-      <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
-          : 'bg-white'
-      }`}>
-        <div className="lg:mx-2 md:mx-4 mx-auto max-w-full px-4 py-4">
-          <div className="flex justify-between items-center">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Link to="/" className="group">
-                <img 
-                  src={seefLogo} 
-                  alt="SEEF Consulting Logo" 
-                  className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
-                />
+        <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-4 py-4">
+            <Link to="/" className="flex min-w-0 items-center gap-3">
+              <img src={seefLogo} alt="SEEF Consulting Logo" className="h-11 w-auto" />
+              <div className="hidden min-w-0 sm:block">
+                <div className="truncate text-sm font-semibold uppercase tracking-[0.26em] text-sky-700">SEE Future Consult</div>
+                <div className="truncate text-sm text-slate-600">Integrated sustainability consulting</div>
+              </div>
+            </Link>
+
+            <nav className="hidden items-center gap-2 lg:flex">
+              {navigationItems.map((item) => (
+                <NavLink
+                  key={item.label}
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 ${
+                      isActive ? 'bg-slate-900 text-white shadow-sm' : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </nav>
+
+            <div className="hidden items-center gap-3 lg:flex">
+              <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800 xl:block">
+                {officeContact.hours}
+              </div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center rounded-full bg-gradient-to-r from-sky-600 to-emerald-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200/70 transition-transform duration-300 hover:-translate-y-0.5"
+              >
+                Start a Project
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              {navigationItems.map((item, index) => (
-                <div
-                  key={item.label}
-                  className="relative group"
-                  onMouseEnter={() => item.children && openDropdown(index)}
-                  onMouseLeave={() => item.children && closeDropdown()}
-                  onFocusCapture={() => item.children && openDropdown(index)}
-                  onBlurCapture={(event) => {
-                    if (item.children && !event.currentTarget.contains(event.relatedTarget)) {
-                      closeDropdown()
-                    }
-                  }}
-                >
-                  <div className="flex items-center space-x-1">
-                    <NavLink
-                      to={item.path}
-                      className={({ isActive }) =>
-                        `px-2 py-2 rounded-lg font-medium transition-all duration-200 relative ${
-                          isActive
-                            ? 'text-blue-600 bg-blue-50'
-                            : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                        }`
-                      }
-                    >
-                      {item.label}
-                    </NavLink>
-                    {item.children && (
-                      <button
-                        type="button"
-                        onMouseEnter={() => openDropdown(index)}
-                        onFocus={() => openDropdown(index)}
-                        className="p-1 hover:bg-gray-100 rounded transition-colors"
-                        aria-expanded={activeDropdown === index}
-                        aria-label={`Show ${item.label} submenu`}
-                      >
-                        {/* {activeDropdown === index ? (
-                          <ChevronUp className="w-4 h-4 text-gray-600" />
-                        ) : (
-                          <ChevronDown className="w-4 h-4 text-gray-600" />
-                        )} */}
-                      </button>
-                    )}
-                  </div>
-                  
-                  {/* Dropdown Menu */}
-                  {item.children && (
-                    <div className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 transition-all duration-300 transform origin-top ${
-                      activeDropdown === index 
-                        ? 'opacity-100 scale-100 translate-y-0' 
-                        : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
-                    }`}>
-                      <div className="p-2">
-                        {item.children.map((subItem) => (
-                          <NavLink
-                            key={subItem.label}
-                            to={subItem.path}
-                            className={({ isActive }) =>
-                              `block px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ${
-                                isActive ? 'bg-blue-50 text-blue-600 font-medium' : ''
-                              }`
-                            }
-                            onClick={closeAll}
-                          >
-                            {subItem.label}
-                          </NavLink>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-              
-              {/* CTA Button */}
-              <Link
-                to="/contact"
-                className="ml-4 px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
-              >
-                Get Started
-              </Link>
-            </nav>
-
-            {/* Mobile Menu Button */}
             <button
-              onClick={toggleMenu}
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-              aria-label="Toggle menu"
+              type="button"
+              onClick={() => setIsMenuOpen((open) => !open)}
+              className="rounded-2xl border border-slate-200 p-2.5 text-slate-700 transition-colors hover:bg-slate-50 lg:hidden"
+              aria-label="Toggle navigation"
             >
-              {isOpen ? (
-                <X className="w-6 h-6 text-gray-700" />
-              ) : (
-                <Menu className="w-6 h-6 text-gray-700" />
-              )}
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        <div className={`lg:hidden transition-all duration-300 ease-in-out ${
-          isOpen 
-            ? 'max-h-screen opacity-100' 
-            : 'max-h-0 opacity-0 overflow-hidden'
-        }`}>
-          <div className="bg-white border-t border-gray-200 shadow-lg">
-            <nav className="px-4 py-4 space-y-2">
-              {navigationItems.map((item, index) => (
-                <div key={item.label} className="space-y-1">
-                  <div className="flex items-center justify-between">
-                    <NavLink
-                      to={item.path}
-                      className={({ isActive }) =>
-                        `flex-1 px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
-                          isActive
-                            ? 'text-blue-600 bg-blue-50'
-                            : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                        }`
-                      }
-                      onClick={() => !item.children && closeAll()}
-                    >
-                      {item.label}
-                    </NavLink>
-                    {item.children && (
-                      <button
-                        onClick={() => toggleDropdown(index)}
-                        className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-                      >
-                        {activeDropdown === index ? (
-                          <ChevronUp className="w-4 h-4 text-gray-600" />
-                        ) : (
-                          <ChevronDown className="w-4 h-4 text-gray-600" />
-                        )}
-                      </button>
-                    )}
-                  </div>
-                  
-                  {/* Mobile Dropdown */}
-                  {item.children && (
-                    <div className={`ml-4 space-y-1 transition-all duration-300 ${
-                      activeDropdown === index 
-                        ? 'max-h-96 opacity-100' 
-                        : 'max-h-0 opacity-0 overflow-hidden'
-                    }`}>
-                      {item.children.map((subItem) => (
-                        <NavLink
-                          key={subItem.label}
-                          to={subItem.path}
-                          className={({ isActive }) =>
-                            `block px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition-all duration-200 ${
-                              isActive ? 'bg-blue-50 text-blue-600 font-medium' : ''
-                            }`
-                          }
-                          onClick={closeAll}
-                        >
-                          {subItem.label}
-                        </NavLink>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-              
-              {/* Mobile CTA */}
-              <div className="pt-4 border-t border-gray-200">
-                <Link
-                  to="/contact"
-                  className="block w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg text-center hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg"
-                  onClick={closeAll}
+        <div
+          className={`overflow-hidden border-t border-slate-200 bg-white transition-all duration-300 lg:hidden ${
+            isMenuOpen ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <nav className="mx-auto max-w-full px-4 py-4 sm:px-6">
+            <div className="grid gap-2">
+              {navigationItems.map((item) => (
+                <NavLink
+                  key={item.label}
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `rounded-2xl px-4 py-3 text-sm font-semibold transition-all duration-200 ${
+                      isActive ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
+                    }`
+                  }
                 >
-                  Get Started
-                </Link>
-              </div>
-            </nav>
-          </div>
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
+
+            <div className="mt-4 grid gap-3 rounded-3xl bg-slate-50 p-4 text-sm text-slate-600">
+              <button
+                type="button"
+                onClick={() => setIsMapOpen(true)}
+                className="inline-flex items-center gap-2 text-left font-medium text-slate-700"
+              >
+                <MapPin className="h-4 w-4 text-sky-600" />
+                {officeContact.locationLabel}
+              </button>
+              <a href={`tel:${officeContact.phone}`} className="inline-flex items-center gap-2">
+                <Phone className="h-4 w-4 text-sky-600" />
+                {officeContact.phone}
+              </a>
+              <a href={`mailto:${officeContact.email}`} className="text-slate-700">
+                {officeContact.email}
+              </a>
+              <Link
+                to="/contact"
+                className="mt-1 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-600 to-emerald-500 px-5 py-3 font-semibold text-white"
+              >
+                Start a Project
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </nav>
         </div>
-        {/* Map Location Modal */}
-      <MapLocation 
-        isOpen={isMapOpen} 
-        onClose={() => setIsMapOpen(false)} 
-      />
+
+        <MapLocation isOpen={isMapOpen} onClose={() => setIsMapOpen(false)} />
       </header>
 
-      {/* Spacer to prevent content from hiding behind fixed header */}
-      <div className="h-16" />
+      <div className="h-[88px] lg:h-[129px]" />
     </>
-  );
+  )
 }
 
-export default Header;
+export default Header
