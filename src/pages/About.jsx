@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { motion as Motion, useReducedMotion } from 'framer-motion'
 import OurClients from '../sections/abouts/OurClients'
 import OurTeam from '../sections/abouts/OurTeam'
 import OurStory from '../sections/abouts/OurStory'
 import { aboutPageData } from '../data/aboutData'
+import { cardVariants, sectionVariants } from '../utils/motionPresets'
 
 function About() {
+  const reduceMotion = useReducedMotion()
+
   return (
     <div className="bg-white">
       <OurStory />
@@ -13,8 +17,17 @@ function About() {
       <OurClients />
 
       <section className="bg-white py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-[2rem] bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 p-8 text-white shadow-xl lg:p-10">
+        <Motion.div
+          className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.25 }}
+        >
+          <Motion.div
+            className="rounded-[2rem] bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 p-8 text-white shadow-xl lg:p-10"
+            variants={reduceMotion ? undefined : cardVariants}
+          >
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-100">Work With SEEF</p>
@@ -36,8 +49,8 @@ function About() {
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
+          </Motion.div>
+        </Motion.div>
       </section>
     </div>
   )
