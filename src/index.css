@@ -79,6 +79,41 @@ html, #root {
   animation: fade-in-up 0.6s ease-out forwards;
 }
 
+@keyframes core-ideas-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+.animate-core-ideas-marquee {
+  animation: core-ideas-marquee 28s linear infinite;
+}
+
+.core-ideas-rail:hover .animate-core-ideas-marquee {
+  animation-play-state: paused;
+}
+
+.core-idea-card {
+  width: min(86vw, 22rem);
+  min-height: 8.75rem;
+}
+
+@media (min-width: 1024px) {
+  .core-idea-card {
+    width: calc((min(100vw, 80rem) - 4rem - 2rem) / 3);
+    min-height: 9.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-core-ideas-marquee {
+    animation: none;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 2px;
@@ -96,4 +131,3 @@ html, #root {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #2563eb, #7c3aed);
 }
-

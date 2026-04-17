@@ -8,7 +8,7 @@ function PageHero({ eyebrow, title, description, tags = [], gradient = 'from-blu
   return (
     <section className={`bg-gradient-to-br ${gradient} py-10 lg:py-14`}>
       <Motion.div
-        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
         variants={reduceMotion ? undefined : staggerContainer(0.08, 0.05)}
         initial={reduceMotion ? false : 'initial'}
         animate={reduceMotion ? undefined : 'animate'}
