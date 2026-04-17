@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion as Motion, useReducedMotion } from 'framer-motion'
 import PageHero from '../components/PageHero'
 import SectionHeading from '../components/SectionHeading'
@@ -14,6 +13,7 @@ function ThematicAreas() {
         eyebrow="Cross-Sector Focus"
         title={thematicAreasPageData.hero.title}
         description={thematicAreasPageData.hero.description}
+        tags={thematicAreasPageData.hero.tags}
         gradient="from-sky-50 via-white to-green-50"
       />
 
@@ -86,6 +86,46 @@ function ThematicAreas() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <SectionHeading
+            eyebrow="Themes in Practice"
+            title="How thematic work connects to real-world sectors and decisions"
+            description="SEEF uses these themes as a practical framework for navigating cross-cutting development challenges."
+            centered
+          />
+
+          <Motion.div
+            className="grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+            variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
+            initial={reduceMotion ? false : 'initial'}
+            whileInView={reduceMotion ? undefined : 'animate'}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {thematicAreasPageData.sectorApplications.map((item) => (
+              <Motion.article
+                key={item.title}
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                variants={reduceMotion ? undefined : cardVariants}
+                {...(reduceMotion ? {} : hoverLift)}
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100">
+                  <item.icon className="h-5 w-5 text-sky-700" />
+                </div>
+                <h3 className="mt-5 text-xl font-bold text-slate-900">{item.title}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{item.description}</p>
+              </Motion.article>
+            ))}
+          </Motion.div>
+        </Motion.div>
+      </section>
+
+      <section className="bg-white py-12 lg:py-16">
+        <Motion.div
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <SectionHeading
             eyebrow="Where Themes Meet"
             title="Cross-cutting lenses that keep work coherent"
             description="These shared lenses help connect thematic workstreams and reduce fragmentation during implementation."
@@ -102,11 +142,11 @@ function ThematicAreas() {
             {thematicAreasPageData.intersections.map((item) => (
               <Motion.div
                 key={item.title}
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white">
                   <item.icon className="h-5 w-5 text-sky-700" />
                 </div>
                 <h3 className="mt-5 text-xl font-bold text-slate-900">{item.title}</h3>
