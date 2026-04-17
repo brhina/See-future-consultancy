@@ -1,4 +1,6 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion as Motion, useReducedMotion } from 'framer-motion'
+import { pageVariants } from '../utils/motionPresets'
 
 import Home from '../pages/Home';
 import About from '../pages/About';
@@ -8,17 +10,29 @@ import Contact from '../pages/Contact';
 import LatestNews from '../sections/homes/LatestNews';
 
 function AppRoutes() {
+  const location = useLocation()
+  const reduceMotion = useReducedMotion()
+
   return (
-    <main className="min-h-screen w-full">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/latest-news" element={<LatestNews />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/thematic-areas" element={<ThematicAreas />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </main>
+    <AnimatePresence mode="wait">
+      <Motion.main
+        key={location.pathname}
+        className="min-h-screen w-full"
+        variants={reduceMotion ? undefined : pageVariants}
+        initial={reduceMotion ? false : 'initial'}
+        animate={reduceMotion ? undefined : 'animate'}
+        exit={reduceMotion ? undefined : 'exit'}
+      >
+        <Routes location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/latest-news" element={<LatestNews />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/thematic-areas" element={<ThematicAreas />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Motion.main>
+    </AnimatePresence>
   )
 }
 
