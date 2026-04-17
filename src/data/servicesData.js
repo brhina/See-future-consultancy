@@ -1,6 +1,7 @@
 import {
   ArrowRight,
   BookOpenCheck,
+  Building2,
   Droplets,
   FileCheck2,
   HeartPulse,
@@ -8,6 +9,7 @@ import {
   Map,
   NotebookPen,
   Route,
+  ShieldCheck,
   Users
 } from 'lucide-react'
 
@@ -15,15 +17,15 @@ export const servicesPageData = {
   hero: {
     title: 'SEEF Consulting Services',
     description:
-      'SEEF delivers integrated consulting services to advance sustainable development in Ethiopia. Each engagement is designed around practical implementation, measurable outcomes, and long-term resilience.',
-    tags: ['Advisory and research', 'Field-informed analysis', 'Capacity-building support']
+      'SEEF delivers integrated consulting services that support sustainable development, strengthen decision-making, and help partners move from evidence to action.',
+    tags: ['Advisory and research', 'Field-informed analysis', 'Training and capacity building']
   },
   services: [
     {
       icon: Leaf,
       title: 'Agriculture and Environmental Management',
       summary:
-        'Support for resilient production systems, environmental stewardship, and sustainable land use decisions.',
+        'Support for resilient production systems, ecosystem stewardship, and sustainable land use decisions.',
       points: [
         'Sustainable land use planning and ecosystem conservation',
         'Climate-smart agriculture and production system advisory',
@@ -47,7 +49,7 @@ export const servicesPageData = {
       icon: HeartPulse,
       title: 'Human and Animal Health Support',
       summary:
-        'Evidence-based support for equitable health outcomes, program design, and health-related field analysis.',
+        'Evidence-based support for equitable health outcomes, program design, surveillance, and health-related field analysis.',
       points: [
         'Health impact assessments and program evaluation',
         'Policy and strategy support for equitable health outcomes',
@@ -59,7 +61,7 @@ export const servicesPageData = {
       icon: Users,
       title: 'Social Affairs and Inclusive Development',
       summary:
-        'Participatory processes and social analysis that strengthen inclusion, livelihoods, and implementation ownership.',
+        'Participatory processes and social analysis that strengthen inclusion, livelihoods, ownership, and equity.',
       points: [
         'Stakeholder engagement and participatory facilitation',
         'Social impact assessment and livelihood analysis',
@@ -71,13 +73,39 @@ export const servicesPageData = {
       icon: Map,
       title: 'Geoinformation and Spatial Services',
       summary:
-        'Spatial intelligence services that improve monitoring, planning, and risk-aware decision-making.',
+        'Spatial intelligence services that improve monitoring, planning, environmental analysis, and risk-aware decision-making.',
       points: [
         'GIS mapping and spatial data analysis',
         'Remote sensing for environmental and risk monitoring',
         'GPS-enabled data collection and planning support'
       ],
       deliverables: ['Maps and dashboards', 'Spatial analysis outputs', 'Field data workflows']
+    }
+  ],
+  sectors: [
+    {
+      icon: Leaf,
+      title: 'Agriculture and food systems',
+      description:
+        'Supporting productivity, climate resilience, sustainable production systems, and value-chain thinking.'
+    },
+    {
+      icon: Droplets,
+      title: 'Water, ecosystems, and natural resources',
+      description:
+        'Helping institutions and communities manage water systems, watersheds, and environmental resources responsibly.'
+    },
+    {
+      icon: Building2,
+      title: 'Infrastructure, planning, and institutions',
+      description:
+        'Contributing evidence, safeguards thinking, and spatial insight for planning and implementation decisions.'
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Health, social development, and resilience',
+      description:
+        'Improving program design and evaluation where equity, behavior, livelihoods, and well-being intersect.'
     }
   ],
   process: [
@@ -98,23 +126,31 @@ export const servicesPageData = {
     }
   ],
   serviceBenefits: [
-    'Decision-ready reports and technical briefs',
-    'Implementation-facing recommendations',
-    'Clearer alignment between sustainability goals and delivery realities'
+    'Decision-ready reports, briefs, maps, and analytical outputs',
+    'Recommendations that reflect implementation realities, not only theory',
+    'Clearer alignment between sustainability goals, stakeholder needs, and delivery constraints'
   ],
   training: {
     title: 'Capacity Building and Knowledge Transfer',
     description:
-      'In addition to consulting, SEEF provides practical training in ArcGIS and fruit production, and is expanding offerings in R programming, statistics, GIS, and Integrated Resource Management (IRM).',
+      'In addition to consulting, SEEF provides practical training that helps institutions and professionals build lasting capability in geospatial analysis, agriculture, and applied resource management.',
     tracks: [
-      { icon: BookOpenCheck, title: 'Current tracks', items: ['ArcGIS', 'Fruit production practice'] },
-      { icon: ArrowRight, title: 'Expanding focus', items: ['R programming', 'Statistics', 'GIS', 'Integrated Resource Management'] }
+      {
+        icon: BookOpenCheck,
+        title: 'Current tracks',
+        items: ['ArcGIS', 'Fruit production', 'Orchard management', 'Crop optimization practices']
+      },
+      {
+        icon: ArrowRight,
+        title: 'Expanding focus',
+        items: ['R programming', 'Statistics', 'Advanced GIS', 'Integrated Resource Management']
+      }
     ]
   },
   cta: {
     title: 'Need a consulting partner for assessment, advisory, or training support?',
     description:
-      'SEEF can tailor a service package around your sector, evidence needs, and implementation timeline.',
+      'SEEF can tailor an engagement around your sector, evidence needs, implementation timeline, and capacity-building goals.',
     action: { label: 'Discuss Your Service Needs', to: '/contact' }
   }
 }
