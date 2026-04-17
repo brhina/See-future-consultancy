@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { motion as Motion, useReducedMotion } from 'framer-motion'
 import PageHero from '../components/PageHero'
 import SectionHeading from '../components/SectionHeading'
 import { servicesPageData } from '../data/servicesData'
+import { cardVariants, hoverLift, sectionVariants, staggerContainer } from '../utils/motionPresets'
 
 function Services() {
+  const reduceMotion = useReducedMotion()
+
   return (
     <div className="bg-white">
       <PageHero
@@ -17,7 +21,13 @@ function Services() {
       />
 
       <section className="py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Motion.div
+          className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.15 }}
+        >
           <SectionHeading
             eyebrow="Service Portfolio"
             title="Flexible support across sectors and project stages"
@@ -25,11 +35,19 @@ function Services() {
             centered
           />
 
-          <div className="grid gap-5 lg:grid-cols-2">
+          <Motion.div
+            className="grid gap-5 lg:grid-cols-2"
+            variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
+            initial={reduceMotion ? false : 'initial'}
+            whileInView={reduceMotion ? undefined : 'animate'}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {servicesPageData.services.map((service) => (
-              <article
+              <Motion.article
                 key={service.title}
                 className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                variants={reduceMotion ? undefined : cardVariants}
+                {...(reduceMotion ? {} : hoverLift)}
               >
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
                   <service.icon className="h-5 w-5 text-white" />
@@ -61,14 +79,20 @@ function Services() {
                     </div>
                   </div>
                 </div>
-              </article>
+              </Motion.article>
             ))}
-          </div>
-        </div>
+          </Motion.div>
+        </Motion.div>
       </section>
 
       <section className="bg-slate-50 py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Motion.div
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.15 }}
+        >
           <SectionHeading
             eyebrow="How We Work"
             title="A delivery model built for clarity"
@@ -76,9 +100,20 @@ function Services() {
             centered
           />
 
-          <div className="grid gap-5 md:grid-cols-3">
+          <Motion.div
+            className="grid gap-5 md:grid-cols-3"
+            variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
+            initial={reduceMotion ? false : 'initial'}
+            whileInView={reduceMotion ? undefined : 'animate'}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {servicesPageData.process.map((step, index) => (
-              <div key={step.title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <Motion.div
+                key={step.title}
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                variants={reduceMotion ? undefined : cardVariants}
+                {...(reduceMotion ? {} : hoverLift)}
+              >
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-100 text-base font-bold text-sky-700">
                     {index + 1}
@@ -87,26 +122,49 @@ function Services() {
                 </div>
                 <h3 className="mt-5 text-xl font-bold text-slate-900">{step.title}</h3>
                 <p className="mt-3 leading-7 text-slate-600">{step.description}</p>
-              </div>
+              </Motion.div>
             ))}
-          </div>
+          </Motion.div>
 
-          <div className="mt-8 rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl">
+          <Motion.div
+            className="mt-8 rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
+            variants={reduceMotion ? undefined : cardVariants}
+            initial={reduceMotion ? false : 'initial'}
+            whileInView={reduceMotion ? undefined : 'animate'}
+            viewport={{ once: true, amount: 0.25 }}
+          >
             <h3 className="text-2xl font-bold">What partners usually gain</h3>
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <Motion.div
+              className="mt-6 grid gap-4 md:grid-cols-3"
+              variants={reduceMotion ? undefined : staggerContainer(0.06, 0.04)}
+              initial={reduceMotion ? false : 'initial'}
+              whileInView={reduceMotion ? undefined : 'animate'}
+              viewport={{ once: true, amount: 0.25 }}
+            >
               {servicesPageData.serviceBenefits.map((item) => (
-                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <Motion.div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-5"
+                  variants={reduceMotion ? undefined : cardVariants}
+                  {...(reduceMotion ? {} : { whileHover: { y: -2 }, whileTap: { scale: 0.99 } })}
+                >
                   <CheckCircle2 className="h-5 w-5 text-sky-300" />
                   <p className="mt-4 text-sm leading-7 text-slate-200">{item}</p>
-                </div>
+                </Motion.div>
               ))}
-            </div>
-          </div>
-        </div>
+            </Motion.div>
+          </Motion.div>
+        </Motion.div>
       </section>
 
       <section className="bg-white py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Motion.div
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.15 }}
+        >
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
             <div>
               <SectionHeading
@@ -116,9 +174,20 @@ function Services() {
               />
             </div>
 
-            <div className="grid gap-4">
+            <Motion.div
+              className="grid gap-4"
+              variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
+              initial={reduceMotion ? false : 'initial'}
+              whileInView={reduceMotion ? undefined : 'animate'}
+              viewport={{ once: true, amount: 0.2 }}
+            >
               {servicesPageData.training.tracks.map((track) => (
-                <div key={track.title} className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                <Motion.div
+                  key={track.title}
+                  className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+                  variants={reduceMotion ? undefined : cardVariants}
+                  {...(reduceMotion ? {} : hoverLift)}
+                >
                   <div className="flex items-center gap-3">
                     <track.icon className="h-5 w-5 text-sky-600" />
                     <h3 className="text-lg font-bold text-slate-900">{track.title}</h3>
@@ -130,16 +199,25 @@ function Services() {
                       </span>
                     ))}
                   </div>
-                </div>
+                </Motion.div>
               ))}
-            </div>
+            </Motion.div>
           </div>
-        </div>
+        </Motion.div>
       </section>
 
       <section className="bg-slate-50 py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-[2rem] bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 p-8 text-white shadow-xl lg:p-10">
+        <Motion.div
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.25 }}
+        >
+          <Motion.div
+            className="rounded-[2rem] bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 p-8 text-white shadow-xl lg:p-10"
+            variants={reduceMotion ? undefined : cardVariants}
+          >
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-100">Start an Engagement</p>
@@ -156,8 +234,8 @@ function Services() {
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
+          </Motion.div>
+        </Motion.div>
       </section>
     </div>
   )
