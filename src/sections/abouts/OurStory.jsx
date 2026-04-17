@@ -1,7 +1,9 @@
 import React from 'react'
 import { BadgeCheck, ShieldCheck } from 'lucide-react'
+import { motion as Motion, useReducedMotion } from 'framer-motion'
 import SectionHeading from '../../components/SectionHeading'
 import { aboutPageData } from '../../data/aboutData'
+import { cardVariants, hoverLift, sectionVariants, staggerContainer } from '../../utils/motionPresets'
 
 const toneClasses = {
   blue: 'from-sky-500 to-cyan-500',
@@ -10,15 +12,33 @@ const toneClasses = {
 
 function OurStory() {
   const PhilosophyIcon = aboutPageData.philosophy.icon
+  const reduceMotion = useReducedMotion()
 
   return (
     <section className="bg-gradient-to-br from-white via-sky-50/40 to-emerald-50/40 py-12 lg:py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Motion.div
+        className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+        variants={reduceMotion ? undefined : sectionVariants}
+        initial={reduceMotion ? false : 'initial'}
+        whileInView={reduceMotion ? undefined : 'animate'}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <SectionHeading title={aboutPageData.story.title} description={aboutPageData.story.description} />
 
-        <div className="grid gap-5 lg:grid-cols-2">
+        <Motion.div
+          className="grid gap-5 lg:grid-cols-2"
+          variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {aboutPageData.missionVision.map((item) => (
-            <article key={item.title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <Motion.article
+              key={item.title}
+              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+              variants={reduceMotion ? undefined : cardVariants}
+              {...(reduceMotion ? {} : hoverLift)}
+            >
               <div
                 className={`mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${toneClasses[item.tone]}`}
               >
@@ -26,67 +46,106 @@ function OurStory() {
               </div>
               <h2 className="text-2xl font-bold text-slate-900">{item.title}</h2>
               <p className="mt-3 leading-7 text-slate-600">{item.description}</p>
-            </article>
+            </Motion.article>
           ))}
-        </div>
+        </Motion.div>
 
-        <div className="mt-5 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-          <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <Motion.div
+          className="mt-5 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]"
+          variants={reduceMotion ? undefined : staggerContainer(0.06, 0.04)}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <Motion.article
+            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+            variants={reduceMotion ? undefined : cardVariants}
+            {...(reduceMotion ? {} : hoverLift)}
+          >
             <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500">
               <PhilosophyIcon className="h-5 w-5 text-white" />
             </div>
             <h2 className="text-2xl font-bold text-slate-900">{aboutPageData.philosophy.title}</h2>
             <p className="mt-3 leading-7 text-slate-600">{aboutPageData.philosophy.description}</p>
-          </article>
+          </Motion.article>
 
-          <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <Motion.article
+            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+            variants={reduceMotion ? undefined : cardVariants}
+            {...(reduceMotion ? {} : hoverLift)}
+          >
             <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-blue-500">
               <ShieldCheck className="h-5 w-5 text-white" />
             </div>
             <h2 className="text-2xl font-bold text-slate-900">Core Values</h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {aboutPageData.values.map((value) => (
-                <p key={value} className="rounded-2xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700">
+                <Motion.p
+                  key={value}
+                  className="rounded-2xl bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700"
+                  {...(reduceMotion ? {} : { whileHover: { y: -2 }, whileTap: { scale: 0.99 } })}
+                >
                   {value}
-                </p>
+                </Motion.p>
               ))}
             </div>
-          </article>
-        </div>
+          </Motion.article>
+        </Motion.div>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-          <article className="rounded-3xl bg-slate-900 p-6 text-white shadow-xl">
+        <Motion.div
+          className="mt-12 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]"
+          variants={reduceMotion ? undefined : staggerContainer(0.06, 0.04)}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <Motion.article
+            className="rounded-3xl bg-slate-900 p-6 text-white shadow-xl"
+            variants={reduceMotion ? undefined : cardVariants}
+          >
             <div className="flex items-center gap-3">
               <BadgeCheck className="h-5 w-5 text-sky-300" />
               <h2 className="text-2xl font-bold">Growth Timeline</h2>
             </div>
             <div className="mt-6 space-y-4">
               {aboutPageData.milestones.map((item) => (
-                <div key={item.year} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <Motion.div
+                  key={item.year}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-4"
+                  {...(reduceMotion ? {} : { whileHover: { y: -2 } })}
+                >
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-300">{item.year}</p>
                   <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
                   <p className="mt-2 text-sm leading-7 text-slate-200">{item.description}</p>
-                </div>
+                </Motion.div>
               ))}
             </div>
-          </article>
+          </Motion.article>
 
-          <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <Motion.article
+            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+            variants={reduceMotion ? undefined : cardVariants}
+            {...(reduceMotion ? {} : hoverLift)}
+          >
             <h2 className="text-2xl font-bold text-slate-900">Why partners choose SEEF</h2>
             <div className="mt-6 space-y-4">
               {aboutPageData.differentiators.map((item) => (
-                <div key={item.title} className="rounded-2xl bg-slate-50 p-4">
+                <Motion.div
+                  key={item.title}
+                  className="rounded-2xl bg-slate-50 p-4"
+                  {...(reduceMotion ? {} : hoverLift)}
+                >
                   <div className="flex items-center gap-3">
                     <item.icon className="h-5 w-5 text-sky-600" />
                     <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
                   </div>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
-                </div>
+                </Motion.div>
               ))}
             </div>
-          </article>
-        </div>
-      </div>
+          </Motion.article>
+        </Motion.div>
+      </Motion.div>
     </section>
   )
 }
