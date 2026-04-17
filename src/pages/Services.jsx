@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { motion as Motion, useReducedMotion } from 'framer-motion'
@@ -87,6 +86,46 @@ function Services() {
 
       <section className="bg-slate-50 py-12 lg:py-16">
         <Motion.div
+          className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+          variants={reduceMotion ? undefined : sectionVariants}
+          initial={reduceMotion ? false : 'initial'}
+          whileInView={reduceMotion ? undefined : 'animate'}
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <SectionHeading
+            eyebrow="Sector Applications"
+            title="Services built for the sectors where sustainability is lived"
+            description="SEEF’s service lines are designed to adapt across sectors while keeping evidence, implementation, and resilience in view."
+            centered
+          />
+
+          <Motion.div
+            className="grid gap-5 md:grid-cols-2 xl:grid-cols-4"
+            variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
+            initial={reduceMotion ? false : 'initial'}
+            whileInView={reduceMotion ? undefined : 'animate'}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {servicesPageData.sectors.map((sector) => (
+              <Motion.article
+                key={sector.title}
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                variants={reduceMotion ? undefined : cardVariants}
+                {...(reduceMotion ? {} : hoverLift)}
+              >
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100">
+                  <sector.icon className="h-5 w-5 text-sky-700" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900">{sector.title}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{sector.description}</p>
+              </Motion.article>
+            ))}
+          </Motion.div>
+        </Motion.div>
+      </section>
+
+      <section className="bg-white py-12 lg:py-16">
+        <Motion.div
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
@@ -110,7 +149,7 @@ function Services() {
             {servicesPageData.process.map((step, index) => (
               <Motion.div
                 key={step.title}
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
@@ -157,7 +196,7 @@ function Services() {
         </Motion.div>
       </section>
 
-      <section className="bg-white py-12 lg:py-16">
+      <section className="bg-slate-50 py-12 lg:py-16">
         <Motion.div
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
           variants={reduceMotion ? undefined : sectionVariants}
@@ -184,7 +223,7 @@ function Services() {
               {servicesPageData.training.tracks.map((track) => (
                 <Motion.div
                   key={track.title}
-                  className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
                   variants={reduceMotion ? undefined : cardVariants}
                   {...(reduceMotion ? {} : hoverLift)}
                 >
@@ -194,7 +233,7 @@ function Services() {
                   </div>
                   <div className="mt-4 flex flex-wrap gap-3">
                     {track.items.map((item) => (
-                      <span key={item} className="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm">
+                      <span key={item} className="rounded-full bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm">
                         {item}
                       </span>
                     ))}
@@ -206,7 +245,7 @@ function Services() {
         </Motion.div>
       </section>
 
-      <section className="bg-slate-50 py-12 lg:py-16">
+      <section className="bg-white py-12 lg:py-16">
         <Motion.div
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
           variants={reduceMotion ? undefined : sectionVariants}
