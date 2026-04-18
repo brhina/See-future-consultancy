@@ -16,7 +16,7 @@ function Services() {
         title={servicesPageData.hero.title}
         description={servicesPageData.hero.description}
         tags={servicesPageData.hero.tags}
-        gradient="from-sky-50 via-white to-emerald-50"
+        gradient="from-blue-50 via-white to-slate-50"
       />
 
       <section className="page-section page-section-white">
@@ -56,7 +56,7 @@ function Services() {
 
                 <div className="mt-6 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
                   <div>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">What we support</h3>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">What we support</h3>
                     <div className="mt-3 space-y-3">
                       {service.points.map((point) => (
                         <p key={point} className="text-sm leading-7 text-slate-600">
@@ -71,7 +71,7 @@ function Services() {
                     <div className="mt-3 space-y-3">
                       {service.deliverables.map((item) => (
                         <div key={item} className="flex items-start gap-2 text-sm text-slate-600">
-                          <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-emerald-600" />
+                          <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600" />
                           <span>{item}</span>
                         </div>
                       ))}
@@ -186,8 +186,8 @@ function Services() {
                   className="rounded-2xl border border-white/10 bg-white/5 p-5"
                   variants={reduceMotion ? undefined : cardVariants}
                   {...(reduceMotion ? {} : { whileHover: { y: -2 }, whileTap: { scale: 0.99 } })}
-                >
-                  <CheckCircle2 className="h-5 w-5 text-sky-300" />
+              >
+                  <CheckCircle2 className="h-5 w-5 text-blue-300" />
                   <p className="mt-4 text-sm leading-7 text-slate-200">{item}</p>
                 </Motion.div>
               ))}
@@ -228,7 +228,7 @@ function Services() {
                   {...(reduceMotion ? {} : hoverLift)}
                 >
                   <div className="flex items-center gap-3">
-                    <track.icon className="h-5 w-5 text-sky-600" />
+                    <track.icon className="h-5 w-5 text-blue-600" />
                     <h3 className="text-lg font-bold text-slate-900">{track.title}</h3>
                   </div>
                   <div className="mt-4 flex flex-wrap gap-3">
@@ -254,19 +254,19 @@ function Services() {
           viewport={{ once: true, amount: 0.25 }}
         >
           <Motion.div
-            className="rounded-[2rem] bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 p-8 text-white shadow-xl lg:p-10"
+            className="rounded-[2rem] bg-gradient-to-r from-slate-900 to-blue-700 p-8 text-white shadow-xl lg:p-10"
             variants={reduceMotion ? undefined : cardVariants}
           >
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-100">Start an Engagement</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-100">Start an Engagement</p>
                 <h2 className="mt-3 text-3xl font-bold lg:text-4xl">{servicesPageData.cta.title}</h2>
-                <p className="mt-4 max-w-3xl text-base leading-7 text-sky-50">{servicesPageData.cta.description}</p>
+                <p className="mt-4 max-w-3xl text-base leading-7 text-blue-50">{servicesPageData.cta.description}</p>
               </div>
               <div className="flex justify-start lg:justify-end">
                 <Link
                   to={servicesPageData.cta.action.to}
-                  className="group inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-sky-700 transition-all duration-300 hover:scale-105"
+                  className="group inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 transition-all duration-300 hover:scale-105"
                 >
                   {servicesPageData.cta.action.label}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

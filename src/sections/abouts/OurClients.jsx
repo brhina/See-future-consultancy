@@ -55,7 +55,7 @@ function OurClients() {
         >
           <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-200">Partnership Approach</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-200">Partnership Approach</p>
               <h3 className="mt-3 text-2xl font-bold">{aboutPageData.partnershipApproach.title}</h3>
               <p className="mt-4 text-sm leading-7 text-slate-200">{aboutPageData.partnershipApproach.description}</p>
             </div>
@@ -63,7 +63,7 @@ function OurClients() {
             <div className="grid gap-3">
               {aboutPageData.partnershipApproach.points.map((item) => (
                 <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-7 text-slate-100">
-                  <CheckCircle2 className="mb-3 h-5 w-5 text-emerald-300" />
+                  <CheckCircle2 className="mb-3 h-5 w-5 text-blue-300" />
                   {item}
                 </div>
               ))}
