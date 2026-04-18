@@ -111,14 +111,14 @@ function Footer() {
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <p>© {currentYear} SEE Future Consult PLC. All rights reserved.</p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/about" className="transition-colors hover:text-white">
-                About
+              <Link to="/terms" className="transition-colors hover:text-white">
+                Terms of Service
               </Link>
-              <Link to="/services" className="transition-colors hover:text-white">
-                Services
+              <Link to="/privacy" className="transition-colors hover:text-white">
+                Privacy Policy
               </Link>
-              <Link to="/contact" className="transition-colors hover:text-white">
-                Contact
+              <Link to="/help" className="transition-colors hover:text-white">
+                Help Center
               </Link>
             </div>
           </div>
