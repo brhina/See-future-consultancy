@@ -17,7 +17,7 @@ function Hero() {
     <section className="relative min-h-[calc(78vh-4rem)] w-full overflow-hidden">
       <video src={heroVideo} autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-slate-950/60" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.28),transparent_42%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.24),transparent_32%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.28),transparent_42%),radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.18),transparent_32%)]" />
 
       <div className="relative z-10 flex min-h-[calc(78vh-4rem)] items-center py-10 lg:py-12">
         <div className="page-frame max-w-full">
@@ -38,7 +38,7 @@ function Hero() {
                 }`}
               >
                 {hero.title}
-                <span className="mt-2 block bg-gradient-to-r from-sky-300 via-emerald-300 to-cyan-100 bg-clip-text text-transparent">
+                <span className="mt-2 block bg-gradient-to-r from-blue-300 to-slate-100 bg-clip-text text-transparent">
                   {hero.highlightedTitle}
                 </span>
               </h1>
@@ -59,9 +59,9 @@ function Hero() {
                 {hero.ctas.map((cta) => {
                   const baseClass =
                     cta.variant === 'primary'
-                      ? 'bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-lg hover:from-sky-600 hover:to-cyan-600'
+                      ? 'bg-blue-600 text-white shadow-lg hover:bg-blue-700'
                       : cta.variant === 'accent'
-                        ? 'bg-emerald-500 text-white shadow-lg hover:bg-emerald-600'
+                        ? 'bg-blue-500 text-white shadow-lg hover:bg-blue-600'
                         : 'border border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white/20'
 
                   return (
@@ -83,7 +83,7 @@ function Hero() {
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.26em] text-sky-200">What defines SEEF</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.26em] text-blue-200">What defines SEEF</p>
               <div className="mt-4 grid gap-3">
                 {hero.highlights.map((item) => (
                   <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm leading-6 text-slate-100">

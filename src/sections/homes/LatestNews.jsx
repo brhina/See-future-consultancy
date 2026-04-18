@@ -44,7 +44,7 @@ function LatestNews() {
             className="rounded-3xl bg-slate-900 p-6 text-white shadow-xl lg:p-8"
             variants={reduceMotion ? undefined : cardVariants}
           >
-            <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-sky-200">
+            <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-blue-200">
               {news.lead.tag}
             </span>
             <h3 className="mt-4 text-2xl font-bold">{news.lead.title}</h3>
@@ -62,7 +62,7 @@ function LatestNews() {
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
-                <span className="inline-flex rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700">
+                <span className="inline-flex rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
                   {item.tag}
                 </span>
                 <div className="mt-4 flex items-center text-sm text-slate-500">
@@ -80,7 +80,7 @@ function LatestNews() {
           <Motion.div {...(reduceMotion ? {} : { whileHover: { scale: 1.03 }, whileTap: { scale: 0.98 } })}>
             <Link
               to={news.cta.to}
-              className="group inline-flex items-center rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:from-sky-600 hover:to-cyan-600"
+              className="group inline-flex items-center rounded-full bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:bg-blue-700"
             >
               {news.cta.label}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
