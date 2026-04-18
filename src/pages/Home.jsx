@@ -76,18 +76,18 @@ function Home() {
   }, [shouldAnimateStats])
 
   return (
-    <div className="relative bg-white">
+    <div className="page-shell relative">
       <CoreIdeasRail />
       <Hero />
 
       <section
         id="about-section"
         ref={overviewRef}
-        className="relative overflow-hidden bg-gradient-to-br from-white via-sky-50/70 to-emerald-50/70 py-12 lg:py-16"
+        className="page-section page-section-soft overflow-hidden"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.12),transparent_35%)]" />
         <Motion.div
-          className="relative mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+          className="page-frame relative max-w-full"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -135,17 +135,17 @@ function Home() {
                 ))}
               </Motion.div>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-6 grid grid-cols-2 gap-3">
                 <Link
                   to="/about"
-                  className="group inline-flex items-center rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:from-sky-600 hover:to-cyan-600"
+                  className="group inline-flex h-full items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-4 py-3 text-center text-sm font-semibold leading-tight text-white shadow-sm transition-all duration-300 hover:scale-105 hover:from-sky-600 hover:to-cyan-600"
                 >
                   Learn More About SEEF
                   <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:border-sky-500 hover:text-sky-600"
+                  className="group inline-flex h-full items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-slate-700 shadow-sm transition-all duration-300 hover:border-sky-500 hover:text-sky-600"
                 >
                   Get in Touch
                   <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -219,9 +219,9 @@ function Home() {
         </Motion.div>
       </section>
 
-      <section className="bg-white py-12 lg:py-16">
+      <section className="page-section page-section-white">
         <Motion.div
-          className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-full"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -257,17 +257,17 @@ function Home() {
             ))}
           </Motion.div>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-8 grid grid-cols-2 gap-3">
             <Link
               to="/services"
-              className="group inline-flex items-center rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:scale-105 hover:from-sky-600 hover:to-cyan-600"
+              className="group inline-flex h-full items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-4 py-3 text-center text-sm font-semibold leading-tight text-white shadow-sm transition-all duration-300 hover:scale-105 hover:from-sky-600 hover:to-cyan-600"
             >
               View All Services
               <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
               to="/thematic-areas"
-              className="group inline-flex items-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-sky-500 hover:text-sky-600"
+              className="group inline-flex h-full items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-sky-500 hover:text-sky-600"
             >
               Explore Thematic Areas
               <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -276,9 +276,9 @@ function Home() {
         </Motion.div>
       </section>
 
-      <section className="bg-slate-50 py-12 lg:py-16">
+      <section className="page-section page-section-mist">
         <Motion.div
-          className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-full"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -316,8 +316,8 @@ function Home() {
         </Motion.div>
       </section>
 
-      <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 py-12 text-white lg:py-16">
-        <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+      <section className="page-section bg-gradient-to-b from-slate-950 via-slate-900 to-sky-950 text-white">
+        <div className="page-frame max-w-full">
           <SectionHeading
             eyebrow="Featured Focus Areas"
             title="Where SEEF adds momentum fastest"
@@ -343,9 +343,9 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-12 lg:py-16">
+      <section className="page-section page-section-white">
         <Motion.div
-          className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-full"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -394,8 +394,8 @@ function Home() {
         </Motion.div>
       </section>
 
-      <section className="bg-white py-12 lg:py-16">
-        <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+      <section className="page-section page-section-white">
+        <div className="page-frame max-w-full">
           <div className="rounded-[2rem] bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 p-8 text-white shadow-xl lg:p-10">
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
@@ -403,16 +403,16 @@ function Home() {
                 <h2 className="mt-3 text-3xl font-bold lg:text-4xl">{homePageData.cta.title}</h2>
                 <p className="mt-4 max-w-3xl text-base leading-7 text-sky-50">{homePageData.cta.description}</p>
               </div>
-              <div className="flex flex-wrap gap-3 lg:justify-end">
+              <div className="grid grid-cols-2 gap-3 lg:justify-end">
                 <Link
                   to={homePageData.cta.primary.to}
-                  className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-sky-700 transition-all duration-300 hover:scale-105"
+                  className="inline-flex h-full items-center justify-center rounded-full bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-sky-700 transition-all duration-300 hover:scale-105"
                 >
                   {homePageData.cta.primary.label}
                 </Link>
                 <Link
                   to={homePageData.cta.secondary.to}
-                  className="rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-white/10"
+                  className="inline-flex h-full items-center justify-center rounded-full border border-white/60 px-4 py-3 text-center text-sm font-semibold leading-tight text-white transition-all duration-300 hover:scale-105 hover:bg-white/10"
                 >
                   {homePageData.cta.secondary.label}
                 </Link>

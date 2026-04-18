@@ -10,7 +10,7 @@ function Services() {
   const reduceMotion = useReducedMotion()
 
   return (
-    <div className="bg-white">
+    <div className="page-shell">
       <PageHero
         eyebrow="Integrated Service Offerings"
         title={servicesPageData.hero.title}
@@ -19,9 +19,9 @@ function Services() {
         gradient="from-sky-50 via-white to-emerald-50"
       />
 
-      <section className="py-12 lg:py-16">
+      <section className="page-section page-section-white">
         <Motion.div
-          className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-full"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -84,9 +84,9 @@ function Services() {
         </Motion.div>
       </section>
 
-      <section className="bg-slate-50 py-12 lg:py-16">
+      <section className="page-section page-section-mist">
         <Motion.div
-          className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-full"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -124,9 +124,9 @@ function Services() {
         </Motion.div>
       </section>
 
-      <section className="bg-white py-12 lg:py-16">
+      <section className="page-section page-section-white">
         <Motion.div
-          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-7xl"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -196,9 +196,9 @@ function Services() {
         </Motion.div>
       </section>
 
-      <section className="bg-slate-50 py-12 lg:py-16">
+      <section className="page-section page-section-mist">
         <Motion.div
-          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-7xl"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -245,9 +245,9 @@ function Services() {
         </Motion.div>
       </section>
 
-      <section className="bg-white py-12 lg:py-16">
+      <section className="page-section page-section-white">
         <Motion.div
-          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-7xl"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
