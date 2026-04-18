@@ -10,11 +10,11 @@ function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative overflow-hidden bg-slate-950 text-white">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-slate-950 text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.22),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.16),transparent_24%)]" />
       <div className="absolute inset-0 opacity-10 [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:36px_36px]" />
 
-      <div className="relative mx-auto max-w-full px-2 py-3 sm:px-2 lg:px-3 lg:py-4">
+      <div className="page-frame relative max-w-full py-3 lg:px-3 lg:py-4">
         <div className="grid gap-4 xl:grid-cols-[1.2fr_0.8fr_0.8fr_0.9fr]">
           <div className="max-w-xl">
             <Link to="/" className="inline-flex items-center gap-3">

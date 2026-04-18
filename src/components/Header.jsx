@@ -32,7 +32,7 @@ function Header() {
         }`}
       >
         <div className="hidden border-b border-slate-200/70 lg:block">
-          <div className="mx-auto flex max-w-full items-center justify-between px-4 py-2 text-sm text-slate-600 sm:px-6 lg:px-8">
+          <div className="page-frame flex max-w-full items-center justify-between py-2 text-sm text-slate-600">
             <button
               type="button"
               onClick={() => setIsMapOpen(true)}
@@ -54,7 +54,7 @@ function Header() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+        <div className="page-frame max-w-full">
           <div className="flex items-center justify-between gap-4 py-4">
             <Link to="/" className="flex min-w-0 items-center gap-3">
               <img src={seefLogo} alt="SEEF Consulting Logo" className="h-11 w-auto" />
@@ -109,7 +109,7 @@ function Header() {
             isMenuOpen ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <nav className="mx-auto max-w-full px-4 py-4 sm:px-6">
+          <nav className="page-frame max-w-full py-4">
             <div className="grid gap-2">
               {navigationItems.map((item) => (
                 <NavLink
