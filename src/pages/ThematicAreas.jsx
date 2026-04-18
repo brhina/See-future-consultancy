@@ -47,9 +47,9 @@ function ThematicAreas() {
                 {...(reduceMotion ? {} : hoverLift)}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
+                  {/* <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
                     <group.icon className="h-5 w-5 text-white" />
-                  </div>
+                  </div> */}
                   <div className="flex flex-wrap justify-end gap-2">
                     {group.tags.map((tag) => (
                       <span key={tag} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
@@ -106,9 +106,9 @@ function ThematicAreas() {
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100">
+                {/* <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100">
                   <item.icon className="h-5 w-5 text-sky-700" />
-                </div>
+                </div> */}
                 <h3 className="mt-5 text-xl font-bold text-slate-900">{item.title}</h3>
                 <p className="mt-3 leading-7 text-slate-600">{item.description}</p>
               </Motion.article>
@@ -146,9 +146,9 @@ function ThematicAreas() {
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white">
+                {/* <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white">
                   <item.icon className="h-5 w-5 text-sky-700" />
-                </div>
+                </div> */}
                 <h3 className="mt-5 text-xl font-bold text-slate-900">{item.title}</h3>
                 <p className="mt-3 leading-7 text-slate-600">{item.description}</p>
               </Motion.div>

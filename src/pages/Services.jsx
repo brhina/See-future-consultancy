@@ -48,9 +48,9 @@ function Services() {
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
+                {/* <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
                   <service.icon className="h-5 w-5 text-white" />
-                </div>
+                </div> */}
                 <h2 className="text-2xl font-bold text-slate-900">{service.title}</h2>
                 <p className="mt-3 leading-7 text-slate-600">{service.summary}</p>
 
@@ -113,9 +113,9 @@ function Services() {
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100">
+                {/* <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100">
                   <sector.icon className="h-5 w-5 text-sky-700" />
-                </div>
+                </div> */}
                 <h3 className="text-xl font-bold text-slate-900">{sector.title}</h3>
                 <p className="mt-3 leading-7 text-slate-600">{sector.description}</p>
               </Motion.article>
@@ -153,12 +153,12 @@ function Services() {
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
-                <div className="flex items-center gap-3">
+                {/* <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-100 text-base font-bold text-sky-700">
                     {index + 1}
                   </div>
                   <step.icon className="h-5 w-5 text-sky-600" />
-                </div>
+                </div> */}
                 <h3 className="mt-5 text-xl font-bold text-slate-900">{step.title}</h3>
                 <p className="mt-3 leading-7 text-slate-600">{step.description}</p>
               </Motion.div>

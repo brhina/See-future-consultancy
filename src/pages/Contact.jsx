@@ -50,9 +50,9 @@ function Contact() {
                   variants={reduceMotion ? undefined : cardVariants}
                   {...(reduceMotion ? {} : hoverLift)}
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
+                  {/* <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
                     <card.icon className="h-5 w-5 text-white" />
-                  </div>
+                  </div> */}
                   <h2 className="mt-5 text-xl font-bold text-slate-900">{card.title}</h2>
                   <p className="mt-3 text-base font-medium text-slate-800">{card.value}</p>
                   <p className="mt-3 flex-1 leading-7 text-slate-600">{card.helper}</p>
