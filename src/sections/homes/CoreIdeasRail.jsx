@@ -8,8 +8,8 @@ function CoreIdeasRail() {
   const ideasToRender = reduceMotion ? homePageData.coreIdeas : duplicatedIdeas
 
   return (
-    <section className="relative overflow-hidden border-b border-slate-200 bg-slate-950 py-2 text-white lg:py-3">
-      <div className="relative mx-auto max-w-full">
+    <section className="relative overflow-hidden border-b border-slate-200/70 bg-slate-950 py-2 text-white lg:py-3">
+      <div className="page-frame relative max-w-full">
         <Motion.div
           className="core-ideas-rail relative overflow-hidden"
           variants={reduceMotion ? undefined : staggerContainer(0.05, 0.04)}
