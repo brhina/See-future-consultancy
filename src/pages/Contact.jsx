@@ -15,7 +15,7 @@ function Contact() {
         title={contactPageData.hero.title}
         description={contactPageData.hero.description}
         tags={contactPageData.hero.tags}
-        gradient="from-sky-50 via-white to-cyan-50"
+        gradient="from-blue-50 via-white to-slate-50"
       />
 
       <section className="page-section page-section-white">
@@ -56,7 +56,7 @@ function Contact() {
                   <h2 className="mt-5 text-xl font-bold text-slate-900">{card.title}</h2>
                   <p className="mt-3 text-base font-medium text-slate-800">{card.value}</p>
                   <p className="mt-3 flex-1 leading-7 text-slate-600">{card.helper}</p>
-                  <div className="mt-5 inline-flex items-center text-sm font-semibold text-sky-700">
+                  <div className="mt-5 inline-flex items-center text-sm font-semibold text-blue-700">
                     {card.action}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </div>
@@ -77,7 +77,7 @@ function Contact() {
               <div className="mt-6 space-y-4">
                 {contactPageData.readinessChecklist.map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-sky-300" />
+                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-blue-300" />
                     <p className="text-sm leading-7 text-slate-200">{item}</p>
                   </div>
                 ))}
@@ -136,7 +136,7 @@ function Contact() {
                   {...(reduceMotion ? {} : hoverLift)}
                 >
                   <div className="flex items-center gap-3">
-                    <item.icon className="h-5 w-5 text-sky-600" />
+                    <item.icon className="h-5 w-5 text-blue-600" />
                     <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
                   </div>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
@@ -169,7 +169,7 @@ function Contact() {
                     className="inline-flex items-center rounded-full bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm"
                     {...(reduceMotion ? {} : { whileHover: { y: -2 }, whileTap: { scale: 0.99 } })}
                   >
-                    <item.icon className="mr-2 h-4 w-4 text-emerald-600" />
+                    <item.icon className="mr-2 h-4 w-4 text-blue-600" />
                     {item.label}
                   </Motion.div>
                 ))}
@@ -190,7 +190,7 @@ function Contact() {
                   variants={reduceMotion ? undefined : cardVariants}
                   {...(reduceMotion ? {} : hoverLift)}
                 >
-                  <CheckCircle2 className="h-5 w-5 text-sky-600" />
+                  <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   <p className="mt-4 leading-7 text-slate-600">{item}</p>
                 </Motion.div>
               ))}
@@ -198,7 +198,7 @@ function Contact() {
           </div>
 
           <Motion.div
-            className="mt-8 rounded-[2rem] bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 p-8 text-white shadow-xl lg:p-10"
+            className="mt-8 rounded-[2rem] bg-gradient-to-r from-slate-900 to-blue-700 p-8 text-white shadow-xl lg:p-10"
             variants={reduceMotion ? undefined : cardVariants}
             initial={reduceMotion ? false : 'initial'}
             whileInView={reduceMotion ? undefined : 'animate'}
@@ -206,14 +206,14 @@ function Contact() {
           >
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-100">Ready When You Are</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-100">Ready When You Are</p>
                 <h2 className="mt-3 text-3xl font-bold lg:text-4xl">{contactPageData.cta.title}</h2>
-                <p className="mt-4 max-w-3xl text-base leading-7 text-sky-50">{contactPageData.cta.description}</p>
+                <p className="mt-4 max-w-3xl text-base leading-7 text-blue-50">{contactPageData.cta.description}</p>
               </div>
               <div className="flex justify-start lg:justify-end">
                 <a
                   href={contactPageData.cta.action.href}
-                  className="group inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-sky-700 transition-all duration-300 hover:scale-105"
+                  className="group inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-700 transition-all duration-300 hover:scale-105"
                 >
                   {contactPageData.cta.action.label}
                   <contactPageData.cta.action.icon className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
