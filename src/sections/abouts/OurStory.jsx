@@ -1,16 +1,10 @@
-import { BadgeCheck, ShieldCheck } from 'lucide-react'
+import { BadgeCheck } from 'lucide-react'
 import { motion as Motion, useReducedMotion } from 'framer-motion'
 import SectionHeading from '../../components/SectionHeading'
 import { aboutPageData } from '../../data/aboutData'
 import { cardVariants, hoverLift, sectionVariants, staggerContainer } from '../../utils/motionPresets'
 
-const toneClasses = {
-  blue: 'from-sky-500 to-cyan-500',
-  emerald: 'from-emerald-500 to-teal-500'
-}
-
 function OurStory() {
-  const PhilosophyIcon = aboutPageData.philosophy.icon
   const reduceMotion = useReducedMotion()
 
   return (
@@ -45,7 +39,7 @@ function OurStory() {
             initial={reduceMotion ? false : 'initial'}
             animate={reduceMotion ? undefined : 'animate'}
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-200">Core Facts</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-200">Core Facts</p>
             <div className="mt-5 grid gap-3">
               {aboutPageData.story.facts.map((fact) => (
                 <div key={fact} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100">
@@ -128,7 +122,7 @@ function OurStory() {
         >
           <Motion.article className="rounded-3xl bg-slate-900 p-6 text-white shadow-xl" variants={reduceMotion ? undefined : cardVariants}>
             <div className="flex items-center gap-3">
-              <BadgeCheck className="h-5 w-5 text-sky-300" />
+              <BadgeCheck className="h-5 w-5 text-blue-300" />
               <h2 className="text-2xl font-bold">Growth Timeline</h2>
             </div>
             <div className="mt-6 space-y-4">
@@ -138,7 +132,7 @@ function OurStory() {
                   className="rounded-2xl border border-white/10 bg-white/5 p-4"
                   {...(reduceMotion ? {} : { whileHover: { y: -2 } })}
                 >
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-300">{item.year}</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300">{item.year}</p>
                   <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
                   <p className="mt-2 text-sm leading-7 text-slate-200">{item.description}</p>
                 </Motion.div>
@@ -156,7 +150,7 @@ function OurStory() {
               {aboutPageData.differentiators.map((item) => (
                 <Motion.div key={item.title} className="rounded-2xl bg-slate-50 p-4" {...(reduceMotion ? {} : hoverLift)}>
                   <div className="flex items-center gap-3">
-                    <item.icon className="h-5 w-5 text-sky-600" />
+                    <item.icon className="h-5 w-5 text-blue-600" />
                     <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
                   </div>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>

@@ -68,7 +68,7 @@ function OurTeam() {
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : { whileHover: { y: -2 }, whileTap: { scale: 0.99 } })}
               >
-                <CheckCircle2 className="h-5 w-5 text-sky-300" />
+                <CheckCircle2 className="h-5 w-5 text-blue-300" />
                 <p className="mt-4 text-sm leading-7 text-slate-200">{item}</p>
               </Motion.div>
             ))}
