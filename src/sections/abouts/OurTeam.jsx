@@ -37,9 +37,9 @@ function OurTeam() {
               variants={reduceMotion ? undefined : cardVariants}
               {...(reduceMotion ? {} : hoverLift)}
             >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
+              {/* <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
                 <profile.icon className="h-5 w-5 text-white" />
-              </div>
+              </div> */}
               <h3 className="text-xl font-bold text-slate-900">{profile.title}</h3>
               <p className="mt-3 leading-7 text-slate-600">{profile.description}</p>
             </Motion.article>

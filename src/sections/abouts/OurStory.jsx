@@ -73,9 +73,9 @@ function OurStory() {
               variants={reduceMotion ? undefined : cardVariants}
               {...(reduceMotion ? {} : hoverLift)}
             >
-              <div className={`mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${toneClasses[item.tone]}`}>
+              {/* <div className={`mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${toneClasses[item.tone]}`}>
                 <item.icon className="h-5 w-5 text-white" />
-              </div>
+              </div> */}
               <h2 className="text-2xl font-bold text-slate-900">{item.title}</h2>
               <p className="mt-3 leading-7 text-slate-600">{item.description}</p>
             </Motion.article>
@@ -94,9 +94,9 @@ function OurStory() {
             variants={reduceMotion ? undefined : cardVariants}
             {...(reduceMotion ? {} : hoverLift)}
           >
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500">
+            {/* <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500">
               <PhilosophyIcon className="h-5 w-5 text-white" />
-            </div>
+            </div> */}
             <h2 className="text-2xl font-bold text-slate-900">{aboutPageData.philosophy.title}</h2>
             <p className="mt-3 leading-7 text-slate-600">{aboutPageData.philosophy.description}</p>
           </Motion.article>
@@ -106,9 +106,9 @@ function OurStory() {
             variants={reduceMotion ? undefined : cardVariants}
             {...(reduceMotion ? {} : hoverLift)}
           >
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-blue-500">
+            {/* <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-blue-500">
               <ShieldCheck className="h-5 w-5 text-white" />
-            </div>
+            </div> */}
             <h2 className="text-2xl font-bold text-slate-900">Core Values</h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {aboutPageData.values.map((value) => (
