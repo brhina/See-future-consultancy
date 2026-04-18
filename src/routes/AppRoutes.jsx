@@ -7,6 +7,9 @@ import About from '../pages/About';
 import Services from '../pages/Services';
 import ThematicAreas from '../pages/ThematicAreas';
 import Contact from '../pages/Contact';
+import TermsOfService from '../pages/TermsOfService';
+import PrivacyPolicy from '../pages/PrivacyPolicy';
+import HelpCenter from '../pages/HelpCenter';
 import LatestNews from '../sections/homes/LatestNews';
 
 function AppRoutes() {
@@ -30,6 +33,9 @@ function AppRoutes() {
           <Route path="/services" element={<Services />} />
           <Route path="/thematic-areas" element={<ThematicAreas />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/help" element={<HelpCenter />} />
         </Routes>
       </Motion.main>
     </AnimatePresence>
