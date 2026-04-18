@@ -5,11 +5,11 @@ function PageHero({ eyebrow, title, description, tags = [], gradient = 'from-sky
   const reduceMotion = useReducedMotion()
 
   return (
-    <section className={`relative overflow-hidden bg-gradient-to-br ${gradient} py-12 lg:py-16`}>
+    <section className={`page-section-hero overflow-hidden bg-gradient-to-br ${gradient}`}>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.14),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.14),transparent_28%)]" />
 
       <Motion.div
-        className="relative mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+        className="page-frame relative max-w-full"
         variants={reduceMotion ? undefined : staggerContainer(0.08, 0.05)}
         initial={reduceMotion ? false : 'initial'}
         animate={reduceMotion ? undefined : 'animate'}

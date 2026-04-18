@@ -9,9 +9,9 @@ function LatestNews() {
   const reduceMotion = useReducedMotion()
 
   return (
-    <section className="bg-gradient-to-br from-slate-50 via-white to-sky-50 py-12 lg:py-16">
+    <section className="page-section page-section-mist">
       <Motion.div
-        className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+        className="page-frame max-w-full"
         variants={reduceMotion ? undefined : sectionVariants}
         initial={reduceMotion ? false : 'initial'}
         whileInView={reduceMotion ? undefined : 'animate'}
