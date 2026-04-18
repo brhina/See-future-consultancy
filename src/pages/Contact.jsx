@@ -9,7 +9,7 @@ function Contact() {
   const reduceMotion = useReducedMotion()
 
   return (
-    <div className="bg-white">
+    <div className="page-shell">
       <PageHero
         eyebrow="Partnership and Project Inquiries"
         title={contactPageData.hero.title}
@@ -18,9 +18,9 @@ function Contact() {
         gradient="from-sky-50 via-white to-cyan-50"
       />
 
-      <section className="py-12 lg:py-16">
+      <section className="page-section page-section-white">
         <Motion.div
-          className="mx-auto grid max-w-full items-stretch gap-6 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8"
+          className="page-frame grid max-w-full items-stretch gap-6 lg:grid-cols-[1.1fr_0.9fr]"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -104,9 +104,9 @@ function Contact() {
         </Motion.div>
       </section>
 
-      <section className="bg-slate-50 py-12 lg:py-16">
+      <section className="page-section page-section-mist">
         <Motion.div
-          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-7xl"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -147,9 +147,9 @@ function Contact() {
         </Motion.div>
       </section>
 
-      <section className="bg-white py-12 lg:py-16">
+      <section className="page-section page-section-white">
         <Motion.div
-          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-7xl"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}

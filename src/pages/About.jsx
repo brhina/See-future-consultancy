@@ -11,7 +11,7 @@ function About() {
   const reduceMotion = useReducedMotion()
 
   return (
-    <div className="bg-white">
+    <div className="page-shell">
       <PageHero
         eyebrow="Who We Are"
         title={aboutPageData.hero.title}
@@ -24,9 +24,9 @@ function About() {
       <OurTeam />
       <OurClients />
 
-      <section className="bg-white py-12 lg:py-16">
+      <section className="page-section page-section-white">
         <Motion.div
-          className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-full"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -42,16 +42,16 @@ function About() {
                 <h2 className="mt-3 text-3xl font-bold lg:text-4xl">{aboutPageData.aboutCta.title}</h2>
                 <p className="mt-4 max-w-3xl text-base leading-7 text-sky-50">{aboutPageData.aboutCta.description}</p>
               </div>
-              <div className="flex flex-wrap gap-3 lg:justify-end">
+              <div className="grid grid-cols-2 gap-3 lg:justify-end">
                 <Link
                   to={aboutPageData.aboutCta.primary.to}
-                  className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-sky-700 transition-all duration-300 hover:scale-105"
+                  className="inline-flex h-full items-center justify-center rounded-full bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-sky-700 transition-all duration-300 hover:scale-105"
                 >
                   {aboutPageData.aboutCta.primary.label}
                 </Link>
                 <Link
                   to={aboutPageData.aboutCta.secondary.to}
-                  className="rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-white/10"
+                  className="inline-flex h-full items-center justify-center rounded-full border border-white/60 px-4 py-3 text-center text-sm font-semibold leading-tight text-white transition-all duration-300 hover:scale-105 hover:bg-white/10"
                 >
                   {aboutPageData.aboutCta.secondary.label}
                 </Link>
