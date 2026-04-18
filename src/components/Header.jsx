@@ -36,18 +36,18 @@ function Header() {
             <button
               type="button"
               onClick={() => setIsMapOpen(true)}
-              className="inline-flex items-center gap-2 transition-colors hover:text-sky-700"
+              className="inline-flex items-center gap-2 transition-colors hover:text-blue-700"
             >
-              <MapPin className="h-4 w-4 text-sky-600" />
+              <MapPin className="h-4 w-4 text-blue-600" />
               <span>{officeContact.locationLabel}</span>
             </button>
 
             <div className="flex items-center gap-6">
-              <a href={`tel:${officeContact.phone}`} className="inline-flex items-center gap-2 transition-colors hover:text-sky-700">
-                <Phone className="h-4 w-4 text-sky-600" />
+              <a href={`tel:${officeContact.phone}`} className="inline-flex items-center gap-2 transition-colors hover:text-blue-700">
+                <Phone className="h-4 w-4 text-blue-600" />
                 <span>{officeContact.phone}</span>
               </a>
-              <a href={`mailto:${officeContact.email}`} className="transition-colors hover:text-sky-700">
+              <a href={`mailto:${officeContact.email}`} className="transition-colors hover:text-blue-700">
                 {officeContact.email}
               </a>
             </div>
@@ -59,7 +59,7 @@ function Header() {
             <Link to="/" className="flex min-w-0 items-center gap-3">
               <img src={seefLogo} alt="SEEF Consulting Logo" className="h-11 w-auto" />
               <div className="hidden min-w-0 sm:block">
-                <div className="truncate text-sm font-semibold uppercase tracking-[0.26em] text-sky-700">SEE Future Consult</div>
+                <div className="truncate text-sm font-semibold uppercase tracking-[0.26em] text-blue-700">SEE Future Consult</div>
                 <div className="truncate text-sm text-slate-600">Integrated sustainability consulting</div>
               </div>
             </Link>
@@ -84,12 +84,12 @@ function Header() {
               {/* <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800 xl:block">
                 {officeContact.hours}
               </div> */}
-              <Link
-                to="/contact"
-                className="inline-flex items-center rounded-full bg-gradient-to-r from-sky-600 to-emerald-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200/70 transition-transform duration-300 hover:-translate-y-0.5"
-              >
-                Start a Project
-                <ArrowRight className="ml-2 h-4 w-4" />
+            <Link
+              to="/contact"
+              className="inline-flex items-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-200/60 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-700"
+            >
+              Start a Project
+              <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
 
@@ -132,11 +132,11 @@ function Header() {
                 onClick={() => setIsMapOpen(true)}
                 className="inline-flex items-center gap-2 text-left font-medium text-slate-700"
               >
-                <MapPin className="h-4 w-4 text-sky-600" />
+                <MapPin className="h-4 w-4 text-blue-600" />
                 {officeContact.locationLabel}
               </button>
               <a href={`tel:${officeContact.phone}`} className="inline-flex items-center gap-2">
-                <Phone className="h-4 w-4 text-sky-600" />
+                <Phone className="h-4 w-4 text-blue-600" />
                 {officeContact.phone}
               </a>
               <a href={`mailto:${officeContact.email}`} className="text-slate-700">
@@ -144,7 +144,7 @@ function Header() {
               </a>
               <Link
                 to="/contact"
-                className="mt-1 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-600 to-emerald-500 px-5 py-3 font-semibold text-white"
+                className="mt-1 inline-flex items-center justify-center rounded-full bg-blue-600 px-5 py-3 font-semibold text-white transition-colors duration-300 hover:bg-blue-700"
               >
                 Start a Project
                 <ArrowRight className="ml-2 h-4 w-4" />

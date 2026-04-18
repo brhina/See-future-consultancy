@@ -11,7 +11,7 @@ function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-slate-950 text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.22),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.16),transparent_24%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.2),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.12),transparent_24%)]" />
       <div className="absolute inset-0 opacity-10 [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:36px_36px]" />
 
       <div className="page-frame relative max-w-full py-3 lg:px-3 lg:py-4">
@@ -20,7 +20,7 @@ function Footer() {
             <Link to="/" className="inline-flex items-center gap-3">
               <img src={seefLogo} alt="SEEF logo" className="h-12 w-auto" />
               <div>
-                <div className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-200">SEE Future Consult</div>
+                <div className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-200">SEE Future Consult</div>
                 <div className="text-sm text-slate-300">{siteMeta.tagline}</div>
               </div>
             </Link>
@@ -33,7 +33,7 @@ function Footer() {
                   key={item.label}
                   className="inline-flex w-fit items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200"
                 >
-                  <item.icon className="mr-2 h-4 w-4 text-emerald-300" />
+                  <item.icon className="mr-2 h-4 w-4 text-blue-300" />
                   {item.label}
                 </div>
               ))}
@@ -51,7 +51,7 @@ function Footer() {
                     to={link.href}
                     className="inline-flex items-center text-sm text-slate-300 transition-colors hover:text-white"
                   >
-                    <link.icon className="mr-3 h-4 w-4 text-sky-300" />
+                    <link.icon className="mr-3 h-4 w-4 text-blue-300" />
                     {link.name}
                   </Link>
                 ))}
@@ -68,7 +68,7 @@ function Footer() {
                     to={service.href}
                     className="inline-flex items-center text-sm text-slate-300 transition-colors hover:text-white"
                   >
-                    <service.icon className="mr-3 h-4 w-4 text-emerald-300" />
+                    <service.icon className="mr-3 h-4 w-4 text-blue-300" />
                     {service.name}
                   </Link>
                 ))}
@@ -84,15 +84,15 @@ function Footer() {
                 onClick={() => setIsMapOpen(true)}
                 className="inline-flex items-start gap-3 text-left transition-colors hover:text-white"
               >
-                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-sky-300" />
+                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-300" />
                 <span>{officeContact.address}</span>
               </button>
               <a href={`tel:${officeContact.phone}`} className="inline-flex items-center gap-3 transition-colors hover:text-white">
-                <Phone className="h-4 w-4 flex-shrink-0 text-sky-300" />
+                <Phone className="h-4 w-4 flex-shrink-0 text-blue-300" />
                 <span>{officeContact.phone}</span>
               </a>
               <a href={`mailto:${officeContact.email}`} className="inline-flex items-center gap-3 transition-colors hover:text-white">
-                <Mail className="h-4 w-4 flex-shrink-0 text-sky-300" />
+                <Mail className="h-4 w-4 flex-shrink-0 text-blue-300" />
                 <span>{officeContact.email}</span>
               </a>
               <div className="rounded-xl px-2">
