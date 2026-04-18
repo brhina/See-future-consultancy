@@ -81,9 +81,9 @@ function Header() {
             </nav>
 
             <div className="hidden items-center gap-3 lg:flex">
-              <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800 xl:block">
+              {/* <div className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800 xl:block">
                 {officeContact.hours}
-              </div>
+              </div> */}
               <Link
                 to="/contact"
                 className="inline-flex items-center rounded-full bg-gradient-to-r from-sky-600 to-emerald-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-200/70 transition-transform duration-300 hover:-translate-y-0.5"

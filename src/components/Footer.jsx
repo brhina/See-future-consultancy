@@ -95,9 +95,9 @@ function Footer() {
                 <Mail className="h-4 w-4 flex-shrink-0 text-sky-300" />
                 <span>{officeContact.email}</span>
               </a>
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-200">Office Hours</p>
-                <p className="mt-3 text-sm text-slate-200">{officeContact.hours}</p>
+              <div className="rounded-xl px-2">
+                {/* <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-200">Office Hours</p> */}
+                <p className="text-sm text-slate-200">{officeContact.hours}</p>
                 <Link to="/contact" className="mt-4 inline-flex items-center font-semibold text-white">
                   Start a conversation
                   <ArrowRight className="ml-2 h-4 w-4" />
