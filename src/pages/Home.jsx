@@ -85,7 +85,7 @@ function Home() {
         ref={overviewRef}
         className="page-section page-section-soft overflow-hidden"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.12),transparent_35%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.08),transparent_35%)]" />
         <Motion.div
           className="page-frame relative max-w-full"
           variants={reduceMotion ? undefined : sectionVariants}
@@ -121,7 +121,7 @@ function Home() {
                 {homePageData.strengths.map((item) => (
                   <Motion.div
                     key={item.title}
-                    className="rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-200 hover:shadow-md"
+                    className="rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-md"
                     variants={reduceMotion ? undefined : cardVariants}
                     {...(reduceMotion ? {} : hoverLift)}
                   >
@@ -138,14 +138,14 @@ function Home() {
               <div className="mt-6 grid grid-cols-2 gap-3">
                 <Link
                   to="/about"
-                  className="group inline-flex h-full items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-4 py-3 text-center text-sm font-semibold leading-tight text-white shadow-sm transition-all duration-300 hover:scale-105 hover:from-sky-600 hover:to-cyan-600"
+                  className="group inline-flex h-full items-center justify-center rounded-full bg-blue-600 px-4 py-3 text-center text-sm font-semibold leading-tight text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-blue-700"
                 >
                   Learn More About SEEF
                   <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
                 <Link
                   to="/contact"
-                  className="group inline-flex h-full items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-slate-700 shadow-sm transition-all duration-300 hover:border-sky-500 hover:text-sky-600"
+                  className="group inline-flex h-full items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-slate-700 shadow-sm transition-all duration-300 hover:border-blue-400 hover:text-blue-700"
                 >
                   Get in Touch
                   <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -155,7 +155,7 @@ function Home() {
 
             <div className="space-y-5">
               <Motion.div
-                className="rounded-3xl bg-white p-6 shadow-lg shadow-sky-100/70"
+                className="rounded-3xl bg-white p-6 shadow-lg shadow-blue-100/60"
                 variants={reduceMotion ? undefined : cardVariants}
                 initial={reduceMotion ? false : 'initial'}
                 whileInView={reduceMotion ? undefined : 'animate'}
@@ -202,7 +202,7 @@ function Home() {
                       {...(reduceMotion ? {} : { whileHover: { y: -2 }, transition: { duration: 0.18 } })}
                     >
                       <div className="flex items-center gap-3">
-                        <group.icon className="h-5 w-5 text-sky-300" />
+                        <group.icon className="h-5 w-5 text-blue-300" />
                         <h4 className="font-semibold">{group.title}</h4>
                       </div>
                       <div className="mt-3 space-y-2 text-sm text-slate-200">
@@ -244,7 +244,7 @@ function Home() {
             {homePageData.serviceDomains.map((service) => (
               <Motion.div
                 key={service.title}
-                className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-sky-200 hover:shadow-lg"
+                className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-lg"
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
@@ -260,14 +260,14 @@ function Home() {
           <div className="mt-8 grid grid-cols-2 gap-3">
             <Link
               to="/services"
-              className="group inline-flex h-full items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-4 py-3 text-center text-sm font-semibold leading-tight text-white shadow-sm transition-all duration-300 hover:scale-105 hover:from-sky-600 hover:to-cyan-600"
+              className="group inline-flex h-full items-center justify-center rounded-full bg-blue-600 px-4 py-3 text-center text-sm font-semibold leading-tight text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-blue-700"
             >
               View All Services
               <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
               to="/thematic-areas"
-              className="group inline-flex h-full items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-sky-500 hover:text-sky-600"
+              className="group inline-flex h-full items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-blue-400 hover:text-blue-700"
             >
               Explore Thematic Areas
               <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -316,12 +316,13 @@ function Home() {
         </Motion.div>
       </section>
 
-      <section className="page-section bg-gradient-to-b from-slate-950 via-slate-900 to-sky-950 text-white">
+      <section className="page-section bg-slate-950 text-white">
         <div className="page-frame max-w-full">
           <SectionHeading
             eyebrow="Featured Focus Areas"
             title="Where SEEF adds momentum fastest"
             description="These are the problem spaces where integrated advisory, local understanding, and practical planning tend to matter most."
+            theme="dark"
           />
 
           <div className="grid gap-5 lg:grid-cols-3">
@@ -379,7 +380,7 @@ function Home() {
               whileInView={reduceMotion ? undefined : 'animate'}
               viewport={{ once: true, amount: 0.2 }}
             >
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-200">Knowledge Transfer</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-200">Knowledge Transfer</p>
               <h3 className="mt-3 text-2xl font-bold">{homePageData.knowledgeTransfer.title}</h3>
               <p className="mt-4 text-sm leading-7 text-slate-200">{homePageData.knowledgeTransfer.description}</p>
               <div className="mt-6 grid gap-3">
@@ -396,17 +397,17 @@ function Home() {
 
       <section className="page-section page-section-white">
         <div className="page-frame max-w-full">
-          <div className="rounded-[2rem] bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 p-8 text-white shadow-xl lg:p-10">
+          <div className="rounded-[2rem] bg-gradient-to-r from-slate-900 to-blue-700 p-8 text-white shadow-xl lg:p-10">
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-100">Work With SEEF</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-100">Work With SEEF</p>
                 <h2 className="mt-3 text-3xl font-bold lg:text-4xl">{homePageData.cta.title}</h2>
-                <p className="mt-4 max-w-3xl text-base leading-7 text-sky-50">{homePageData.cta.description}</p>
+                <p className="mt-4 max-w-3xl text-base leading-7 text-blue-50">{homePageData.cta.description}</p>
               </div>
               <div className="grid grid-cols-2 gap-3 lg:justify-end">
                 <Link
                   to={homePageData.cta.primary.to}
-                  className="inline-flex h-full items-center justify-center rounded-full bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-sky-700 transition-all duration-300 hover:scale-105"
+                  className="inline-flex h-full items-center justify-center rounded-full bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-blue-700 transition-all duration-300 hover:scale-105"
                 >
                   {homePageData.cta.primary.label}
                 </Link>
@@ -428,7 +429,7 @@ function Home() {
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-8 right-8 z-50 rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 p-4 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+          className="fixed bottom-8 right-8 z-50 rounded-full bg-blue-600 p-4 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-blue-700 hover:shadow-xl"
           aria-label="Scroll to top"
         >
           <ArrowUp className="h-6 w-6" />
