@@ -19,8 +19,8 @@ function Hero() {
       <div className="absolute inset-0 bg-slate-950/60" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.28),transparent_42%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.24),transparent_32%)]" />
 
-      <div className="relative z-10 flex min-h-[calc(78vh-4rem)] items-center py-12">
-        <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex min-h-[calc(78vh-4rem)] items-center py-10 lg:py-12">
+        <div className="page-frame max-w-full">
           <div className="grid items-end gap-10 lg:grid-cols-[1.25fr_0.75fr]">
             <div className="max-w-4xl">
               <div

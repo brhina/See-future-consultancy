@@ -6,7 +6,7 @@ function SectionHeading({ eyebrow, title, description, centered = false }) {
 
   return (
     <Motion.div
-      className={centered ? 'mx-auto mb-10 max-w-3xl text-center' : 'mb-10 max-w-3xl'}
+      className={centered ? 'mx-auto mb-8 max-w-3xl text-center lg:mb-10' : 'mb-8 max-w-3xl lg:mb-10'}
       variants={reduceMotion ? undefined : sectionVariants}
       initial={reduceMotion ? false : 'initial'}
       whileInView={reduceMotion ? undefined : 'animate'}
