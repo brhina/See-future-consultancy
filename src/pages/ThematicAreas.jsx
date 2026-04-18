@@ -14,7 +14,7 @@ function ThematicAreas() {
         title={thematicAreasPageData.hero.title}
         description={thematicAreasPageData.hero.description}
         tags={thematicAreasPageData.hero.tags}
-        gradient="from-sky-50 via-white to-green-50"
+        gradient="from-blue-50 via-white to-slate-50"
       />
 
       <section className="page-section page-section-white">
