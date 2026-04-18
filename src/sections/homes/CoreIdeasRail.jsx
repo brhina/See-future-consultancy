@@ -8,7 +8,7 @@ function CoreIdeasRail() {
   const ideasToRender = reduceMotion ? homePageData.coreIdeas : duplicatedIdeas
 
   return (
-    <section className="relative overflow-hidden border-b border-slate-200/70 bg-slate-950 py-2 text-white lg:py-3">
+    <section className="relative overflow-hidden border-b border-slate-800/80 bg-slate-950 py-2 text-white lg:py-3">
       <div className="page-frame relative max-w-full">
         <Motion.div
           className="core-ideas-rail relative overflow-hidden"
@@ -21,7 +21,7 @@ function CoreIdeasRail() {
             {ideasToRender.map((idea, index) => (
               <Motion.article
                 key={`${idea.title}-${index}`}
-                className="core-idea-card group relative flex-none overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/10 p-3 shadow-none backdrop-blur-sm"
+                className="core-idea-card group relative flex-none overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/[0.08] p-3 shadow-none backdrop-blur-sm"
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
@@ -29,7 +29,7 @@ function CoreIdeasRail() {
                   <h3 className="text-base font-bold leading-snug text-white lg:text-lg">
                     {idea.title}
                   </h3>
-                  <p className="mt-1.5 text-xs leading-5 text-slate-200 lg:text-sm lg:leading-6">
+                  <p className="mt-1.5 text-xs leading-5 text-slate-300 lg:text-sm lg:leading-6">
                     {idea.description}
                   </p>
                 </div>
