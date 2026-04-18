@@ -8,9 +8,9 @@ function OurTeam() {
   const reduceMotion = useReducedMotion()
 
   return (
-    <section className="bg-white py-12 lg:py-16">
+    <section className="page-section page-section-white">
       <Motion.div
-        className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+        className="page-frame max-w-full"
         variants={reduceMotion ? undefined : sectionVariants}
         initial={reduceMotion ? false : 'initial'}
         whileInView={reduceMotion ? undefined : 'animate'}
@@ -47,7 +47,7 @@ function OurTeam() {
         </Motion.div>
 
         <Motion.div
-          className="mt-10 rounded-[2rem] bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-8 text-white shadow-xl"
+          className="mt-8 rounded-[2rem] bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-8 text-white shadow-xl lg:mt-10"
           variants={reduceMotion ? undefined : cardVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}

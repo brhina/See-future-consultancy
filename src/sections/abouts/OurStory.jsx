@@ -14,13 +14,12 @@ function OurStory() {
   const reduceMotion = useReducedMotion()
 
   return (
-    <section className="bg-gradient-to-br from-white via-sky-50/40 to-emerald-50/40 py-12 lg:py-16">
+    <section className="page-section page-section-soft">
       <Motion.div
-        className="mx-auto max-w-full px-4 sm:px-6 lg:px-8"
+        className="page-frame max-w-full"
         variants={reduceMotion ? undefined : sectionVariants}
         initial={reduceMotion ? false : 'initial'}
-        whileInView={reduceMotion ? undefined : 'animate'}
-        viewport={{ once: true, amount: 0.2 }}
+        animate={reduceMotion ? undefined : 'animate'}
       >
         <SectionHeading title={aboutPageData.story.title} description={aboutPageData.story.description} />
 
@@ -29,8 +28,7 @@ function OurStory() {
             className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
             variants={reduceMotion ? undefined : cardVariants}
             initial={reduceMotion ? false : 'initial'}
-            whileInView={reduceMotion ? undefined : 'animate'}
-            viewport={{ once: true, amount: 0.2 }}
+            animate={reduceMotion ? undefined : 'animate'}
             {...(reduceMotion ? {} : hoverLift)}
           >
             <h3 className="text-xl font-bold text-slate-900">Why SEEF was founded</h3>
@@ -45,8 +43,7 @@ function OurStory() {
             className="rounded-3xl bg-slate-900 p-6 text-white shadow-xl"
             variants={reduceMotion ? undefined : cardVariants}
             initial={reduceMotion ? false : 'initial'}
-            whileInView={reduceMotion ? undefined : 'animate'}
-            viewport={{ once: true, amount: 0.2 }}
+            animate={reduceMotion ? undefined : 'animate'}
           >
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-200">Core Facts</p>
             <div className="mt-5 grid gap-3">
@@ -63,8 +60,7 @@ function OurStory() {
           className="mt-5 grid gap-5 lg:grid-cols-2"
           variants={reduceMotion ? undefined : staggerContainer(0.06, 0.05)}
           initial={reduceMotion ? false : 'initial'}
-          whileInView={reduceMotion ? undefined : 'animate'}
-          viewport={{ once: true, amount: 0.2 }}
+          animate={reduceMotion ? undefined : 'animate'}
         >
           {aboutPageData.missionVision.map((item) => (
             <Motion.article
@@ -86,8 +82,7 @@ function OurStory() {
           className="mt-5 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]"
           variants={reduceMotion ? undefined : staggerContainer(0.06, 0.04)}
           initial={reduceMotion ? false : 'initial'}
-          whileInView={reduceMotion ? undefined : 'animate'}
-          viewport={{ once: true, amount: 0.2 }}
+          animate={reduceMotion ? undefined : 'animate'}
         >
           <Motion.article
             className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
@@ -126,11 +121,10 @@ function OurStory() {
         </Motion.div>
 
         <Motion.div
-          className="mt-12 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]"
+          className="mt-8 grid gap-5 lg:mt-12 lg:grid-cols-[1.1fr_0.9fr]"
           variants={reduceMotion ? undefined : staggerContainer(0.06, 0.04)}
           initial={reduceMotion ? false : 'initial'}
-          whileInView={reduceMotion ? undefined : 'animate'}
-          viewport={{ once: true, amount: 0.15 }}
+          animate={reduceMotion ? undefined : 'animate'}
         >
           <Motion.article className="rounded-3xl bg-slate-900 p-6 text-white shadow-xl" variants={reduceMotion ? undefined : cardVariants}>
             <div className="flex items-center gap-3">
