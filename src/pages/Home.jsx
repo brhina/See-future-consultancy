@@ -126,9 +126,6 @@ function Home() {
                     {...(reduceMotion ? {} : hoverLift)}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
-                        <item.icon className="h-5 w-5 text-white" />
-                      </div>
                       <div>
                         <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
                         <p className="mt-2 text-sm leading-7 text-slate-600">{item.description}</p>
@@ -251,9 +248,9 @@ function Home() {
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
+                {/* <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
                   <service.icon className="h-5 w-5 text-white" />
-                </div>
+                </div> */}
                 <h3 className="text-lg font-bold text-slate-900">{service.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">{service.description}</p>
               </Motion.div>
@@ -308,9 +305,9 @@ function Home() {
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
+                {/* <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-cyan-500">
                   <group.icon className="h-5 w-5 text-white" />
-                </div>
+                </div> */}
                 <h3 className="text-xl font-bold text-slate-900">{group.title}</h3>
                 <p className="mt-3 leading-7 text-slate-600">{group.description}</p>
               </Motion.article>
@@ -330,9 +327,9 @@ function Home() {
           <div className="grid gap-5 lg:grid-cols-3">
             {homePageData.focusAreas.map((item) => (
               <article key={item.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
+                {/* <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
                   <item.icon className="h-5 w-5 text-sky-300" />
-                </div>
+                </div> */}
                 <h3 className="mt-5 text-xl font-bold">{item.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-200">{item.description}</p>
                 <div className="mt-5 space-y-2 text-sm text-slate-200">
@@ -365,9 +362,9 @@ function Home() {
               <div className="grid gap-5 md:grid-cols-2">
                 {homePageData.deliveryApproach.map((step, index) => (
                   <div key={step.title} className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-100 text-base font-bold text-sky-700">
+                    {/* <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-100 text-base font-bold text-sky-700">
                       {index + 1}
-                    </div>
+                    </div> */}
                     <h3 className="mt-5 text-lg font-bold text-slate-900">{step.title}</h3>
                     <p className="mt-3 text-sm leading-7 text-slate-600">{step.description}</p>
                   </div>

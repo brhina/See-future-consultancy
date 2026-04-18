@@ -9,7 +9,7 @@ function CoreIdeasRail() {
 
   return (
     <section className="relative overflow-hidden border-b border-slate-200 bg-slate-950 py-2 text-white lg:py-3">
-      <div className="relative mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-full">
         <Motion.div
           className="core-ideas-rail relative overflow-hidden"
           variants={reduceMotion ? undefined : staggerContainer(0.05, 0.04)}
