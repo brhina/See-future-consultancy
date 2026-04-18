@@ -8,7 +8,7 @@ function ThematicAreas() {
   const reduceMotion = useReducedMotion()
 
   return (
-    <div className="bg-white">
+    <div className="page-shell">
       <PageHero
         eyebrow="Cross-Sector Focus"
         title={thematicAreasPageData.hero.title}
@@ -17,9 +17,9 @@ function ThematicAreas() {
         gradient="from-sky-50 via-white to-green-50"
       />
 
-      <section className="py-12 lg:py-16">
+      <section className="page-section page-section-white">
         <Motion.div
-          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-7xl"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -77,9 +77,9 @@ function ThematicAreas() {
         </Motion.div>
       </section>
 
-      <section className="bg-slate-50 py-12 lg:py-16">
+      <section className="page-section page-section-mist">
         <Motion.div
-          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-7xl"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
@@ -117,9 +117,9 @@ function ThematicAreas() {
         </Motion.div>
       </section>
 
-      <section className="bg-white py-12 lg:py-16">
+      <section className="page-section page-section-white">
         <Motion.div
-          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          className="page-frame max-w-7xl"
           variants={reduceMotion ? undefined : sectionVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}
