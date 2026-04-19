@@ -47,7 +47,7 @@ function OurClients() {
         </Motion.div>
 
         <Motion.div
-          className="mt-8 rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl lg:mt-10"
+          className="mt-8 lg:rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl lg:mt-10"
           variants={reduceMotion ? undefined : cardVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}

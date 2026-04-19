@@ -47,7 +47,7 @@ function OurTeam() {
         </Motion.div>
 
         <Motion.div
-          className="mt-8 rounded-[2rem] bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-8 text-white shadow-xl lg:mt-10"
+          className="mt-8 lg:rounded-[2rem] bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-8 text-white shadow-xl lg:mt-10"
           variants={reduceMotion ? undefined : cardVariants}
           initial={reduceMotion ? false : 'initial'}
           whileInView={reduceMotion ? undefined : 'animate'}

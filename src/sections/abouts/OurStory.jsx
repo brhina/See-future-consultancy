@@ -19,7 +19,7 @@ function OurStory() {
 
         <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
           <Motion.article
-            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+            className="lg:rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
             variants={reduceMotion ? undefined : cardVariants}
             initial={reduceMotion ? false : 'initial'}
             animate={reduceMotion ? undefined : 'animate'}
@@ -34,7 +34,7 @@ function OurStory() {
           </Motion.article>
 
           <Motion.article
-            className="rounded-3xl bg-slate-900 p-6 text-white shadow-xl"
+            className="lg:rounded-3xl bg-slate-900 p-6 text-white shadow-xl"
             variants={reduceMotion ? undefined : cardVariants}
             initial={reduceMotion ? false : 'initial'}
             animate={reduceMotion ? undefined : 'animate'}
@@ -59,7 +59,7 @@ function OurStory() {
           {aboutPageData.missionVision.map((item) => (
             <Motion.article
               key={item.title}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+              className="lg:rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
               variants={reduceMotion ? undefined : cardVariants}
               {...(reduceMotion ? {} : hoverLift)}
             >
@@ -79,7 +79,7 @@ function OurStory() {
           animate={reduceMotion ? undefined : 'animate'}
         >
           <Motion.article
-            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+            className="lg:rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
             variants={reduceMotion ? undefined : cardVariants}
             {...(reduceMotion ? {} : hoverLift)}
           >
@@ -91,7 +91,7 @@ function OurStory() {
           </Motion.article>
 
           <Motion.article
-            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+            className="lg:rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
             variants={reduceMotion ? undefined : cardVariants}
             {...(reduceMotion ? {} : hoverLift)}
           >
@@ -120,7 +120,7 @@ function OurStory() {
           initial={reduceMotion ? false : 'initial'}
           animate={reduceMotion ? undefined : 'animate'}
         >
-          <Motion.article className="rounded-3xl bg-slate-900 p-6 text-white shadow-xl" variants={reduceMotion ? undefined : cardVariants}>
+          <Motion.article className="lg:rounded-3xl bg-slate-900 p-6 text-white shadow-xl" variants={reduceMotion ? undefined : cardVariants}>
             <div className="flex items-center gap-3">
               <BadgeCheck className="h-5 w-5 text-blue-300" />
               <h2 className="text-2xl font-bold">Growth Timeline</h2>
@@ -141,14 +141,14 @@ function OurStory() {
           </Motion.article>
 
           <Motion.article
-            className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+            className="lg:rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
             variants={reduceMotion ? undefined : cardVariants}
             {...(reduceMotion ? {} : hoverLift)}
           >
             <h2 className="text-2xl font-bold text-slate-900">Why partners choose SEEF</h2>
             <div className="mt-6 space-y-4">
               {aboutPageData.differentiators.map((item) => (
-                <Motion.div key={item.title} className="rounded-2xl bg-slate-50 p-4" {...(reduceMotion ? {} : hoverLift)}>
+                <Motion.div key={item.title} className="lg:rounded-3xl bg-slate-50 p-4" {...(reduceMotion ? {} : hoverLift)}>
                   <div className="flex items-center gap-3">
                     <item.icon className="h-5 w-5 text-blue-600" />
                     <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
