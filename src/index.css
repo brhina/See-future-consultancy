@@ -17,12 +17,12 @@
 
   .page-section {
     position: relative;
-    padding-block: 2.75rem;
+    padding-block: 1rem;
   }
 
   .page-section-hero {
     position: relative;
-    padding-block: 3rem;
+    padding-block: 2rem;
   }
 
   .page-section-soft {
@@ -66,15 +66,15 @@ body {
 @media (min-width: 1024px) {
   .page-frame {
     margin-inline: auto;
-    padding-inline: 2rem;
+    padding-inline: 1rem;
   }
 
   .page-section {
-    padding-block: 4rem;
+    padding-block: 1rem;
   }
 
   .page-section-hero {
-    padding-block: 4rem;
+    padding-block: 1rem;
   }
 }
 
@@ -115,13 +115,11 @@ button {
 
 .core-idea-card {
   width: min(86vw, 22rem);
-  min-height: 8.75rem;
 }
 
 @media (min-width: 1024px) {
   .core-idea-card {
     width: calc((min(100vw, 80rem) - 4rem - 2rem) / 3);
-    min-height: 9.5rem;
   }
 }
 

@@ -41,7 +41,7 @@ function LatestNews() {
           viewport={{ once: true, amount: 0.25 }}
         >
           <Motion.article
-            className="rounded-3xl bg-slate-900 p-6 text-white shadow-xl lg:p-8"
+            className="lg:rounded-3xl bg-slate-900 p-6 text-white shadow-xl lg:p-8"
             variants={reduceMotion ? undefined : cardVariants}
           >
             <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-blue-200">
