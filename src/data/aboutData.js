@@ -20,7 +20,7 @@ export const aboutPageData = {
     title: 'About SEE Future Consult PLC',
     description:
       'SEEF was established in early 2023 to advance sustainable development through integrated social, environmental, and economic solutions that are rigorous, practical, and locally grounded.',
-    tags: ['Founded in 2023', 'Headquartered in Addis Ababa', 'Built for collaboration']
+    tags: ['Founded in 2023', 'Headquartered in Addis Ababa']
   },
   story: {
     title: 'Our Story',
