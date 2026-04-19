@@ -117,7 +117,7 @@ function ResourcePage({ pageData }) {
               <Motion.section
                 id={section.id}
                 key={section.id}
-                className="scroll-mt-32 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm lg:p-8"
+                className="scroll-mt-32 lg:rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm lg:p-8"
                 variants={reduceMotion ? undefined : cardVariants}
               >
                 <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr]">
@@ -171,7 +171,7 @@ function ResourcePage({ pageData }) {
           viewport={{ once: true, amount: 0.15 }}
         >
           <Motion.div
-            className="rounded-[2rem] bg-gradient-to-r from-slate-900 to-blue-700 p-8 text-white shadow-xl lg:p-10"
+            className="lg:rounded-[2rem] bg-gradient-to-r from-slate-900 to-blue-700 p-8 text-white shadow-xl lg:p-10"
             variants={reduceMotion ? undefined : cardVariants}
           >
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
