@@ -135,20 +135,20 @@ function Home() {
                 ))}
               </Motion.div>
 
-              <div className="mt-6 grid grid-cols-2 gap-3">
+              <div className="mt-6 grid grid-cols-2 gap-2">
                 <Link
                   to="/about"
                   className="group inline-flex h-full items-center justify-center rounded-full bg-blue-600 px-4 py-3 text-center text-sm font-semibold leading-tight text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-blue-700"
                 >
-                  Learn More About SEEF
-                  <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  More About SEEF
+                  {/* <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /> */}
                 </Link>
                 <Link
                   to="/contact"
                   className="group inline-flex h-full items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-slate-700 shadow-sm transition-all duration-300 hover:border-blue-400 hover:text-blue-700"
                 >
                   Get in Touch
-                  <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  {/* <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /> */}
                 </Link>
               </div>
             </div>
@@ -187,7 +187,7 @@ function Home() {
               </Motion.div>
 
               <Motion.div
-                className="rounded-3xl bg-slate-900 p-6 text-white shadow-lg"
+                className="lg:rounded-3xl bg-slate-900 p-6 text-white shadow-lg"
                 variants={reduceMotion ? undefined : cardVariants}
                 initial={reduceMotion ? false : 'initial'}
                 whileInView={reduceMotion ? undefined : 'animate'}
@@ -263,14 +263,14 @@ function Home() {
               className="group inline-flex h-full items-center justify-center rounded-full bg-blue-600 px-4 py-3 text-center text-sm font-semibold leading-tight text-white shadow-sm transition-all duration-300 hover:scale-105 hover:bg-blue-700"
             >
               View All Services
-              <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              {/* <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /> */}
             </Link>
             <Link
               to="/thematic-areas"
               className="group inline-flex h-full items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-blue-400 hover:text-blue-700"
             >
-              Explore Thematic Areas
-              <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              Explore Thematics
+              {/* <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /> */}
             </Link>
           </div>
         </Motion.div>
@@ -374,7 +374,7 @@ function Home() {
             </div>
 
             <Motion.div
-              className="rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
+              className="lg:rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
               variants={reduceMotion ? undefined : cardVariants}
               initial={reduceMotion ? false : 'initial'}
               whileInView={reduceMotion ? undefined : 'animate'}
@@ -397,26 +397,43 @@ function Home() {
 
       <section className="page-section page-section-white">
         <div className="page-frame max-w-full">
-          <div className="rounded-[2rem] bg-gradient-to-r from-slate-900 to-blue-700 p-8 text-white shadow-xl lg:p-10">
-            <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <div className="relative overflow-hidden lg:rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl lg:p-10">
+            
+            {/* subtle radial glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.25),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.18),transparent_40%)]" />
+
+            <div className="relative z-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+              
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-100">Work With SEEF</p>
-                <h2 className="mt-3 text-3xl font-bold lg:text-4xl">{homePageData.cta.title}</h2>
-                <p className="mt-4 max-w-3xl text-base leading-7 text-blue-50">{homePageData.cta.description}</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-200">
+                  Work With SEEF
+                </p>
+
+                <h2 className="mt-3 text-3xl font-bold lg:text-4xl">
+                  {homePageData.cta.title}
+                </h2>
+
+                <p className="mt-4 max-w-3xl text-base leading-7 text-blue-50/90">
+                  {homePageData.cta.description}
+                </p>
               </div>
+
               <div className="grid grid-cols-2 gap-3 lg:justify-end">
+                
                 <Link
                   to={homePageData.cta.primary.to}
-                  className="inline-flex h-full items-center justify-center rounded-full bg-white px-4 py-3 text-center text-sm font-semibold leading-tight text-blue-700 transition-all duration-300 hover:scale-105"
+                  className="inline-flex h-full items-center justify-center rounded-full bg-white px-4 py-3 text-center text-sm font-semibold text-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-md"
                 >
                   {homePageData.cta.primary.label}
                 </Link>
+
                 <Link
                   to={homePageData.cta.secondary.to}
-                  className="inline-flex h-full items-center justify-center rounded-full border border-white/60 px-4 py-3 text-center text-sm font-semibold leading-tight text-white transition-all duration-300 hover:scale-105 hover:bg-white/10"
+                  className="inline-flex h-full items-center justify-center rounded-full border border-white/50 px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-white/10"
                 >
                   {homePageData.cta.secondary.label}
                 </Link>
+
               </div>
             </div>
           </div>
@@ -425,7 +442,7 @@ function Home() {
 
       <LatestNews />
 
-      {showScrollTop && (
+      {/* {showScrollTop && (
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -434,7 +451,7 @@ function Home() {
         >
           <ArrowUp className="h-6 w-6" />
         </button>
-      )}
+      )} */}
     </div>
   )
 }
