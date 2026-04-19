@@ -67,7 +67,7 @@ function Contact() {
 
           <div className="flex h-full flex-col gap-6">
             <Motion.div
-              className="rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
+              className="lg:rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
               variants={reduceMotion ? undefined : cardVariants}
               initial={reduceMotion ? false : 'initial'}
               whileInView={reduceMotion ? undefined : 'animate'}
@@ -85,7 +85,7 @@ function Contact() {
             </Motion.div>
 
             <Motion.div
-              className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm"
+              className="lg:rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm"
               variants={reduceMotion ? undefined : cardVariants}
               initial={reduceMotion ? false : 'initial'}
               whileInView={reduceMotion ? undefined : 'animate'}
@@ -198,7 +198,7 @@ function Contact() {
           </div>
 
           <Motion.div
-            className="mt-8 rounded-[2rem] bg-gradient-to-r from-slate-900 to-blue-700 p-8 text-white shadow-xl lg:p-10"
+            className="mt-8 lg:rounded-[2rem] bg-gradient-to-r from-slate-900 to-blue-700 p-8 text-white shadow-xl lg:p-10"
             variants={reduceMotion ? undefined : cardVariants}
             initial={reduceMotion ? false : 'initial'}
             whileInView={reduceMotion ? undefined : 'animate'}
