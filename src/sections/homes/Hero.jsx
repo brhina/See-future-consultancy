@@ -33,18 +33,18 @@ function Hero() {
               </div>
 
               <h1
-                className={`text-4xl font-bold leading-tight text-white transition-all duration-1000 sm:text-5xl xl:text-6xl ${
+                className={`text-4xl font-bold leading-tight text-white text-center lg:text-left transition-all duration-1000 sm:text-5xl xl:text-6xl ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                 }`}
               >
                 {hero.title}
-                <span className="mt-2 block bg-gradient-to-r from-blue-300 to-slate-100 bg-clip-text text-transparent">
+                <span className="mt-2 text-3xl block bg-gradient-to-r from-blue-300 to-slate-100 bg-clip-text text-transparent text-center lg:text-left">
                   {hero.highlightedTitle}
                 </span>
               </h1>
 
               <p
-                className={`mt-6 max-w-3xl text-base leading-8 text-slate-100 transition-all delay-200 duration-1000 sm:text-lg ${
+                className={`mt-6 pl-2 max-w-3xl text-base leading-8 text-slate-100 transition-all delay-200 duration-1000 sm:text-lg ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                 }`}
               >
@@ -71,7 +71,7 @@ function Hero() {
                       className={`group inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold transition-all duration-300 hover:scale-[1.02] ${baseClass}`}
                     >
                       {cta.label}
-                      <cta.icon className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                      {/* <cta.icon className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" /> */}
                     </Link>
                   )
                 })}
@@ -79,7 +79,7 @@ function Hero() {
             </div>
 
             <div
-              className={`rounded-[2rem] border border-white/10 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-md transition-all delay-500 duration-1000 ${
+              className={`lg:rounded-[2rem] border border-white/10 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-md transition-all delay-500 duration-1000 ${
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
             >
