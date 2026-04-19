@@ -19,7 +19,7 @@ import { officeContact } from './siteData'
 export const homePageData = {
   hero: {
     badge: `Headquartered in ${officeContact.locationLabel}`,
-    title: 'SEE Future Consult PLC',
+    title: 'SEE Future Consult',
     highlightedTitle: 'Social. Environmental. Economic. Sustainability.',
     description:
       'SEEF is a forward-thinking consulting firm helping shape a more sustainable and resilient Ethiopia through integrated social, environmental, and economic solutions.',
@@ -242,7 +242,7 @@ export const homePageData = {
     title: 'Planning a program, study, training, or technical intervention?',
     description:
       'SEEF can help shape the right response, whether the need is advisory support, applied research, geospatial analysis, social engagement, or practical training.',
-    primary: { label: 'Start a Conversation', to: '/contact' },
+    primary: { label: 'Start Conversation', to: '/contact' },
     secondary: { label: 'Review Services', to: '/services' }
   },
   news: {
