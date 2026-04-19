@@ -42,7 +42,7 @@ function ThematicAreas() {
             {thematicAreasPageData.groups.map((group) => (
               <Motion.article
                 key={group.title}
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="lg:rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
@@ -102,7 +102,7 @@ function ThematicAreas() {
             {thematicAreasPageData.sectorApplications.map((item) => (
               <Motion.article
                 key={item.title}
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="lg:rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
@@ -156,7 +156,7 @@ function ThematicAreas() {
           </Motion.div>
 
           <Motion.div
-            className="mt-8 rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
+            className="mt-8 lg:rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
             variants={reduceMotion ? undefined : cardVariants}
             initial={reduceMotion ? false : 'initial'}
             whileInView={reduceMotion ? undefined : 'animate'}

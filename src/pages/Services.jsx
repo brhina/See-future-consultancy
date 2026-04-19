@@ -44,7 +44,7 @@ function Services() {
             {servicesPageData.services.map((service) => (
               <Motion.article
                 key={service.title}
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="lg:rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
@@ -66,7 +66,7 @@ function Services() {
                     </div>
                   </div>
 
-                  <div className="rounded-2xl bg-slate-50 p-4">
+                  <div className="lg:rounded-2xl bg-slate-50 p-4">
                     <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-700">Typical outputs</h3>
                     <div className="mt-3 space-y-3">
                       {service.deliverables.map((item) => (
@@ -109,7 +109,7 @@ function Services() {
             {servicesPageData.sectors.map((sector) => (
               <Motion.article
                 key={sector.title}
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="lg:rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
@@ -149,7 +149,7 @@ function Services() {
             {servicesPageData.process.map((step, index) => (
               <Motion.div
                 key={step.title}
-                className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+                className="lg:rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
                 variants={reduceMotion ? undefined : cardVariants}
                 {...(reduceMotion ? {} : hoverLift)}
               >
@@ -166,7 +166,7 @@ function Services() {
           </Motion.div>
 
           <Motion.div
-            className="mt-8 rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
+            className="mt-8 lg:rounded-[2rem] bg-slate-900 p-8 text-white shadow-xl"
             variants={reduceMotion ? undefined : cardVariants}
             initial={reduceMotion ? false : 'initial'}
             whileInView={reduceMotion ? undefined : 'animate'}
@@ -223,7 +223,7 @@ function Services() {
               {servicesPageData.training.tracks.map((track) => (
                 <Motion.div
                   key={track.title}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                  className="lg:rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
                   variants={reduceMotion ? undefined : cardVariants}
                   {...(reduceMotion ? {} : hoverLift)}
                 >
@@ -254,7 +254,7 @@ function Services() {
           viewport={{ once: true, amount: 0.25 }}
         >
           <Motion.div
-            className="rounded-[2rem] bg-gradient-to-r from-slate-900 to-blue-700 p-8 text-white shadow-xl lg:p-10"
+            className="lg:rounded-[2rem] bg-gradient-to-r from-slate-900 to-blue-700 p-8 text-white shadow-xl lg:p-10"
             variants={reduceMotion ? undefined : cardVariants}
           >
             <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
