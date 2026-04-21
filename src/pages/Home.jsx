@@ -98,7 +98,7 @@ function Home() {
               isOverviewVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}
           >
-            <div>
+            <div className="px-2">
               <SectionHeading
                 eyebrow={homePageData.overview.eyebrow}
                 title={homePageData.overview.title}
@@ -317,7 +317,7 @@ function Home() {
       </section>
 
       <section className="page-section bg-slate-950 text-white">
-        <div className="page-frame max-w-full">
+        <div className="page-frame max-w-full px-2">
           <SectionHeading
             eyebrow="Featured Focus Areas"
             title="Where SEEF adds momentum fastest"
@@ -353,7 +353,7 @@ function Home() {
           viewport={{ once: true, amount: 0.15 }}
         >
           <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-            <div>
+            <div className='px-2'>
               <SectionHeading
                 eyebrow="Delivery Approach"
                 title="A simple engagement journey from diagnosis to capability"
