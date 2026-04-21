@@ -96,10 +96,10 @@ function Header() {
             <button
               type="button"
               onClick={() => setIsMenuOpen((open) => !open)}
-              className="rounded-2xl border border-slate-200 p-2.5 text-slate-700 transition-colors hover:bg-slate-50 lg:hidden"
+              className="rounded-xl p-2 text-slate-700 transition-colors hover:bg-slate-50 lg:hidden"
               aria-label="Toggle navigation"
             >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
