@@ -69,28 +69,6 @@ function ClientAssistant() {
 
   return (
     <div className="pointer-events-none fixed bottom-4 right-4 z-[60] flex max-w-[calc(100vw-1.5rem)] flex-col items-end sm:bottom-6 sm:right-6">
-      {/* <AnimatePresence>
-        {!isOpen && (
-          <Motion.div
-            initial={{ opacity: 0, y: 18, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 12, scale: 0.96 }}
-            className="pointer-events-auto mb-3 hidden max-w-xs rounded-3xl border border-blue-100 bg-white/95 p-4 shadow-[0_24px_70px_-32px_rgba(15,23,42,0.45)] backdrop-blur xl:block"
-          >
-            <div className="flex items-start gap-3">
-              <div className="mt-0.5 rounded-2xl bg-blue-600 p-2 text-white">
-                <Sparkles className="h-4 w-4" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-slate-900">Ask about SEEF Consult</p>
-                <p className="mt-1 text-sm leading-6 text-slate-600">
-                  Services, GIS support, training, contact details, and project fit.
-                </p>
-              </div>
-            </div>
-          </Motion.div>
-        )}
-      </AnimatePresence> */}
 
       <AnimatePresence>
         {isOpen ? (
