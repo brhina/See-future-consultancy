@@ -29,11 +29,11 @@ export const officeContact = {
 }
 
 export const navigationItems = [
-  { label: 'Home', path: '/' },
+  { label: 'SEEF', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Services', path: '/services' },
   { label: 'Thematic Areas', path: '/thematic-areas' },
-  { label: 'Contact', path: '/contact' }
+  { label: 'Contact SEEF', path: '/contact' }
 ]
 
 export const siteMeta = {
