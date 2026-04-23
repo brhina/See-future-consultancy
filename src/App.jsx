@@ -1,5 +1,6 @@
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import ClientAssistant from "./components/ClientAssistant"
 import AppRoutes from "./routes/AppRoutes"
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <AppRoutes />
       </div>
       <Footer />
+      <ClientAssistant />
     </div>
   )
 }
